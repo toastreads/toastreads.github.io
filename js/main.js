@@ -2,6 +2,8 @@
 
 document.onload = populate_card();
 
+let no_image = "images/sunday_no_image.jpg"
+
 function populate_card() {
     console.clear();
 
@@ -98,7 +100,7 @@ function write_card(data) {
         document.getElementById("article-pic").style.backgroundImage = combinedImageGradientOverlay;
 
     } else {
-        document.getElementById("article-pic").style.backgroundImage = "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%), url('images/no_image.webp')";
+        document.getElementById("article-pic").style.backgroundImage = "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%), url('images/sunday_no_image.jpg')";
     }
 
     if (data[index].sourcelogo.startsWith("http", 0)) {
