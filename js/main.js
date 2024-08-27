@@ -1,8 +1,8 @@
 //© Nithin Davis Nanthikkara
+let no_image = "url('images/sunday_no_image.jpg')"
 
 document.onload = populate_card();
 
-let no_image = "images/sunday_no_image.jpg"
 
 function populate_card() {
     console.clear();
@@ -20,10 +20,12 @@ function populate_card() {
     switch (new Date().getDay()) {
         case 0:
             console.log("Its a Sunday");
+            no_image = "url('images/sunday_no_image.jpg')"
             fetch_and_write(sunday_list)
             break;
         case 1:
             console.log("Its a Monday");
+            no_image = "url('images/monday_no_image.jpg')"
             fetch_and_write(monday_list)
             break;
         case 2:
@@ -40,6 +42,7 @@ function populate_card() {
             break;
         case 5:
             console.log("Its a Friday");
+            no_image = "url('images/friday_no_image.jpg')"
             fetch_and_write(friday_list)
             break;
         case 6:
@@ -100,7 +103,9 @@ function write_card(data) {
         document.getElementById("article-pic").style.backgroundImage = combinedImageGradientOverlay;
 
     } else {
-        document.getElementById("article-pic").style.backgroundImage = "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%), url('images/sunday_no_image.jpg')";
+        gradient_with_no_image = String("linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%)" +"," + no_image)
+        document.getElementById("article-pic").style.backgroundImage = gradient_with_no_image;
+        
     }
 
     if (data[index].sourcelogo.startsWith("http", 0)) {
@@ -118,7 +123,7 @@ function write_card(data) {
 
     //document.getElementById("clickable-area").setAttribute("onclick","location.href='www.yahoo.com';")
     document.getElementById("clickable-area").addEventListener("click", function (event) {
-        document.location = data[index].link;
+        window.open(data[index].link, '_blank');
     })
 
     setup_share_button(data[index].title, data[index].link);
