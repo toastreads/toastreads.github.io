@@ -38,6 +38,7 @@ function populate_card() {
             break;
         case 4:
             console.log("Its a Thursday");
+            no_image = "url('images/thursday_no_image.jpg')"
             fetch_and_write(thursday_list)
             break;
         case 5:
@@ -182,7 +183,8 @@ function setup_share_button(titleToShare, linkToShare) {
 
 }
 
-
+//bugs to fix:
+//using the dev tool clicker adds multiple onclick event listeners to the clickable area of the card.
 
 
 /* Deleted stuff....
