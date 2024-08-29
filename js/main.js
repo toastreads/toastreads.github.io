@@ -1,11 +1,32 @@
 //© Nithin Davis Nanthikkara
+console.clear();
+
+
 let no_image = "url('images/sunday_no_image.jpg')"
+
+let currentURL = window.location.href
+console.log("HEY URL IS: ", currentURL)
+
+let sharedLink = (new URLSearchParams(window.location.search)).get("sharedLink");
+if (sharedLink) {
+    console.log("HEY SHARED LINK IS: ", sharedLink)
+} else {
+    console.log("HEY SHARED LINK IS: NULL")
+}
+
+
+
 
 document.onload = populate_card();
 
 
+
+
 function populate_card() {
-    console.clear();
+
+
+
+
 
     //File paths for different days lists
     const monday_list = "json/monday_list.json"
@@ -58,8 +79,8 @@ function populate_card() {
 
 }
 
-function fetch_and_write(jsonFilePath){
-    console.log("Fetching data from,",jsonFilePath,"...")
+function fetch_and_write(jsonFilePath) {
+    console.log("Fetching data from,", jsonFilePath, "...")
     fetch(jsonFilePath)
         .then(response => {
             if (response.ok) {
@@ -105,9 +126,9 @@ function write_card(data) {
         document.getElementById("article-pic").style.backgroundImage = combinedImageGradientOverlay;
 
     } else {
-        gradient_with_no_image = String("linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%)" +"," + no_image)
+        gradient_with_no_image = String("linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%)" + "," + no_image)
         document.getElementById("article-pic").style.backgroundImage = gradient_with_no_image;
-        
+
     }
 
     if (data[index].sourcelogo.startsWith("http", 0)) {
@@ -123,10 +144,20 @@ function write_card(data) {
 
     document.getElementById("article-source-name").innerHTML = extractDomain(data[index].link)
 
-    //document.getElementById("clickable-area").setAttribute("onclick","location.href='www.yahoo.com';")
-    document.getElementById("clickable-area").addEventListener("click", function (event) {
-        window.open(data[index].link, '_blank');
-    })
+
+    if (sharedLink) {
+        document.getElementById("clickable-area").addEventListener("click", function (event) {
+            window.open(sharedLink, '_blank');
+        })
+
+    } else {
+        //document.getElementById("clickable-area").setAttribute("onclick","location.href='www.yahoo.com';")
+        document.getElementById("clickable-area").addEventListener("click", function (event) {
+            window.open(data[index].link, '_blank');
+        })
+
+    }
+
 
     setup_share_button(data[index].title, data[index].link);
 
@@ -160,7 +191,9 @@ function extractDomain(url) {
 }
 
 
-function setup_share_button(titleToShare, linkToShare) {
+function setup_share_button(titleToShare, linkOfArticle) {
+    
+    linkToShare = String("https://toastreads.com/?sharedLink=" + linkOfArticle)
     if (navigator.share) {
         const shareButton = document.getElementById('share-button');
         shareButton.addEventListener('click', async () => {
