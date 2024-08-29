@@ -124,7 +124,7 @@ function write_card(data) {
     //document.getElementById("clickable-area").setAttribute("onclick","location.href='www.yahoo.com';")
     document.getElementById("clickable-area").addEventListener("click", function (event) {
         window.open(data[index].link, '_blank');
-    }, { once: true })
+    })
 
     setup_share_button(data[index].title, data[index].link);
 
