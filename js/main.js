@@ -4,12 +4,7 @@ console.clear();
 let today
 console.log("today is considered to be = ", today)
 
-
 let no_image = "url('images/sunday_no_image.jpg')"
-
-
-
-
 
 let sharedDay = (new URLSearchParams(window.location.search)).get("sharedDay");
 if (sharedDay) {
