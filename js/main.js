@@ -168,7 +168,7 @@ function setup_share_button(titleToShare, linkToShare) {
                 // Use the Web Share API to trigger the native sharing dialog
                 await navigator.share({
                     title: titleToShare,
-                    text: 'This article was featured on Readpghds',
+                    text: 'This article was featured on Toastreads.com',
                     url: linkToShare
                 });
 
@@ -186,6 +186,12 @@ function setup_share_button(titleToShare, linkToShare) {
 
 //bugs to fix:
 //using the dev tool clicker adds multiple onclick event listeners to the clickable area of the card.
+//some of the links have images, but they are not mentioned in the meta tags so the python does not capture them.
+//Some links dont have a description in the meta tag, python would need to take the first 50 words of the main text as description.
+//share link needs to be from toast reads:
+//  https://stackoverflow.com/questions/31522621/pull-variable-from-a-url-and-set-it-as-value-of-textbox
+//  https://stackoverflow.com/questions/1034621/get-the-current-url-with-javascript
+
 
 
 /* Deleted stuff....
