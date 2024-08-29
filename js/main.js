@@ -30,6 +30,7 @@ function populate_card() {
             break;
         case 2:
             console.log("Its a Tuesday");
+            no_image = "url('images/tuesday_no_image.jpg')"
             fetch_and_write(tuesday_list)
             break;
         case 3:
