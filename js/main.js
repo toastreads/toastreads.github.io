@@ -14,8 +14,14 @@ if (sharedLink) {
     console.log("HEY SHARED LINK IS: NULL")
 }
 
+let sharedDay = (new URLSearchParams(window.location.search)).get("sharedDay");
+if (sharedDay) {
+    console.log("HEY SHARED DAY IS: ", sharedDay)
+} else {
+    console.log("HEY SHARED DAY IS: NULL")
+}
 
-
+let currentDay = new Date().getDay()
 
 document.onload = populate_card();
 
@@ -159,7 +165,7 @@ function write_card(data) {
     }
 
 
-    setup_share_button(data[index].title, data[index].link);
+    setup_share_button(data[index].title, data[index].link,currentDay);
 
 }
 
@@ -191,9 +197,9 @@ function extractDomain(url) {
 }
 
 
-function setup_share_button(titleToShare, linkOfArticle) {
+function setup_share_button(titleToShare, linkOfArticle, dayOfShare) {
     
-    linkToShare = String("https://toastreads.com/?sharedLink=" + linkOfArticle)
+    linkToShare = String("https://toastreads.com/?sharedLink=" + linkOfArticle +"&sharedDay=" + dayOfShare)
     console.log("DEEP LINK: ", linkToShare)
     if (navigator.share) {
         const shareButton = document.getElementById('share-button');
@@ -201,8 +207,7 @@ function setup_share_button(titleToShare, linkOfArticle) {
             try {
                 // Use the Web Share API to trigger the native sharing dialog
                 await navigator.share({
-                    title: titleToShare,
-                    text: 'This article was featured on Toastreads.com',
+                    text: String(titleToShare + " | via Toastreads.com |"),
                     url: linkToShare
                 });
 
