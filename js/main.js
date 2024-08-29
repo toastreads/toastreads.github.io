@@ -194,6 +194,7 @@ function extractDomain(url) {
 function setup_share_button(titleToShare, linkOfArticle) {
     
     linkToShare = String("https://toastreads.com/?sharedLink=" + linkOfArticle)
+    console.log("DEEP LINK: ", linkToShare)
     if (navigator.share) {
         const shareButton = document.getElementById('share-button');
         shareButton.addEventListener('click', async () => {
