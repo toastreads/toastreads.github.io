@@ -1,27 +1,28 @@
 //© Nithin Davis Nanthikkara
 console.clear();
 
+let today
+console.log("today is considered to be = ", today)
+
 
 let no_image = "url('images/sunday_no_image.jpg')"
 
-let currentURL = window.location.href
-console.log("HEY URL IS: ", currentURL)
 
-let sharedLink = (new URLSearchParams(window.location.search)).get("sharedLink");
-if (sharedLink) {
-    console.log("HEY SHARED LINK IS: ", sharedLink)
-} else {
-    console.log("HEY SHARED LINK IS: NULL")
-}
+
+
 
 let sharedDay = (new URLSearchParams(window.location.search)).get("sharedDay");
 if (sharedDay) {
     console.log("HEY SHARED DAY IS: ", sharedDay)
+    today = new Date(sharedDay)
+    console.log("today is considered to be = ", today)
 } else {
     console.log("HEY SHARED DAY IS: NULL")
+    today = new Date()
+    console.log("today is considered to be = ", today)
 }
 
-let currentDay = new Date().getDay()
+
 
 document.onload = populate_card();
 
@@ -44,7 +45,7 @@ function populate_card() {
     const sunday_list = "json/sunday_list.json"
 
     //Select list based on the day of the week.
-    switch (new Date().getDay()) {
+    switch (today.getDay()) {
         case 0:
             console.log("Its a Sunday");
             no_image = "url('images/sunday_no_image.jpg')"
@@ -151,21 +152,17 @@ function write_card(data) {
     document.getElementById("article-source-name").innerHTML = extractDomain(data[index].link)
 
 
-    if (sharedLink) {
-        document.getElementById("clickable-area").addEventListener("click", function (event) {
-            window.open(sharedLink, '_blank');
-        })
 
-    } else {
-        //document.getElementById("clickable-area").setAttribute("onclick","location.href='www.yahoo.com';")
-        document.getElementById("clickable-area").addEventListener("click", function (event) {
-            window.open(data[index].link, '_blank');
-        })
-
-    }
+    //document.getElementById("clickable-area").setAttribute("onclick","location.href='www.yahoo.com';")
+    document.getElementById("clickable-area").addEventListener("click", function (event) {
+        window.open(data[index].link, '_blank');
+    })
 
 
-    setup_share_button(data[index].title, data[index].link,currentDay);
+
+
+    setup_share_button(data[index].title, today);
+
 
 }
 
@@ -178,7 +175,7 @@ function week_of_the_year(fromThisDay = 0) {
     fromThisDay = offset; // dev tool - delete later
 
 
-    var now = new Date();
+    var now = today;
     var start = new Date(now.getFullYear(), 0, 0);
     var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
     var oneDay = 1000 * 60 * 60 * 24;
@@ -197,9 +194,9 @@ function extractDomain(url) {
 }
 
 
-function setup_share_button(titleToShare, linkOfArticle, dayOfShare) {
-    
-    linkToShare = String("https://toastreads.com/?sharedLink=" + linkOfArticle +"&sharedDay=" + dayOfShare)
+function setup_share_button(titleToShare, dateOfShare) {
+
+    linkToShare = String("https://toastreads.com/?sharedDay=" + dateOfShare)
     console.log("DEEP LINK: ", linkToShare)
     if (navigator.share) {
         const shareButton = document.getElementById('share-button');
@@ -207,7 +204,7 @@ function setup_share_button(titleToShare, linkOfArticle, dayOfShare) {
             try {
                 // Use the Web Share API to trigger the native sharing dialog
                 await navigator.share({
-                    text: String(titleToShare + " | via Toastreads.com |"),
+                    text: String(titleToShare + " | via Toastreads! |"),
                     url: linkToShare
                 });
 
@@ -223,6 +220,8 @@ function setup_share_button(titleToShare, linkOfArticle, dayOfShare) {
 
 }
 
+
+
 //bugs to fix:
 //using the dev tool clicker adds multiple onclick event listeners to the clickable area of the card.
 //some of the links have images, but they are not mentioned in the meta tags so the python does not capture them.
@@ -232,17 +231,3 @@ function setup_share_button(titleToShare, linkOfArticle, dayOfShare) {
 //  https://stackoverflow.com/questions/1034621/get-the-current-url-with-javascript
 
 
-
-/* Deleted stuff....
-function day_of_the_year(offset = 0) {
-    today = new Date();
-
-    // the offset is to adjust to the fact that I'm starting this today (3 August 2024) hehe
-    dayIntoYear = (Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()) - Date.UTC(today.getFullYear(), 0, 0)) / 24 / 60 / 60 / 1000;
-    console.log(dayIntoYear);
-
-    return dayIntoYear - offset;
-
-}
-
-*/
