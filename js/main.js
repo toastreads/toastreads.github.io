@@ -1,5 +1,7 @@
 //© Nithin Davis Nanthikkara
+console.log("JS loaded")
 console.clear();
+console.log("JS loaded after clear")
 
 let today
 console.log("today is considered to be = ", today)
