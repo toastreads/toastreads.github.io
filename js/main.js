@@ -1,22 +1,23 @@
 //© Nithin Davis Nanthikkara
-console.log("JS loaded")
 console.clear();
-console.log("JS loaded after clear")
+console.log("JS loaded")
 
-let today
-console.log("today is considered to be = ", today)
+let today = new Date()
+console.log("today is actually = ", today)
 
 let no_image = "url('images/sunday_no_image.jpg')"
 
 let sharedDay = (new URLSearchParams(window.location.search)).get("sharedDay");
 if (sharedDay) {
-    console.log("HEY SHARED DAY IS: ", sharedDay)
+    //bla = console.log(sharedDay.replace(/['"]+/g, ''));
+    console.log("There is a sharedDay in the URL: ", sharedDay);
+    //today = new Date(Date.parse(sharedDay))
     today = new Date(sharedDay)
-    console.log("today is considered to be = ", today)
+    console.log("today will be considered to be = ", today)
 } else {
-    console.log("HEY SHARED DAY IS: NULL")
+    console.log("There is NO sharedDay in the URL")
     today = new Date()
-    console.log("today is considered to be = ", today)
+    console.log("today will be considered to be = ", today)
 }
 
 
@@ -193,7 +194,9 @@ function extractDomain(url) {
 
 function setup_share_button(titleToShare, dateOfShare) {
 
-    linkToShare = String("https://toastreads.com/?sharedDay=" + dateOfShare)
+    encodedDateOfShare = encodeURIComponent(dateOfShare)
+    linkToShare = String("https://toastreads.com/?sharedDay=" + encodedDateOfShare)
+    
     console.log("DEEP LINK: ", linkToShare)
     if (navigator.share) {
         const shareButton = document.getElementById('share-button');
@@ -213,6 +216,12 @@ function setup_share_button(titleToShare, dateOfShare) {
     } else {
         console.warn('Web Share API not supported on this browser');
         //change icon to copy-icon and raise a toast with link copied to clipboard on clicking
+        const copyButton = document.getElementById('share-button');
+        copyButton.addEventListener('click', function(event){
+            navigator.clipboard.writeText(linkToShare)
+            alert("Link copied to clipboard: " + linkToShare)
+        })
+        
     }
 
 }
