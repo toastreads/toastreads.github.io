@@ -32,15 +32,15 @@ function decode_date(inputDate){
 
 let no_image = "url('images/sunday_no_image.jpg')"
 
-let sharedDay = (new URLSearchParams(window.location.search)).get("sharedDay");
-if (sharedDay) {
-    //bla = console.log(sharedDay.replace(/['"]+/g, ''));
-    console.log("There is a sharedDay in the URL: ", sharedDay);
-    //today = new Date(Date.parse(sharedDay))
-    today = decode_date(sharedDay)
+let sd = (new URLSearchParams(window.location.search)).get("sd");
+if (sd) {
+    //bla = console.log(sd.replace(/['"]+/g, ''));
+    console.log("There is a sd in the URL: ", sd);
+    //today = new Date(Date.parse(sd))
+    today = decode_date(sd)
     console.log("today will be considered to be = ", today)
 } else {
-    console.log("There is NO sharedDay in the URL")
+    console.log("There is NO sd in the URL")
     today = new Date()
     console.log("today will be considered to be = ", today)
 }
@@ -220,7 +220,7 @@ function extractDomain(url) {
 function setup_share_button(titleToShare, dateOfShare) {
 
     encodedDateOfShare = encode_date(dateOfShare)
-    linkToShare = String("https://toastreads.com/?sharedDay=" + encodedDateOfShare)
+    linkToShare = String("https://toastreads.com/?sd=" + encodedDateOfShare)
     
     console.log("DEEP LINK: ", linkToShare)
     if (navigator.share) {
