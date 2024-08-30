@@ -3,7 +3,32 @@ console.clear();
 console.log("JS loaded")
 
 let today = new Date()
-console.log("today is actually = ", today)
+// console.log("today is actually = ", today)
+// console.log("date.parse(today): ", Date.parse(today))
+// console.log("Date(date.parse(today)): ", Date(Date.parse(today)))
+// console.log("to String radix 36 of above: ", (Date.parse(today)).toString(36))
+// console.log("Reverse of above: ", parseInt((Date.parse(today)).toString(36),36))
+// console.log("Encoded date: ", encode_date(today));
+// console.log("Decoded date: ", decode_date(encode_date(today)));
+// console.log("is this a date or not: ", decode_date(encode_date(today)).getDay());
+
+
+
+
+function encode_date(inputDate){
+
+    dateInmillisecondFormat = Date.parse(inputDate)
+    encodedtoString = dateInmillisecondFormat.toString(36)
+
+    return encodedtoString
+}
+function decode_date(inputDate){
+    decodedDate = new Date(parseInt(inputDate, 36))
+
+    return decodedDate
+}
+
+
 
 let no_image = "url('images/sunday_no_image.jpg')"
 
@@ -12,7 +37,7 @@ if (sharedDay) {
     //bla = console.log(sharedDay.replace(/['"]+/g, ''));
     console.log("There is a sharedDay in the URL: ", sharedDay);
     //today = new Date(Date.parse(sharedDay))
-    today = new Date(sharedDay)
+    today = decode_date(sharedDay)
     console.log("today will be considered to be = ", today)
 } else {
     console.log("There is NO sharedDay in the URL")
@@ -194,7 +219,7 @@ function extractDomain(url) {
 
 function setup_share_button(titleToShare, dateOfShare) {
 
-    encodedDateOfShare = encodeURIComponent(dateOfShare)
+    encodedDateOfShare = encode_date(dateOfShare)
     linkToShare = String("https://toastreads.com/?sharedDay=" + encodedDateOfShare)
     
     console.log("DEEP LINK: ", linkToShare)
