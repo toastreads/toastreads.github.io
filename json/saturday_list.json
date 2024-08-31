@@ -27,51 +27,6 @@
    "sourcelogo": "https://www.google.com/s2/favicons?domain=https://www.theatlantic.com/magazine/archive/2015/01/the-death-of-the-artist-and-the-birth-of-the-creative-entrepreneur/383497/"
  },
  {
-   "link": "https://www.vqronline.org/articles/2009/spring/weschler-double-vision/",
-   "topic": "art and culture",
-   "subtopic": "",
-   "title": "",
-   "description": "",
-   "image": "",
-   "sourcelogo": ""
- },
- {
-   "link": "https://www.nplusonemag.com/issue-13/reviews/on-sothebys/",
-   "topic": "art and culture",
-   "subtopic": "",
-   "title": "",
-   "description": "",
-   "image": "",
-   "sourcelogo": ""
- },
- {
-   "link": "https://www.esquire.com/entertainment/a4059/klosterman0108/",
-   "topic": "art and culture",
-   "subtopic": "",
-   "title": "Network Television - Chuck Klosterman",
-   "description": "It seems like a trivial question. But the answer gets at the very nature of knowledge. Sort of. Chuck Klosterman takes a look at the look of network television.",
-   "image": "https://hips.hearstapps.com/hmg-prod/images/legacy-fre-image-placeholder-1649872437.png?crop=1.00xw:0.502xh;0,0.223xh&resize=1200:*",
-   "sourcelogo": "https://www.google.com/s2/favicons?domain=https://www.esquire.com/entertainment/a4059/klosterman0108/"
- },
- {
-   "link": "https://www.newyorker.com/magazine/2008/12/22/dead-man-laughing?printable=true",
-   "topic": "art and culture",
-   "subtopic": "",
-   "title": "Dead Man Laughing | The New Yorker",
-   "description": "Zadie Smith on the things her family found funny.",
-   "image": "https://media.newyorker.com/photos/590977b48b51cf59fc4234cf/16:9/w_1280,c_limit/081222_r18049_p646.jpg",
-   "sourcelogo": "https://www.newyorker.com/verso/static/the-new-yorker/assets/favicon.ico"
- },
- {
-   "link": "https://www.theatlantic.com/magazine/archive/2005/04/host/303812/",
-   "topic": "art and culture",
-   "subtopic": "",
-   "title": "Host - The Atlantic",
-   "description": "Deep into the mercenary world of take-no-prisoners political talk radio",
-   "image": "https://cdn.theatlantic.com/thumbor/PTsn6zbjvig5WdcfZZRObmG-76w=/50x0:1951x990/960x500/media/img/2015/05/host1_lo/original.jpg",
-   "sourcelogo": "https://cdn.theatlantic.com/tng/static/theatlantic/img/lacroix/favicon.fb04af6390eb.ico"
- },
- {
    "link": "https://watchdocumentaries.com/exit-through-the-gift-shop/",
    "topic": "art and culture",
    "subtopic": "",
@@ -81,6 +36,24 @@
    "sourcelogo": "https://www.google.com/s2/favicons?domain=https://watchdocumentaries.com/exit-through-the-gift-shop/"
  },
  {
+  "link": "https://www.newyorker.com/magazine/2008/12/22/dead-man-laughing?printable=true",
+  "topic": "art and culture",
+  "subtopic": "",
+  "title": "Dead Man Laughing | The New Yorker",
+  "description": "Zadie Smith on the things her family found funny.",
+  "image": "https://media.newyorker.com/photos/590977b48b51cf59fc4234cf/16:9/w_1280,c_limit/081222_r18049_p646.jpg",
+  "sourcelogo": "https://www.newyorker.com/verso/static/the-new-yorker/assets/favicon.ico"
+},
+{
+  "link": "https://www.theatlantic.com/magazine/archive/2005/04/host/303812/",
+  "topic": "art and culture",
+  "subtopic": "",
+  "title": "Host - The Atlantic",
+  "description": "Deep into the mercenary world of take-no-prisoners political talk radio",
+  "image": "https://cdn.theatlantic.com/thumbor/PTsn6zbjvig5WdcfZZRObmG-76w=/50x0:1951x990/960x500/media/img/2015/05/host1_lo/original.jpg",
+  "sourcelogo": "https://cdn.theatlantic.com/tng/static/theatlantic/img/lacroix/favicon.fb04af6390eb.ico"
+},
+{
    "link": "http://www.radosh.net/writing/trends.html",
    "topic": "art and culture",
    "subtopic": "",
