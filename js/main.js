@@ -229,7 +229,7 @@ function setup_share_button(titleToShare, dateOfShare) {
             try {
                 // Use the Web Share API to trigger the native sharing dialog
                 await navigator.share({
-                    text: String(titleToShare + " | via Toastreads! |"),
+                    text: String(titleToShare + " | via Toastreads! |" + "\n"),
                     url: linkToShare
                 });
 
