@@ -26,42 +26,7 @@
    "image": "https://cdn.theatlantic.com/thumbor/m7_wpjLfSdk6FH173gF-WwPmH0o=/0x41:1380x760/1200x625/media/img/2014/12/WEL_DeresiewiczOpener_WEBCrop/original.jpg",
    "sourcelogo": "https://www.google.com/s2/favicons?domain=https://www.theatlantic.com/magazine/archive/2015/01/the-death-of-the-artist-and-the-birth-of-the-creative-entrepreneur/383497/"
  },
- {
-   "link": "https://watchdocumentaries.com/exit-through-the-gift-shop/",
-   "topic": "art and culture",
-   "subtopic": "",
-   "title": "Exit Through The Gift Shop (2010) | Watch Free Documentaries Online",
-   "description": "Watch Exit Through The Gift Shop (2010) online. Documentary by renowned English graffiti artist Banksy telling the true story of how French shopkeeper Thierry Guetta strived to contact Banksy but ended up with the artist turning the camera back at him.",
-   "image": "https://watchdocumentaries.com/wp-content/uploads/exit-through-the-gift-shop.jpg",
-   "sourcelogo": "https://www.google.com/s2/favicons?domain=https://watchdocumentaries.com/exit-through-the-gift-shop/"
- },
- {
-  "link": "https://www.newyorker.com/magazine/2008/12/22/dead-man-laughing?printable=true",
-  "topic": "art and culture",
-  "subtopic": "",
-  "title": "Dead Man Laughing | The New Yorker",
-  "description": "Zadie Smith on the things her family found funny.",
-  "image": "https://media.newyorker.com/photos/590977b48b51cf59fc4234cf/16:9/w_1280,c_limit/081222_r18049_p646.jpg",
-  "sourcelogo": "https://www.newyorker.com/verso/static/the-new-yorker/assets/favicon.ico"
-},
-{
-  "link": "https://www.theatlantic.com/magazine/archive/2005/04/host/303812/",
-  "topic": "art and culture",
-  "subtopic": "",
-  "title": "Host - The Atlantic",
-  "description": "Deep into the mercenary world of take-no-prisoners political talk radio",
-  "image": "https://cdn.theatlantic.com/thumbor/PTsn6zbjvig5WdcfZZRObmG-76w=/50x0:1951x990/960x500/media/img/2015/05/host1_lo/original.jpg",
-  "sourcelogo": "https://cdn.theatlantic.com/tng/static/theatlantic/img/lacroix/favicon.fb04af6390eb.ico"
-},
-{
-   "link": "http://www.radosh.net/writing/trends.html",
-   "topic": "art and culture",
-   "subtopic": "",
-   "title": "The Trendspotting Generation",
-   "description": "#ERROR",
-   "image": "#ERROR",
-   "sourcelogo": "https://www.google.com/s2/favicons?domain=http://www.radosh.net/writing/trends.html"
- },
+ 
  {
    "link": "https://www.theatlantic.com/magazine/archive/2015/09/thats-not-funny/399335/",
    "topic": "art and culture",
@@ -71,6 +36,42 @@
    "image": "https://cdn.theatlantic.com/thumbor/ZLDlIdoAIdbOBCK42-9T0Fp-01k=/0x0:1999x1041/1200x625/media/img/2015/07/WEL_FlanniganPCComedy_01WEBCrop-1/original.jpg",
    "sourcelogo": "https://www.google.com/s2/favicons?domain=https://www.theatlantic.com/magazine/archive/2015/09/thats-not-funny/399335/"
  },
+ {
+  "link": "https://watchdocumentaries.com/exit-through-the-gift-shop/",
+  "topic": "art and culture",
+  "subtopic": "",
+  "title": "Exit Through The Gift Shop (2010) | Watch Free Documentaries Online",
+  "description": "Watch Exit Through The Gift Shop (2010) online. Documentary by renowned English graffiti artist Banksy telling the true story of how French shopkeeper Thierry Guetta strived to contact Banksy but ended up with the artist turning the camera back at him.",
+  "image": "https://watchdocumentaries.com/wp-content/uploads/exit-through-the-gift-shop.jpg",
+  "sourcelogo": "https://www.google.com/s2/favicons?domain=https://watchdocumentaries.com/exit-through-the-gift-shop/"
+},
+{
+ "link": "https://www.newyorker.com/magazine/2008/12/22/dead-man-laughing?printable=true",
+ "topic": "art and culture",
+ "subtopic": "",
+ "title": "Dead Man Laughing | The New Yorker",
+ "description": "Zadie Smith on the things her family found funny.",
+ "image": "https://media.newyorker.com/photos/590977b48b51cf59fc4234cf/16:9/w_1280,c_limit/081222_r18049_p646.jpg",
+ "sourcelogo": "https://www.newyorker.com/verso/static/the-new-yorker/assets/favicon.ico"
+},
+{
+ "link": "https://www.theatlantic.com/magazine/archive/2005/04/host/303812/",
+ "topic": "art and culture",
+ "subtopic": "",
+ "title": "Host - The Atlantic",
+ "description": "Deep into the mercenary world of take-no-prisoners political talk radio",
+ "image": "https://cdn.theatlantic.com/thumbor/PTsn6zbjvig5WdcfZZRObmG-76w=/50x0:1951x990/960x500/media/img/2015/05/host1_lo/original.jpg",
+ "sourcelogo": "https://cdn.theatlantic.com/tng/static/theatlantic/img/lacroix/favicon.fb04af6390eb.ico"
+},
+{
+  "link": "http://www.radosh.net/writing/trends.html",
+  "topic": "art and culture",
+  "subtopic": "",
+  "title": "The Trendspotting Generation",
+  "description": "#ERROR",
+  "image": "#ERROR",
+  "sourcelogo": "https://www.google.com/s2/favicons?domain=http://www.radosh.net/writing/trends.html"
+},
  {
    "link": "https://www.vanityfair.com/style/2012/01/prisoners-of-style-201201",
    "topic": "art and culture",
