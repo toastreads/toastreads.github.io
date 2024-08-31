@@ -35,7 +35,7 @@ let no_image = "url('images/sunday_no_image.jpg')"
 let sd = (new URLSearchParams(window.location.search)).get("sd");
 if (sd) {
     //bla = console.log(sd.replace(/['"]+/g, ''));
-    console.log("There is a sd in the URL: ", sd);
+    console.log("There is a sd (shared day) in the URL: ", sd);
     //today = new Date(Date.parse(sd))
     today = decode_date(sd)
     console.log("today will be considered to be = ", today)
