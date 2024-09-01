@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Copyright" content="Created by Nithin Davis Nanthikkara">
-    <meta name="description" content="Read something useful today. This app delivers a short read on Knowledgeable and insightful stuff from the internet.">
-    
+    <meta name="description"
+        content="Read something useful today. This app delivers a short read on Knowledgeable and insightful stuff from the internet.">
+
     <meta property="og:title" content="Toastreads: read something interesting and useful once a day" />
     <meta property="og:url" content="https://www.toastreads.com/" />
-    <meta property="og:description" content="Read something useful today. This app delivers a short read on Knowledgeable and insightful stuff from the internet." />
+    <meta property="og:description"
+        content="Read something useful today. This app delivers a short read on Knowledgeable and insightful stuff from the internet." />
     <meta property="og:image" content="https://toastreads.com/images/bread_icon.png" />
 
     <meta name="referrer" content="origin">
     <link rel="apple-touch-icon" href="images/bread_icon.png">
-    
+
     <title>Toastreads: read something interesting and useful once a day</title>
     <link rel="icon" type="image/png" href="images/favicon.ico">
 
@@ -26,9 +28,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wdth,wght@0,50..125,100..900;1,50..125,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Saira:ital,wdth,wght@0,50..125,100..900;1,50..125,100..900&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --background-color: #C0CECD;
@@ -78,7 +83,7 @@
             font-size: 18px;
             color: var(--foreground-text-color);
             margin-top: 26px;
-            
+
         }
 
 
@@ -128,7 +133,8 @@
 
         .article-title {
             font-family: var(--headline-font), serif;
-            font-size: 26px; /*was 32*/
+            font-size: 26px;
+            /*was 32*/
             text-transform: uppercase;
             color: var(--text-color);
             margin-top: 16px;
@@ -154,7 +160,7 @@
         }
 
         .article-description {
-            font-family: var(--body-text) ,"Noto Sans", sans-serif;
+            font-family: var(--body-text), "Noto Sans", sans-serif;
             font-weight: 400;
             font-size: 12px;
             margin-top: 6px;
@@ -218,10 +224,20 @@
             display: none;
         }
 
+        #focus-sounds {
+            background-color: #bcbace;
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 32px;
+            font-family: var(--ui-font);
+            font-size: 12px;
+            display: none;
+        }
+
 
 
         .subtitle {
-            font-family: var(--ui-font), "Mystery Quest" , "Mali", sans-serif;
+            font-family: var(--ui-font), "Mystery Quest", "Mali", sans-serif;
             font-size: 12px;
             color: var(--foreground-text-color);
             margin-top: 32px;
@@ -229,28 +245,28 @@
 
         .footer {
             margin-top: 64px;
-            font-family: var(--ui-font) ,"Noto Sans", sans-serif;
+            font-family: var(--ui-font), "Noto Sans", sans-serif;
             font-size: 8px;
         }
 
         .spacer {
             height: 16px;
         }
+
     </style>
 
 </head>
 
 
 <body>
-    <div id="dev-tool-clicker" class="title-image"><img src="images/bread_icon.png" alt=""></div>
+    <div id="dev-tool-clicker" class="title-image"><img src="images/bread_icon_animated.gif" alt=""></div>
 
     <div class="title">toastreads</div>
 
     <div class="today" id="today">Today</div>
 
     <div class="article-card">
-        <div id="clickable-area"
-            style="cursor: pointer;">
+        <div id="clickable-area" style="cursor: pointer;">
             <div class="article-pic" id="article-pic">
                 <div class="big-arrow"><img src="images/big_arrow.svg" alt=""></div>
 
@@ -264,7 +280,7 @@
 
             <div class="article-time">
                 <span id="article-time-icon"></span>
-                <span>25 mins</span>
+                <span id="article-time-value">25 mins</span>
             </div>
 
             <div class="article-description" id="article-description">
@@ -288,11 +304,20 @@
 
     </div>
 
+    <div id="focus-sounds">
+        Focus sounds
+        <div>
+            <span>white noise</span>
+            <span>brown noise</span>
+            <span>binaural waves</span>
+        </div>
+    </div>
+
 
     <div class="subtitle">Delightfully useful reads, toasted once a day</div>
     <div class="footer">Submit an article | Report an article | Get in touch</div>
     <div class="spacer"></div>
-    
+
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 
