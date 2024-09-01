@@ -64,7 +64,8 @@
 
         body {
             text-align: center;
-            background: var(--background-gradient);
+            /* background: var(--background-gradient); */
+            background: #EFEDEB;
             background-repeat: no-repeat;
             margin: 0;
             /* padding-left: 25px;
@@ -74,8 +75,9 @@
         }
 
         .title-image img {
-            height: 48px;
+            height: 64px; /*was 48*/
             margin-top: 77px;
+            filter: drop-shadow(16px -10px 0px #4525652d );
         }
 
         .title {
@@ -221,17 +223,18 @@
             background-size: 16px, 16px;
             background-repeat: no-repeat;
             background-position: center;
-            display: none;
         }
 
         #focus-sounds {
-            background-color: #bcbace;
+            background-color: #484d5b;
             padding: 16px;
             border-radius: 8px;
-            margin-top: 32px;
             font-family: var(--ui-font);
             font-size: 12px;
-            display: none;
+            color: #e8e8e8;
+            max-width: 390px;
+            min-width: 210px;
+            margin: 32px auto;
         }
 
 
@@ -259,7 +262,7 @@
 
 
 <body>
-    <div id="dev-tool-clicker" class="title-image"><img src="images/bread_icon_animated.gif" alt=""></div>
+    <div id="dev-tool-clicker" class="title-image"><img src="images/bread_icon.png" alt=""></div>
 
     <div class="title">toastreads</div>
 
@@ -298,6 +301,7 @@
             <div class="article-actions">
                 <span class="article-action-buttons" id="share-button"></span>
                 <span class="article-action-buttons" id="bookmark-button"></span>
+                <span class="article-action-buttons" id="mark-as-read-button"></span>
             </div>
 
         </div>
@@ -310,7 +314,20 @@
             <span>white noise</span>
             <span>brown noise</span>
             <span>binaural waves</span>
+            <button onclick="whiteNoise.play()">Play noise</button>
         </div>
+    </div>
+
+    <div>
+        Random Meme from the bellies of the interwebs
+    </div>
+
+    <div>
+        Articles you have read
+    </div>
+
+    <div>
+        Bookmarked articles
     </div>
 
 
@@ -319,6 +336,8 @@
     <div class="spacer"></div>
 
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/noise.js"></script>
+    
 </body>
 
 
