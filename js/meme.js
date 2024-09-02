@@ -20,9 +20,9 @@ function fetch_meme() {
     }
 
     function write_meme(jsonData) {
-        console.log("Meme selected:", jsonData.preview[1]);
+        console.log("Meme selected:", jsonData.preview[2]);
         
-        document.getElementById("meme-pic").style.backgroundImage = String("url(\"" + jsonData.preview[1] + "\"");
+        document.getElementById("meme-pic").style.backgroundImage = String("url(\"" + jsonData.preview[2] + "\"");
     }
 
     document.onload = fetch_meme()
