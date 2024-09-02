@@ -75,9 +75,10 @@
         }
 
         .title-image img {
-            height: 64px; /*was 48*/
+            height: 64px;
+            /*was 48*/
             margin-top: 77px;
-            filter: drop-shadow(16px -10px 0px #4525652d );
+            filter: drop-shadow(16px -10px 0px #4525652d);
         }
 
         .title {
@@ -106,7 +107,7 @@
             min-width: 210px;
             margin: auto;
             padding: 16px;
-            box-shadow: 4px 16px 30px -9px rgba(12, 0, 105, 0.2);
+            box-shadow: 4px 16px 30px -9px #4525652d;
             border: #ffffff;
             border-style: solid;
             border-width: 1px;
@@ -255,7 +256,7 @@
             color: #e8e8e8;
             max-width: 390px;
             min-width: 210px;
-            margin: 32px auto;
+            margin: 16px auto;
         }
 
         .containers {
@@ -268,15 +269,32 @@
             max-width: 390px;
             min-width: 210px;
             min-height: 200px;
-            margin: 32px auto;
+            margin: 16px auto;
         }
 
+        .show-on-desktop-only {
+            display: block;
+            background-color: #484d5b;
+            color: #cccccc;
+            font-family: var(--ui-font);
+            font-size: 10px;
+            padding: 4px;
+            margin: 0px -8px 0px -8px;
+        }
+
+        @media only screen and (max-width: 800px) {
+            .show-on-desktop-only {
+                display: none;
+            }
+        }
     </style>
+
 
 </head>
 
 
 <body>
+    <div class="show-on-desktop-only">Best viewed on Mobile</div>
     <div id="dev-tool-clicker" class="title-image"><img src="images/bread_icon.png" alt=""></div>
 
     <div class="title">toastreads</div>
@@ -352,7 +370,7 @@
 
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/noise.js"></script>
-    
+
 </body>
 
 

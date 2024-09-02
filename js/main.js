@@ -2,6 +2,7 @@
 console.clear();
 console.log("JS loaded")
 
+
 let today = new Date()
 // console.log("today is actually = ", today)
 // console.log("date.parse(today): ", Date.parse(today))
