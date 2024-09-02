@@ -20,9 +20,12 @@ function fetch_meme() {
     }
 
     function write_meme(jsonData) {
-        console.log("Meme selected:", jsonData.preview[2]);
         
-        document.getElementById("meme-pic").src = jsonData.preview[2];
+        if (jsonData.url) {
+            document.getElementById("meme-pic").src = jsonData.url;
+            console.log("Meme selected:", jsonData.url);
+        }
+        
     }
 
     document.onload = fetch_meme()
