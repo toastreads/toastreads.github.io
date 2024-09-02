@@ -269,7 +269,7 @@
         }
 
         .containers {
-            background-color: #dfdee6;
+            background-color: #484d5b15;
             padding: 16px;
             border-radius: 8px;
             font-family: var(--ui-font);
@@ -298,12 +298,7 @@
         }
 
         #meme-pic {
-            background: #f1f1f1;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            height: 300px;
-            /* border-radius: 21px 21px 8px 8px; */
+            width: 100%;
             border-radius: 4px;
             filter: saturate(0.5);
         }
@@ -377,7 +372,9 @@
 
     <div class="containers">
         Random Meme from the bellies of the interwebs
-        <div id="meme-pic"></div>
+        <div >
+            <img src="" alt="" id="meme-pic">
+        </div>
     </div>
 
     <div class="containers">
@@ -395,6 +392,7 @@
 
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/meme.js"></script>
+    <script type="text/javascript" src="js/bookmarks.js"></script>
     
 
 </body>
