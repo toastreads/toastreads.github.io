@@ -277,14 +277,27 @@
             color: #222222;
             max-width: 390px;
             min-width: 210px;
-            min-height: 200px;
+            
             margin: 16px auto;
             text-align: left;
         }
 
-        .bookmarked-article {
+        .bookmarked-article-card {
             background-color: rgb(255, 255, 255);
             text-align: left;
+            margin-top: 8px;
+            border-radius: 2px;
+            padding: 8px;
+        }
+        .bookmarked-article-card-title {
+            font-family: var(--headline-font);
+            font-size: 16px;
+            margin-top: 4px;
+        }
+        .bookmarked-article-card-description {
+            font-family: var(--body-text);
+            font-size: 12px;
+            margin-top: 4px;
         }
 
         .show-on-desktop-only {
@@ -376,25 +389,32 @@
     <div class="subtitle">Delightfully useful reads, toasted once a day</div>
     <div class="spacer"></div>
 
-    <div class="containers">
-        Random Meme from the bellies of the interwebs
-        <div >
-            <img src="" alt="" id="meme-pic">
-        </div>
-    </div>
+    
 
     
 
     <div class="containers" id="bookmarked-section">
         Bookmarked articles
-        <div class="bookmarked-article">
-            <div>Title of the article</div>
-            <div>Description</div>
+        <div class="bookmarked-article-card">
+            <div class="bookmarked-article-card-title">Title of the article</div>
+            <div class="bookmarked-article-card-description">Description</div>
+        </div>
+        <div class="bookmarked-article-card">
+            <div class="bookmarked-article-card-title">Title of the article</div>
+            <div class="bookmarked-article-card-description">Description</div>
         </div>
     </div>
 
     <div class="containers">
         Articles you have read
+    </div>
+
+    <div class="containers">
+        Random Meme from the bellies of the interwebs
+        <div >
+            <img src="" alt="" id="meme-pic">
+            Source: reddit
+        </div>
     </div>
 
 
