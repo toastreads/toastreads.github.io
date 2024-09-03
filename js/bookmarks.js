@@ -1,10 +1,11 @@
-console.log("bookmark.js loaded");
 
-console.log("writing bookmark cookie");
 
-document.cookie = "username=John Doe; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/";
 
-console.log("Reading back bookmark cookie");
-console.log("Cookie value is: ", document.cookie);
+
+document.getElementById("bookmark-button").addEventListener("click", function(event){
+    console.log("Bookmarked!");
+    document.cookie = "sd=" + encode_date(today) + "; expires=Thu, 01 Jan 2026 00:00:01 GMT; path=/";
+    console.log("Cookie value is: ", document.cookie);
+})
 
 

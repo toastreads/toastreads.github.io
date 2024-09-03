@@ -1,20 +1,20 @@
 function fetch_meme() {
-    console.log("Fetching meme...")
+    console.log("/meme.js/Fetching meme...")
     fetch("https://meme-api.com/gimme")
         .then(response => {
             if (response.ok) {
-                console.log("Meme fetch Success")
+                console.log("/meme.js/Meme fetch Success")
                 return response.json()
 
 
             } else {
-                console.log("Meme Fetch failed")
+                console.log("/meme.js/Meme Fetch failed")
                 return response.json()
             }
         })
         .then(data => {
             write_meme(data)
-            console.log(data);
+            console.log("/meme.js/Meme data: ",data);
             
         })
     }
@@ -23,7 +23,7 @@ function fetch_meme() {
         
         if (jsonData.url) {
             document.getElementById("meme-pic").src = jsonData.url;
-            console.log("Meme selected:", jsonData.url);
+            console.log("/meme.js/Meme selected:", jsonData.url);
         }
         
     }

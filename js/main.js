@@ -1,7 +1,6 @@
 //© Nithin Davis Nanthikkara
 console.clear();
-console.log("JS loaded")
-
+console.log("/main.js/ loaded")
 
 let today = new Date()
 // console.log("today is actually = ", today)
@@ -143,7 +142,8 @@ function write_card(data) {
 
 
     console.log("writing card with the following data: ", data)
-    index = week_of_the_year(222);
+    // index = week_of_the_year(222);
+    index = today.getWeek(); // using this function now, source: https://weeknumber.com/how-to/javascript
     console.log("Writing card with data index = ", index)
     document.getElementById("article-title").innerHTML = data[index].title;
     document.getElementById("article-description").innerHTML = data[index].description;
@@ -190,7 +190,7 @@ function write_card(data) {
 
 }
 
-var offset = 222;
+var offset = 0;
 
 
 
@@ -251,6 +251,38 @@ function setup_share_button(titleToShare, dateOfShare) {
     }
 
 }
+
+
+
+
+
+// This script is released to the public domain and may be used, modified and
+// distributed without restrictions. Attribution not necessary but appreciated.
+// Source: https://weeknumber.com/how-to/javascript
+
+// Returns the ISO week of the date.
+Date.prototype.getWeek = function() {
+    var date = new Date(this.getTime());
+    date.setHours(0, 0, 0, 0);
+    // Thursday in current week decides the year.
+    date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
+    // January 4 is always in week 1.
+    var week1 = new Date(date.getFullYear(), 0, 4);
+    // Adjust to Thursday in week 1 and count number of weeks from date to week1.
+    return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000
+                          - 3 + (week1.getDay() + 6) % 7) / 7);
+  }
+  
+  // Returns the four-digit year corresponding to the ISO week of the date.
+  Date.prototype.getWeekYear = function() {
+    var date = new Date(this.getTime());
+    date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
+    return date.getFullYear();
+  }
+
+  console.log("Week of the year from the new function: ", today.getWeek());
+  
+
 
 
 
