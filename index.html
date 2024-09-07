@@ -34,6 +34,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --background-color: #C0CECD;
@@ -42,6 +45,7 @@
             --background-gradient: linear-gradient(to bottom, #ffffff 0%, #ebeff2 50%, #ffffff 100%);
             --card-color: #F0F0F0;
             --card-gradient: linear-gradient(to right, #ffffff00 0%, #f0f0f0 50%, #ffffff00 100%);
+            --card-gradient-only: linear-gradient(to right, #ffffff 0%, #f0f0f0 50%, #ffffff 100%);
             --foreground-text-color: #222222;
             --text-color: #222222;
             --ui-font: "Share Tech Mono", "Ubuntu Mono";
@@ -100,14 +104,15 @@
         }
 
         .article-card {
-            background: var(--card-gradient), url(images/noise_lite.png);
+            /* background: var(--card-gradient), url(images/noise_lite.png); */
+            background: var(--card-gradient-only);
             background-repeat: repeat;
             /* max-width: 300px; */
             max-width: 390px;
             min-width: 210px;
             margin: auto;
             padding: 16px;
-            box-shadow: 4px 16px 30px -9px #4525652d;
+            /* box-shadow: 4px 16px 30px -9px #4525652d; */
             border: #ffffff;
             border-style: solid;
             border-width: 1px;
@@ -122,7 +127,6 @@
             background-size: cover;
             background-position: center;
             height: 192px;
-            /* border-radius: 21px 21px 8px 8px; */
             border-radius: 4px;
             filter: saturate(0.5);
         }
@@ -134,8 +138,21 @@
             padding: 16px;
         }
 
+        #time-to-read {
+            background-color: white;
+            width: 24px;
+            float: right;
+            margin-right: 16px;
+            margin-top: -8px;
+            font-family: var(--ui-font);
+            font-size: 8px;
+            border-radius: 2px;
+            padding: 4px;
+        }
+
         .article-title {
             font-family: var(--headline-font), serif;
+            font-weight: 400;
             font-size: 26px;
             /*was 32*/
             text-transform: uppercase;
@@ -145,35 +162,18 @@
             text-shadow: 0px 1px 1px rgb(255, 255, 255);
         }
 
-        #article-time-icon {
-            background: url("images/sandwich_icon.png");
-            background-size: contain;
-            height: 32px;
-            width: 32px;
-            background-repeat: no-repeat;
-        }
-
-        .article-time {
-            font-family: var(--ui-font), sans-serif;
-            font-size: 12px;
-            margin-top: 9px;
-            text-align: left;
-            display: flex;
-            align-items: center;
-        }
-
         .article-description {
             font-family: var(--body-text), "Noto Sans", sans-serif;
             font-weight: 400;
-            font-size: 12px;
+            font-size: 16px;
             margin-top: 6px;
             text-align: left;
         }
 
         .article-source {
-            font-family: var(--ui-font), sans-serif;
-            font-size: 8px;
-            margin-top: 16px;
+            font-family: var(--body-text), sans-serif;
+            font-size: 12px;
+            margin-top: 6px;
             text-align: left;
             display: flex;
             align-items: center;
@@ -198,40 +198,54 @@
 
 
         .article-actions {
-            margin-left: auto;
-            margin-bottom: -4px;
-            /*dont know why there was a gap there*/
+            text-align: left;
+            margin-top: 32px;
+            margin-bottom: 12px;
+
         }
 
         .article-action-buttons {
-            display: inline-block;
-            /* background: var(--text-color); */
-            width: 48px;
-            height: 48px;
-            border-radius: 24px;
+
+
+            display: inline;
+            /* margin-right: 4px; */
+            
+
+            border: #e4e4e4 solid;
+            border-radius: 32px;
+            color: #222222;
+            font-family: var(--ui-font);
+            font-size: 12px;
+            padding: 12px;
+            padding-left: 14px;
+            padding-right: 14px;
+
+            cursor: pointer;
+
+
         }
 
-        #share-button {
-            background-image: url('images/share_icon.png');
-            background-size: 24px, 24px;
-            background-repeat: no-repeat;
-            background-position: center;
+
+        .article-action-button-icons {
+
+            height: 16px;
+            vertical-align: middle;
+            margin-bottom: 2px; /*center correction*/
+            margin-right: 4px;
+            
+
+
 
         }
 
-        #bookmark-button {
-            background-image: url('images/bookmark_icon.png');
-            background-size: 24px, 24px;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
+        #share-button {}
+
+        #bookmark-button {}
 
         #done-button {
-            background-image: url('images/done_icon.png');
-            background-size: 24px, 24px;
-            background-repeat: no-repeat;
-            background-position: center;
-
+            background-color: #222222;
+            border: #202020 solid;
+            color: #ffffff;
         }
 
 
@@ -256,16 +270,43 @@
             height: 16px;
         }
 
-        #focus-sounds {
+        #focus-mode {
             background-color: #484d5b;
             padding: 16px;
             border-radius: 8px;
             font-family: var(--ui-font);
             font-size: 12px;
-            color: #e8e8e8;
+            color: #ffffff;
             max-width: 390px;
             min-width: 210px;
+            height: 100px;
             margin: 16px auto;
+            text-align: left;
+        }
+        #focus-mode-header {
+            margin-bottom: 16px;
+
+        }
+
+        #headphones-icon {
+            height: 16px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        .noise-label {
+            background-color: #ffffff;
+            color: #222222;
+            font-family: var(--ui-font);
+            font-size: 10px;
+            width: 52px;
+            height: 24px;
+            border-radius: 2px;
+            display: inline-block;
+            text-align: center;
+            padding: 4px;
+            align-content:end;
+            
         }
 
         .containers {
@@ -277,7 +318,7 @@
             color: #222222;
             max-width: 390px;
             min-width: 210px;
-            
+
             margin: 16px auto;
             text-align: left;
         }
@@ -286,14 +327,29 @@
             background-color: rgb(255, 255, 255);
             text-align: left;
             margin-top: 8px;
-            border-radius: 2px;
+            border-radius: 4px;
             padding: 8px;
+            display: flex;
+            min-height: 48px;
         }
+
+        .bookmarked-article-card-pic {
+            background: rgb(232, 223, 241);
+            background-size: contain;
+            margin-right: 8px;
+            width: 48px;
+            height: 48px;
+            border-radius: 2px;
+        }
+
+        .bookmarked-article-card-block-right {}
+
         .bookmarked-article-card-title {
             font-family: var(--headline-font);
             font-size: 16px;
             margin-top: 4px;
         }
+
         .bookmarked-article-card-description {
             font-family: var(--body-text);
             font-size: 12px;
@@ -321,6 +377,11 @@
             border-radius: 4px;
             filter: saturate(0.5);
         }
+
+        .space-betweeners {
+            display: flex;
+            justify-content: space-between;
+        }
     </style>
 
 
@@ -339,6 +400,7 @@
         <div id="clickable-area" style="cursor: pointer;">
             <div class="article-pic" id="article-pic">
                 <div class="big-arrow"><img src="images/big_arrow.svg" alt=""></div>
+                <div id="time-to-read">25 min</div>
 
             </div>
 
@@ -348,58 +410,73 @@
                 WHY EVER STOP PLAYING VIDEO GAMES
             </div>
 
-            <div class="article-time">
-                <span id="article-time-icon"></span>
-                <span id="article-time-value">25 mins</span>
-            </div>
+
 
             <div class="article-description" id="article-description">
                 Many Americans have replaced work hours with game play — and Ended up happier. Which wouldn’t surprise
                 most
                 gamers. By Frank Guan
             </div>
-        </div>
 
-        <div class="article-source">
-            <span id="article-source-icon"></span>
-            <span id="article-source-name">
-                Source of this article
-            </span>
-            <div class="article-actions">
-                <span class="article-action-buttons" id="share-button"></span>
-                <span class="article-action-buttons" id="bookmark-button"></span>
-                <span class="article-action-buttons" id="done-button"></span>
+
+
+            <div class="article-source">
+                <span id="article-source-icon"></span>
+                <span id="article-source-name">
+                    Source of this article
+                </span>
             </div>
 
+
+        </div>
+
+
+        <div class="article-actions space-betweeners">
+            <div>
+                <div class="article-action-buttons" id="bookmark-button"><img src="images/bookmark_icon.png" alt=""
+                        class="article-action-button-icons">Bookmark</div>
+                <div class="article-action-buttons" id="share-button"><img src="images/share_icon.png" alt=""
+                        class="article-action-button-icons">Share</div>
+            </div>
+            <div>
+                <div class="article-action-buttons" id="done-button"><img src="images/done_icon.png" alt=""
+                        class="article-action-button-icons">I've Read it!</div>
+            </div>
         </div>
 
     </div>
 
-    <div id="focus-sounds">
-        Focus sounds
+    <div id="focus-mode">
+        <div id="focus-mode-header">
+            <img src="images/headphones.png" id="headphones-icon" alt="">
+            <span>Focus Mode</span>
+        </div>
+        
         <div>
-            <span>white noise</span>
-            <span>brown noise</span>
-            <span>binaural waves</span>
+            <div class="noise-label">Brown Noise</div>
+            <div class="noise-label">Rain<br>Fall</div>
+            <div class="noise-label"> Binaural waves</div>
             <button onclick="whiteNoise.play()">Play noise</button>
+            <div>Advanced Settings</div>
+            <div><span>Volume</span><span><input type="range"></span></div>
         </div>
     </div>
 
 
 
-    
 
-    
+
+
 
     <div class="containers" id="bookmarked-section">
         Bookmarked articles
         <div class="bookmarked-article-card">
-            <div class="bookmarked-article-card-title">Title of the article</div>
-            <div class="bookmarked-article-card-description">Description</div>
-        </div>
-        <div class="bookmarked-article-card">
-            <div class="bookmarked-article-card-title">Title of the article</div>
-            <div class="bookmarked-article-card-description">Description</div>
+            <div class="bookmarked-article-card-pic"></div>
+            <div class="bookmarked-article-card-block-right">
+                <div class="bookmarked-article-card-title">toasting title</div>
+                <div class="bookmarked-article-card-description">toasting description
+                </div>
+            </div>
         </div>
     </div>
 
@@ -409,7 +486,7 @@
 
     <div class="containers">
         Random Meme from the bellies of the interwebs
-        <div >
+        <div>
             <img src="" alt="" id="meme-pic">
             Source: reddit
         </div>
@@ -419,7 +496,7 @@
     <div class="subtitle">Delightfully useful reads and useless memes, toasted once a day</div>
     <div class="spacer"></div>
 
-   
+
     <div class="footer">Submit an article | Report an article | Get in touch</div>
     <div class="spacer"></div>
 
@@ -427,6 +504,7 @@
     <script type="text/javascript" src="js/meme.js"></script>
     <script type="text/javascript" src="js/bookmarks.js"></script>
     
+
 
 </body>
 

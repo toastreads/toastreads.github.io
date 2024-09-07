@@ -45,7 +45,10 @@ if (sd) {
     console.log("today will be considered to be = ", today)
 }
 
-
+document.getElementById("dev-tool-clicker").addEventListener("click", function (event) {
+    today.setDate(today.getDate() + 1)
+    populate_card()
+});
 
 document.onload = populate_card();
 
@@ -55,7 +58,7 @@ document.onload = populate_card();
 function populate_card() {
 
 
-
+   
 
 
     //File paths for different days lists
@@ -133,11 +136,7 @@ function fetch_and_write(jsonFilePath) {
 function write_card(data) {
 
     //dev tool stuff  -----
-    document.getElementById("dev-tool-clicker").addEventListener("click", function (event) {
-        offset = offset - 7;
-        write_card(data)
-        console.log(offset)
-    }, { once: true });
+    
 
 
 
@@ -214,7 +213,7 @@ function week_of_the_year(fromThisDay = 0) {
 }
 
 function extractDomain(url) {
-    return url.replace(/^(?:https?:\/\/)?(?:[^\/]+\.)?([^.\/]+\.[^.\/]+).*$/, "https://www.$1");
+    return url.replace(/^(?:https?:\/\/)?(?:[^\/]+\.)?([^.\/]+\.[^.\/]+).*$/, "$1");
 }
 
 
