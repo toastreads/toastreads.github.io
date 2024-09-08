@@ -209,7 +209,7 @@
 
             display: inline;
             /* margin-right: 4px; */
-            
+
 
             border: #e4e4e4 solid 1px;
             border-radius: 32px;
@@ -230,9 +230,10 @@
 
             height: 16px;
             vertical-align: middle;
-            margin-bottom: 2px; /*center correction*/
+            margin-bottom: 2px;
+            /*center correction*/
             margin-right: 4px;
-            
+
 
 
 
@@ -283,6 +284,7 @@
             margin: 16px auto;
             text-align: left;
         }
+
         #focus-mode-header {
             margin-bottom: 16px;
 
@@ -305,8 +307,8 @@
             display: inline-block;
             text-align: center;
             padding: 4px;
-            align-content:end;
-            
+            align-content: end;
+
         }
 
         .containers {
@@ -382,6 +384,7 @@
             display: flex;
             justify-content: space-between;
         }
+
     </style>
 
 
@@ -397,39 +400,27 @@
     <div class="today" id="today">Today</div>
 
     <div class="article-card">
+
         <div id="clickable-area" style="cursor: pointer;">
             <div class="article-pic" id="article-pic">
                 <div class="big-arrow"><img src="images/big_arrow.svg" alt=""></div>
                 <div id="time-to-read">25 min</div>
-
             </div>
-
-
-
             <div class="article-title" id="article-title">
                 WHY EVER STOP PLAYING VIDEO GAMES
             </div>
-
-
-
             <div class="article-description" id="article-description">
                 Many Americans have replaced work hours with game play — and Ended up happier. Which wouldn’t surprise
                 most
                 gamers. By Frank Guan
             </div>
-
-
-
             <div class="article-source">
                 <span id="article-source-icon"></span>
                 <span id="article-source-name">
                     Source of this article
                 </span>
             </div>
-
-
         </div>
-
 
         <div class="article-actions space-betweeners">
             <div>
@@ -451,22 +442,15 @@
             <img src="images/headphones.png" id="headphones-icon" alt="">
             <span>Focus Mode</span>
         </div>
-        
         <div>
             <div class="noise-label">Brown Noise</div>
+            <button id="noise-button" data-playing="false" role="switch" aria-checked="false"><span>play/pause</span></button>
             <div class="noise-label">Rain<br>Fall</div>
             <div class="noise-label"> Binaural waves</div>
-            <button onclick="whiteNoise.play()">Play noise</button>
             <div>Advanced Settings</div>
             <div><span>Volume</span><span><input type="range"></span></div>
         </div>
     </div>
-
-
-
-
-
-
 
     <div class="containers" id="bookmarked-section">
         Bookmarked articles
@@ -496,16 +480,14 @@
     <div class="subtitle">Delightfully useful reads and useless memes, toasted once a day</div>
     <div class="spacer"></div>
 
-
     <div class="footer">Submit an article | Report an article | Get in touch</div>
     <div class="spacer"></div>
 
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/meme.js"></script>
     <script type="text/javascript" src="js/bookmarks.js"></script>
-    
-
-
+    <script type="text/javascript" src="http://unpkg.com/tone"></script>
+    <script type="text/javascript" src="js/noise.js"></script>
 </body>
 
 
