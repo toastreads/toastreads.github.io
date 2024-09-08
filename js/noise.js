@@ -14,7 +14,8 @@ noise.fadeOut = 0.5
 
 const noiseButton = document.querySelector("#noise-button");
 noiseButton.addEventListener("click", () => {
-  noise.context.resume();
+  noise.context.resume(); //testing
+  Tone.Transport.start(); //testing
   if (noiseButton.dataset.playing === "false") {
     noise.start();
     noiseButton.dataset.playing = "true";
