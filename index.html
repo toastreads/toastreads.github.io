@@ -302,15 +302,24 @@
             font-family: var(--ui-font);
             text-transform: uppercase;
             font-size: 10px;
-            width: 52px;
-            height: 32px;
+            width: 64px;
+            height: 48px;
             border-radius: 2px;
             display: inline-block;
             text-align: center;
             padding: 2px;
             margin-right: 8px;
             cursor: pointer;
+            transition: background-color 0.2s;
+            outline: #404552 solid 2px;
+            
 
+
+        }
+        .focus-buttons:active {
+            background-color: #ff806d;
+            color: #6a3c2b;
+            border: #ff9d1d solid 2px;
 
         }
 
@@ -332,6 +341,7 @@
 
         .focus-buttons-active {
             animation: focus-button-color-change 2s infinite alternate;
+
         }
 
 
@@ -485,11 +495,11 @@
             <div id="noise-image"></div>
             <div>
                 <button id="noise-button" class="focus-buttons" data-playing="false" role="switch"
-                    aria-checked="false"><span>Brown Noise</span></button>
+                    aria-checked="false"><span>Brown <br>Noise</span></button>
                 <button id="" class="focus-buttons" data-playing="false" role="switch" aria-checked="false"><span>Rain
-                        Fall</span></button>
+                        <br>Fall</span></button>
                 <button id="" class="focus-buttons" data-playing="false" role="switch"
-                    aria-checked="false"><span>Binaural Waves</span></button>
+                    aria-checked="false"><span>Binaural <br>Waves</span></button>
             </div>
 
             <div class="spacer"></div>
