@@ -1,17 +1,17 @@
 
 
-const myAudioContext = new AudioContext();
+const audioContext = new AudioContext();
 
 const audioElement = document.querySelector('audio');
-const track = myAudioContext.createMediaElementSource(audioElement);
+const track = audioContext.createMediaElementSource(audioElement);
 
-const gainNode = myAudioContext.createGain();
+const gainNode = audioContext.createGain();
 
 const pannerOptions = { pan: 0};
-const panner = new StereoPannerNode(myAudioContext, pannerOptions);
+const panner = new StereoPannerNode(audioContext, pannerOptions);
 
 
-track.connect(gainNode).connect(panner).connect(myAudioContext.destination);
+track.connect(gainNode).connect(panner).connect(audioContext.destination);
 
 
 
@@ -19,8 +19,8 @@ const playButton = document.querySelector("button");
 
 playButton.addEventListener("click", ()=>{
     //check if context is suspended
-    if (myAudioContext.state === "suspended"){
-        myAudioContext.resume();
+    if (audioContext.state === "suspended"){
+        audioContext.resume();
     }
 
     //check button stuff
