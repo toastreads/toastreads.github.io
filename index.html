@@ -311,23 +311,27 @@
             margin-right: 8px;
             cursor: pointer;
 
+
         }
 
-        @keyframes color_change {
+        @keyframes focus-button-color-change {
             from {
-                background-color: #ff8f6d;
+                background-color: #ff806d;
+                color: #6a3c2b;
+                border: #ff9d1d solid 2px;
             }
 
             to {
                 background-color: #ffa163;
+                color: #222222;
+                border: #ffca85 solid 1px;
             }
         }
 
 
+
         .focus-buttons-active {
-            background-color: #ffa163;
-            border: #ffca85 solid 1px;
-            animation: color_change 2s infinite alternate;
+            animation: focus-button-color-change 2s infinite alternate;
         }
 
 
