@@ -280,7 +280,6 @@
             color: #ffffff;
             max-width: 390px;
             min-width: 210px;
-            height: 100px;
             margin: 16px auto;
             text-align: left;
         }
@@ -296,20 +295,55 @@
             margin-right: 8px;
         }
 
-        .noise-label {
+        .focus-buttons {
             background-color: #aab1ba;
+            border: #abb3bf solid 1px;
             color: #222222;
             font-family: var(--ui-font);
             text-transform: uppercase;
             font-size: 10px;
             width: 52px;
-            height: 24px;
+            height: 32px;
             border-radius: 2px;
             display: inline-block;
             text-align: center;
             padding: 2px;
-            align-content: end;
+            margin-right: 8px;
+            cursor: pointer;
 
+        }
+
+        @keyframes color_change {
+            from {
+                background-color: #ff8f6d;
+            }
+
+            to {
+                background-color: #ffa163;
+            }
+        }
+
+
+        .focus-buttons-active {
+            background-color: #ffa163;
+            border: #ffca85 solid 1px;
+            animation: color_change 2s infinite alternate;
+        }
+
+
+        #noise-image {
+
+            width: 52px;
+            height: 16px;
+            border-radius: 4px;
+            border: #000000 solid 1px;
+            background-image: url("images/noise_static.gif");
+            background-size: contain;
+            filter: invert(70%) sepia(7%) saturate(352%) hue-rotate(174deg) brightness(101%) contrast(89%);
+            /* Tool to get filter values to convert image to color fill: https://codepen.io/sosuke/pen/Pjoqqp */
+            margin-top: 8px;
+            margin-bottom: 4px;
+            display: none;
         }
 
         .containers {
@@ -385,7 +419,6 @@
             display: flex;
             justify-content: space-between;
         }
-
     </style>
 
 
@@ -444,10 +477,17 @@
             <span>Focus Mode</span>
         </div>
         <div>
-            <button id="noise-button" data-playing="false" role="switch" aria-checked="false"><span>play/pause</span></button>
-            <div class="noise-label">Brown Noise</div>
-            <div class="noise-label">Rain<br>Fall</div>
-            <div class="noise-label"> Binaural waves</div>
+
+            <div id="noise-image"></div>
+            <div>
+                <button id="noise-button" class="focus-buttons" data-playing="false" role="switch"
+                    aria-checked="false"><span>Brown Noise</span></button>
+                <button id="" class="focus-buttons" data-playing="false" role="switch" aria-checked="false"><span>Rain
+                        Fall</span></button>
+                <button id="" class="focus-buttons" data-playing="false" role="switch"
+                    aria-checked="false"><span>Binaural Waves</span></button>
+            </div>
+
             <div class="spacer"></div>
             <div><span>Volume</span><span><input type="range"></span></div>
         </div>
@@ -456,7 +496,7 @@
     <div class="containers" id="bookmarked-section">
         <span>Bookmarked articles - Refrigerator</span>
         <span>Your fridge is empty</span>
-        
+
         <div class="bookmarked-article-card">
             <div class="bookmarked-article-card-pic"></div>
             <div class="bookmarked-article-card-block-right">
@@ -468,7 +508,7 @@
     </div>
 
     <div class="containers">
-        Articles you have read
+        Rack - Wall of achievements - Articles you have read
     </div>
 
     <div class="containers">

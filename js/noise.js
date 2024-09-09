@@ -17,9 +17,11 @@ noiseButton.addEventListener("click", () => {
   if (noiseButton.dataset.playing === "false") {
     noise.start();
     noiseButton.dataset.playing = "true";
+    noiseButton.classList.add("focus-buttons-active")
   } else if (noiseButton.dataset.playing === "true") {
     noise.stop(2);
     noiseButton.dataset.playing = "false";
+    noiseButton.classList.remove("focus-buttons-active")
   }
 })
 
