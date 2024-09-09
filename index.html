@@ -285,14 +285,24 @@
         }
 
         #focus-mode-header {
-            margin-bottom: 16px;
+            margin: auto;
+            text-align: left;
+
+            margin-left: 0;
+
+
 
         }
 
         #headphones-icon {
             height: 16px;
             vertical-align: middle;
-            margin-right: 8px;
+            margin-bottom: 3px;
+            margin-right: 4px;
+        }
+
+        #focus-buttons-set {
+            text-align: right;
         }
 
         .focus-buttons {
@@ -303,7 +313,7 @@
             text-transform: uppercase;
             font-size: 10px;
             width: 64px;
-            height: 48px;
+            height: 32px;
             border-radius: 2px;
             display: inline-block;
             text-align: center;
@@ -312,7 +322,7 @@
             cursor: pointer;
             transition: background-color 0.2s;
             outline: #404552 solid 2px;
-            
+
 
 
         }
@@ -336,22 +346,6 @@
         .focus-buttons-active {
             animation: focus-button-color-change 2s infinite alternate;
 
-        }
-
-
-        #noise-image {
-
-            width: 52px;
-            height: 16px;
-            border-radius: 4px;
-            border: #000000 solid 1px;
-            background-image: url("images/noise_static.gif");
-            background-size: contain;
-            filter: invert(70%) sepia(7%) saturate(352%) hue-rotate(174deg) brightness(101%) contrast(89%);
-            /* Tool to get filter values to convert image to color fill: https://codepen.io/sosuke/pen/Pjoqqp */
-            margin-top: 8px;
-            margin-bottom: 4px;
-            display: none;
         }
 
         .containers {
@@ -479,26 +473,20 @@
 
     </div>
 
-    <div id="focus-mode">
+    <div id="focus-mode" class="space-betweeners">
         <div id="focus-mode-header">
             <img src="images/headphones.png" id="headphones-icon" alt="">
             <span>Focus Mode</span>
         </div>
-        <div>
-
-            <div id="noise-image"></div>
-            <div>
-                <button id="noise-button" class="focus-buttons" data-playing="false" role="switch"
-                    aria-checked="false"><span>Brown <br>Noise</span></button>
-                <button id="" class="focus-buttons" data-playing="false" role="switch" aria-checked="false"><span>Rain
-                        <br>Fall</span></button>
-                <button id="" class="focus-buttons" data-playing="false" role="switch"
-                    aria-checked="false"><span>Binaural <br>Waves</span></button>
-            </div>
-
-            <div class="spacer"></div>
-            <div><span>Volume</span><span><input type="range"></span></div>
+        <div id="focus-buttons-set">
+            <button id="noise-button" class="focus-buttons" data-playing="false" role="switch"
+                aria-checked="false"><span>Brown <br>Noise</span></button>
+            <button id="" class="focus-buttons" data-playing="false" role="switch" aria-checked="false"><span>Rain
+                    <br>Fall</span></button>
+            <button id="" class="focus-buttons" data-playing="false" role="switch" aria-checked="false"><span>Binaural
+                    <br>Waves</span></button>
         </div>
+
     </div>
 
     <div class="containers" id="bookmarked-section">
