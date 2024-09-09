@@ -54,15 +54,6 @@
    "sourcelogo": "https://www.google.com/s2/favicons?domain=https://www.esquire.com/news-politics/a26367/esq0704-july-astro/#ixzz1R4qIyutC"
  },
  {
-   "link": "https://www.nytimes.com/2009/07/19/opinion/19wolfe.html?pagewanted=all",
-   "topic": "space",
-   "subtopic": "",
-   "title": "",
-   "description": "",
-   "image": "",
-   "sourcelogo": ""
- },
- {
    "link": "https://www.newyorker.com/magazine/2011/05/16/creation-myth",
    "topic": "technology",
    "subtopic": "computers",
@@ -117,24 +108,6 @@
    "sourcelogo": "https://www.google.com/s2/favicons?domain=https://www.theatlantic.com/magazine/archive/2017/09/has-the-smartphone-destroyed-a-generation/534198/"
  },
  {
-   "link": "https://www.nplusonemag.com/issue-36/essays/my-instagram/",
-   "topic": "technology",
-   "subtopic": "computers",
-   "title": "",
-   "description": "",
-   "image": "",
-   "sourcelogo": ""
- },
- {
-   "link": "https://archive.ph/yHfah",
-   "topic": "technology",
-   "subtopic": "computers",
-   "title": "",
-   "description": "",
-   "image": "",
-   "sourcelogo": ""
- },
- {
    "link": "https://www.wired.com/2017/08/uncanny-valley-internet/",
    "topic": "technology",
    "subtopic": "computers",
@@ -142,15 +115,6 @@
    "description": "Virginia Heffernan on why we all need to learn to read the internet, not live in it.",
    "image": "https://media.wired.com/photos/59974836c6ac94286333f7cf/191:100/w_1280,c_limit/escape-the-web.jpg",
    "sourcelogo": "https://www.wired.com/verso/static/wired/assets/favicon.ico"
- },
- {
-   "link": "https://www.nplusonemag.com/online-only/online-only/sad-as-hell/",
-   "topic": "technology",
-   "subtopic": "computers",
-   "title": "",
-   "description": "",
-   "image": "",
-   "sourcelogo": ""
  },
  {
    "link": "https://www.newyorker.com/magazine/2011/02/14/the-information?currentPage=all",
@@ -369,29 +333,11 @@
    "sourcelogo": "https://www.wired.com/verso/static/wired/assets/favicon.ico"
  },
  {
-   "link": "https://www.nytimes.com/2004/03/21/magazine/get-out-of-my-namespace.html",
-   "topic": "technology",
-   "subtopic": "computers",
-   "title": "",
-   "description": "",
-   "image": "",
-   "sourcelogo": ""
- },
- {
-   "link": "https://www.nytimes.com/2003/02/09/magazine/tangled-up-in-spam.html",
-   "topic": "technology",
-   "subtopic": "computers",
-   "title": "",
-   "description": "",
-   "image": "",
-   "sourcelogo": ""
- },
- {
    "link": "https://www.nybooks.com/articles/2011/06/23/mind-control-and-internet/?pagination=false&printpage=true",
    "topic": "technology",
    "subtopic": "computers",
-   "title": "Mind Control & the Internet | Sue Halpern | The New York Review of Books",
-   "description": "A Google search ”curates” the Internet. It’s not just the large number of search variables, or the intervention of marketers, that shapes the information we’re shown by bringing certain pages to our attention while others fall far enough down in the rankings to be kept out of view. As Eli Pariser documents in his chilling book The Filter Bubble: What the Internet Is Hiding from You, since December 2009, Google has aimed to contour every search to fit the profile of the person making the query. The search process, in other words, has become “personalized,” which is to say that instead of being universal, it is idiosyncratic and oddly peremptory.",
+   "title": "Mind Control & the Internet | Sue Halpern",
+   "description": "A Google search ”curates” the Internet. It’s not just the large number of search variables, or the intervention of marketers, that shapes the information we’re shown by bringing certain pages to our attention while others fall...",
    "image": "https://www.nybooks.com/wp-content/themes/nyrb_2020/img/NYR_800x800.png",
    "sourcelogo": "https://www.google.com/s2/favicons?domain=https://www.nybooks.com/articles/2011/06/23/mind-control-and-internet/?pagination=false&printpage=true"
  },
