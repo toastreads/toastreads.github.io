@@ -87,11 +87,19 @@
         }
 
         .title {
-            font-family: "Mali", "Mystery Quest", "Honk", sans-serif;
-            font-size: 18px;
-            color: var(--foreground-text-color);
+            font-family: "Mali", sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: #290a57;
             margin-top: 26px;
 
+        }
+
+        .subtitle {
+            font-family: var(--ui-font), "Mystery Quest", "Mali", sans-serif;
+            font-size: 12px;
+            color: #773d1a;
+            margin-top: 8px;
         }
 
 
@@ -257,12 +265,7 @@
 
 
 
-        .subtitle {
-            font-family: var(--ui-font), "Mystery Quest", "Mali", sans-serif;
-            font-size: 12px;
-            color: var(--foreground-text-color);
-            margin-top: 32px;
-        }
+        
 
         .footer {
             margin-top: 64px;
@@ -452,6 +455,7 @@
     <div id="dev-tool-clicker" class="title-image"><img src="images/bread_icon.png" alt=""></div>
 
     <div class="title">toastreads</div>
+    <div class="subtitle">Read one thing, once a day</div>
 
     <div class="today" id="today">Today</div>
 
@@ -501,7 +505,7 @@
         <div id="focus-buttons-set">
             <button id="noise-button" class="focus-buttons" data-playing="false" role="switch"
                 aria-checked="false"><span>Brown <br>Noise</span></button>
-            <button id="" class="focus-buttons" data-playing="false" role="switch" aria-checked="false"><span>Rain
+            <button id="rain-button" style="filter: opacity(0.4);" class="focus-buttons" data-playing="false" role="switch" aria-checked="false"><span>Rain
                     <br>Fall</span></button>
             <button id="binaural-button" class="focus-buttons" data-playing="false" role="switch"
                 aria-checked="false"><span>Binaural
