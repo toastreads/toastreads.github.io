@@ -37,6 +37,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <style>
         :root {
             --background-color: #C0CECD;
@@ -127,7 +128,7 @@
             background-size: cover;
             background-position: center;
             height: 192px;
-            border-radius: 4px;
+            border-radius: 2px;
             filter: saturate(0.5);
         }
 
@@ -151,28 +152,31 @@
         }
 
         .article-title {
-            font-family: var(--headline-font), serif;
-            font-weight: 400;
-            font-size: 26px;
+            font-family: "Playfair Display", var(--headline-font), serif;
+            font-weight: 900;
+            font-size: 36px;
+            line-height: 1.2;
+            
             /*was 32*/
-            text-transform: uppercase;
+            /* text-transform: uppercase; */
             color: var(--text-color);
-            margin-top: 16px;
+            margin-top: 8px;
             text-align: left;
             text-shadow: 0px 1px 1px rgb(255, 255, 255);
         }
 
         .article-description {
-            font-family: var(--body-text), "Noto Sans", sans-serif;
-            font-weight: 400;
+            font-family: "Noto Sans" ,var(--body-text), "Noto Sans", sans-serif;
+            font-weight: 300;
             font-size: 16px;
             margin-top: 6px;
             text-align: left;
         }
 
         .article-source {
-            font-family: var(--body-text), sans-serif;
-            font-size: 12px;
+            font-family: "Noto Sans" ,var(--body-text), sans-serif;
+            font-size: 10px;
+            font-weight: 600;
             margin-top: 6px;
             text-align: left;
             display: flex;
@@ -185,15 +189,14 @@
             background-repeat: no-repeat;
             border-radius: 100px;
             border-style: solid;
-            border-color: #eeeeee;
-            border-width: 2px;
+            border-color: #222222;
+            border-width: 1px;
             height: 16px;
             width: 16px;
+            margin-right: 4px;
         }
 
-        span+span {
-            margin-left: 8px;
-        }
+
 
 
 
@@ -429,11 +432,11 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-P3P1BLHEQN"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-P3P1BLHEQN');
+    gtag('config', 'G-P3P1BLHEQN');
 </script>
 
 <body>
@@ -470,7 +473,7 @@
         <div class="article-actions space-betweeners">
             <div>
                 <div class="article-action-buttons" id="bookmark-button"><img src="images/bookmark_icon.png" alt=""
-                        class="article-action-button-icons">Freeze</div>
+                        class="article-action-button-icons">Save</div>
                 <div class="article-action-buttons" id="share-button"><img src="images/share_icon.png" alt=""
                         class="article-action-button-icons">Share</div>
             </div>
@@ -492,7 +495,8 @@
                 aria-checked="false"><span>Brown <br>Noise</span></button>
             <button id="" class="focus-buttons" data-playing="false" role="switch" aria-checked="false"><span>Rain
                     <br>Fall</span></button>
-            <button id="binaural-button" class="focus-buttons" data-playing="false" role="switch" aria-checked="false"><span>Binaural
+            <button id="binaural-button" class="focus-buttons" data-playing="false" role="switch"
+                aria-checked="false"><span>Binaural
                     <br>8Hz</span></button>
         </div>
 
