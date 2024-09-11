@@ -39,6 +39,9 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --background-color: #C0CECD;
@@ -71,7 +74,7 @@
         body {
             text-align: center;
             /* background: var(--background-gradient); */
-            background: hsl(0, 0%, 93%);
+            background: #EFEDEB;
             background-repeat: no-repeat;
             margin: 0;
             /* padding-left: 25px;
@@ -91,17 +94,16 @@
             font-family: "Mali", sans-serif;
             font-size: 20px;
             font-weight: 400;
-            color: #222222;
-            margin-top: 26px;display: non;
+            color: #290a57;
+            margin-top: 26px;
 
         }
 
         .subtitle {
             font-family: var(--ui-font), "Mystery Quest", "Mali", sans-serif;
             font-size: 12px;
-            color: #bbbbbb;
+            color: #773d1a;
             margin-top: 8px;
-            margin-bottom: 32px;
         }
 
 
@@ -112,20 +114,18 @@
             color: var(--text-color);
             margin-top: 11px;
             margin-bottom: 4px;
-            display: none;
         }
 
         .article-card {
             /* background: var(--card-gradient), url(images/noise_lite.png); */
             background: var(--card-gradient-only);
-            background-color: #fefefe;
             background-repeat: repeat;
             /* max-width: 300px; */
             max-width: 390px;
             min-width: 210px;
             margin: auto;
             padding: 16px;
-            box-shadow: 0px 16px 30px 9px #1e1f2230;
+            /* box-shadow: 4px 16px 30px -9px #4525652d; */
             border: #ffffff;
             border-style: solid;
             border-width: 1px;
@@ -136,7 +136,10 @@
 
 
         .article-pic {
+
             background: #000000;
+
+            /* Needs noise : https://css-tricks.com/grainy-gradients/ */
             background-size: cover;
             background-position: center;
             height: 192px;
@@ -152,7 +155,7 @@
         }
 
         #time-to-read {
-            background-color: rgb(255, 255, 255);
+            background-color: white;
             width: 24px;
             float: right;
             margin-right: 16px;
@@ -165,23 +168,23 @@
 
         .article-title {
             font-family: "Playfair Display", var(--headline-font), serif;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 36px;
             line-height: 1.2;
 
             /*was 32*/
             /* text-transform: uppercase; */
             color: var(--text-color);
-            margin-top: 16px;
+            margin-top: 8px;
             text-align: left;
             text-shadow: 0px 1px 1px rgb(255, 255, 255);
         }
 
         .article-description {
-            font-family: "Noto Sans", var(--body-text), "Noto Sans", sans-serif;
+            font-family: "Crimson Text", "Noto Sans", var(--body-text), "Noto Sans", sans-serif;
             font-weight: 300;
-            font-size: 14px;
-            margin-top: 16px;
+            font-size: 16px;
+            margin-top: 6px;
             text-align: left;
         }
 
@@ -189,7 +192,7 @@
             font-family: "Noto Sans", var(--body-text), sans-serif;
             font-size: 10px;
             font-weight: 600;
-            margin-top: 12px;
+            margin-top: 8px;
             text-align: left;
             display: flex;
             align-items: center;
@@ -214,7 +217,7 @@
 
         .article-actions {
             text-align: left;
-            margin-top: 48px;
+            margin-top: 32px;
             margin-bottom: 12px;
 
         }
@@ -226,8 +229,8 @@
             /* margin-right: 4px; */
 
 
-            
-            border-radius: 4px;
+            border: #e4e4e4 solid 1px;
+            border-radius: 32px;
             color: #222222;
             font-family: var(--ui-font);
             font-size: 12px;
@@ -282,16 +285,16 @@
         }
 
         #focus-mode-container {
-            background-color: #d3d5da;
+            background-color: #484d5b;
+
             padding: 16px;
             border-radius: 4px;
             font-family: var(--ui-font);
             font-size: 12px;
-            color: #222222;
+            color: #ffffff;
             max-width: 390px;
             min-width: 210px;
             margin: 8px auto;
-            margin-top: 32px;
             text-align: left;
         }
 
@@ -307,7 +310,6 @@
 
         #headphones-icon {
             height: 16px;
-            filter: invert();
             vertical-align: middle;
             margin-bottom: 3px;
             margin-right: 4px;
@@ -318,8 +320,8 @@
         }
 
         .focus-buttons {
-            background-color: #babec2;
-            border: 0;
+            background-color: #aab1ba;
+            border: #abb3bf solid 1px;
             color: #222222;
             font-family: var(--ui-font);
             text-transform: uppercase;
@@ -333,7 +335,7 @@
             margin-right: 4px;
             cursor: pointer;
             transition: background-color 0.2s;
-           
+            outline: #404552 solid 2px;
 
 
 
@@ -361,7 +363,7 @@
         }
 
         .containers {
-            background-color: #d3d5da;
+            background-color: #d6d9df;
             /* background-color: #484d5b15; */
             padding: 16px;
             border-radius: 4px;
@@ -383,7 +385,6 @@
             padding: 8px;
             display: flex;
             min-height: 48px;
-            box-shadow: 0px 8px 10px 0px #1b1a4b39;
         }
 
         .bookmarked-article-card-pic {
@@ -503,7 +504,6 @@
         </div>
 
     </div>
-    
     <div id="focus-mode-container" class="space-betweeners">
         <div id="focus-mode-header">
             <img src="images/headphones.png" id="headphones-icon" alt="">
