@@ -116,7 +116,7 @@
             color: var(--text-color);
             margin-top: 11px;
             margin-bottom: 4px;
-            display: none;
+            
         }
 
         .article-card {
@@ -286,7 +286,7 @@
         }
 
         #focus-mode-container {
-            
+
             padding: 16px;
             padding-top: 24px;
             padding-bottom: 24px;
@@ -310,6 +310,10 @@
 
 
 
+        }
+
+        #focus-mode-title {
+            display: inline-block;
         }
 
         #headphones-icon {
@@ -384,10 +388,16 @@
             border-bottom: #666666 solid 1px;
         }
 
+        .container-header {
+            margin-bottom: 16px;
+        }
+
         .bookmarked-article-card {
-            background: var(--card-gradient-only)
+            background: var(--card-gradient-only);
             text-align: left;
             margin-top: 8px;
+            margin-bottom: 8px;
+
             border-radius: 4px;
             padding: 8px;
             display: flex;
@@ -402,7 +412,7 @@
             /* max-width: 300px; */
             max-width: 390px;
             min-width: 210px;
-            margin: auto;
+
             padding: 16px;
             box-shadow: 0px 16px 30px 9px #1e1f2230;
             border: #ffffff;
@@ -425,7 +435,7 @@
         .bookmarked-article-card-block-right {}
 
         .bookmarked-article-card-title {
-            font-family: "Playfair Display" ,var(--headline-font);
+            font-family: "Playfair Display", var(--headline-font);
             font-weight: 500;
             font-size: 16px;
             margin-top: 4px;
@@ -535,7 +545,7 @@
     <div id="focus-mode-container" class="space-betweeners">
         <div id="focus-mode-header">
             <img src="images/headphones.png" id="headphones-icon" alt="">
-            <span>Focus Mode</span>
+            <div id="focus-mode-title">Focus Mode</div>
         </div>
         <div id="focus-buttons-set">
             <button id="noise-button" class="focus-buttons" data-playing="false" role="switch"
@@ -551,8 +561,7 @@
     </div>
 
     <div class="containers" id="bookmarked-section">
-        <span>Bookmarked articles - Refrigerator</span>
-        <span>Your fridge is empty</span>
+        <div class="container-header"><span>Saved articles</span></div>
 
         <div class="bookmarked-article-card">
             <div class="bookmarked-article-card-pic"></div>
@@ -565,11 +574,11 @@
     </div>
 
     <div class="containers">
-        Rack - Wall of achievements - Articles you have read
+        <div class="container-header">My Rack (Yes you read them all!)</div>
     </div>
 
     <div class="containers">
-        Random Meme from the bellies of the interwebs
+        <div class="container-header">Random Meme from the bellies of the interwebs</div>
         <div>
             <img src="" alt="" id="meme-pic">
             Source: reddit
