@@ -235,9 +235,7 @@
             color: #222222;
             font-family: var(--ui-font);
             font-size: 12px;
-            padding: 12px;
-            padding-left: 14px;
-            padding-right: 14px;
+            padding: 14px;
 
             cursor: pointer;
 
@@ -316,9 +314,8 @@
             display: inline-block;
         }
 
-        #headphones-icon {
+        .container-header-icon {
             height: 16px;
-            filter: invert();
             vertical-align: middle;
             margin-bottom: 3px;
             margin-right: 4px;
@@ -391,6 +388,7 @@
         }
 
         .container-header {
+            margin-top: 8px;
             margin-bottom: 24px;
         }
 
@@ -525,7 +523,7 @@
 
         <div class="article-actions space-betweeners">
             <div>
-                <div class="article-action-buttons" id="bookmark-button"><img src="images/bookmark_icon.png" alt=""
+                <div class="article-action-buttons" id="bookmark-button"><img src="images/bookmark_add_icon.png" alt=""
                         class="article-action-button-icons">Save</div>
                 <div class="article-action-buttons" id="share-button"><img src="images/share_icon.png" alt=""
                         class="article-action-button-icons">Share</div>
@@ -540,13 +538,13 @@
 
     <div id="focus-mode-container" class="space-betweeners">
         <div id="focus-mode-header">
-            <img src="images/headphones.png" id="headphones-icon" alt="">
+            <img src="images/headphones.png" class="container-header-icon" alt="">
             <div id="focus-mode-title">Focus Mode</div>
         </div>
         <div id="focus-buttons-set">
             <button id="noise-button" class="focus-buttons" data-playing="false" role="switch"
                 aria-checked="false"><span>Brown <br>Noise</span></button>
-            <button id="rain-button" style="filter: opacity(0.4);" class="focus-buttons" data-playing="false"
+            <button id="rain-button" class="focus-buttons" data-playing="false"
                 role="switch" aria-checked="false"><span>Rain
                     <br>Fall</span></button>
             <button id="binaural-button" class="focus-buttons" data-playing="false" role="switch"
@@ -557,7 +555,10 @@
     </div>
 
     <div class="containers" id="bookmarked-section">
-        <div class="container-header"><span>Saved articles</span></div>
+        <div class="container-header">
+            <img src="images/bookmark_icon.png" class="container-header-icon" alt="">
+            <span>Saved articles</span>
+        </div>
 
         <div class="bookmarked-article-card space-betweeners">
             <div class="bookmarked-article-card-block-left">
@@ -605,11 +606,17 @@
     </div>
 
     <div class="containers">
-        <div class="container-header">My Rack (Yes you read them all!)</div>
+        <div class="container-header">
+            <img src="images/check_icon.png" class="container-header-icon" alt="">
+            <span>My Rack (Yes you read them all!)</span>
+        </div>
     </div>
 
     <div class="containers">
-        <div class="container-header">Random Meme from the bellies of the interwebs</div>
+        <div class="container-header">
+            <img src="images/meme_icon.png" class="container-header-icon" alt="">
+            <span>Random Meme from the bellies of the interwebs</span>
+        </div>
         <div>
             <img src="" alt="" id="meme-pic">
             Source: reddit
