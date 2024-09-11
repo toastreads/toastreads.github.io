@@ -122,7 +122,7 @@
         .article-card {
             /* background: var(--card-gradient), url(images/noise_lite.png); */
             background: var(--card-gradient-only);
-            background-color: #fefefe;
+            background-color: #f7f7f7;
             background-repeat: repeat;
             /* max-width: 300px; */
             max-width: 390px;
@@ -329,14 +329,16 @@
         }
 
         .focus-buttons {
-            background-color: #babec2;
+            background-color: #e1e4e7;
+            
+            /* background-color: #babec2; */
             border: 0;
             color: #222222;
             font-family: var(--ui-font);
             text-transform: uppercase;
             font-size: 10px;
             width: 64px;
-            height: 32px;
+            height: 40px;
             border-radius: 2px;
             display: inline-block;
             text-align: center;
@@ -352,13 +354,13 @@
 
         @keyframes focus-button-color-change {
             from {
-                background-color: #ff806d;
+                background-color: #ff8f20;
                 color: #6a3c2b;
                 border: #ff9d1d solid 2px;
             }
 
             to {
-                background-color: #ffa163;
+                background-color: #ffbc5f;
                 color: #222222;
                 border: #ffca85 solid 1px;
             }
@@ -389,32 +391,25 @@
         }
 
         .container-header {
-            margin-bottom: 16px;
+            margin-bottom: 24px;
         }
 
         .bookmarked-article-card {
-            background: var(--card-gradient-only);
+            /* background: var(--card-gradient-only); */
+            background-color: #fafafa;           
             text-align: left;
             margin-top: 8px;
-            margin-bottom: 8px;
-
+            margin-bottom: 16px;
             border-radius: 4px;
             padding: 8px;
             display: flex;
             min-height: 48px;
-
-
-
-
-            background: var(--card-gradient-only);
-            background-color: #fefefe;
             background-repeat: repeat;
             /* max-width: 300px; */
             max-width: 390px;
             min-width: 210px;
-
-            padding: 16px;
-            box-shadow: 0px 16px 30px 9px #1e1f2230;
+            padding: 4px;
+            box-shadow: 0px 16px 30px 10px #0f14211d, 0px 50px 30px -30px #0000001b;
             border: #ffffff;
             border-style: solid;
             border-width: 1px;
@@ -424,14 +419,15 @@
         }
 
         .bookmarked-article-card-pic {
-            background: #484d5b;
+            background: #e1e4e7;
             background-size: contain;
             margin-right: 8px;
             width: 48px;
             height: 48px;
             border-radius: 2px;
         }
-
+        .bookmarked-article-card-block-left {}
+        .bookmarked-article-card-block-center {}
         .bookmarked-article-card-block-right {}
 
         .bookmarked-article-card-title {
@@ -563,14 +559,49 @@
     <div class="containers" id="bookmarked-section">
         <div class="container-header"><span>Saved articles</span></div>
 
-        <div class="bookmarked-article-card">
-            <div class="bookmarked-article-card-pic"></div>
+        <div class="bookmarked-article-card space-betweeners">
+            <div class="bookmarked-article-card-block-left">
+                <div class="bookmarked-article-card-pic"></div>
+            </div>
+            <div class="bookmarked-article-card-block-center">
+                <div class="bookmarked-article-card-title">Why we should give free money...</div>
+                <div class="bookmarked-article-card-description">We tend to think that simply giving people ...</div>
+            </div>
             <div class="bookmarked-article-card-block-right">
-                <div class="bookmarked-article-card-title">toasting title</div>
-                <div class="bookmarked-article-card-description">toasting description
-                </div>
+                <div>source icon</div>
+            <div>more ...</div>
             </div>
         </div>
+
+        <div class="bookmarked-article-card space-betweeners">
+            <div class="bookmarked-article-card-block-left">
+                <div class="bookmarked-article-card-pic"></div>
+            </div>
+            <div class="bookmarked-article-card-block-center">
+                <div class="bookmarked-article-card-title">Pearls before breakfast</div>
+                <div class="bookmarked-article-card-description">Joshua Bell is one of the world's greatest  ...</div>
+            </div>
+            <div class="bookmarked-article-card-block-right">
+                <div>source icon</div>
+            <div>more ...</div>
+            </div>
+        </div>
+
+        <div class="bookmarked-article-card space-betweeners">
+            <div class="bookmarked-article-card-block-left">
+                <div class="bookmarked-article-card-pic"></div>
+            </div>
+            <div class="bookmarked-article-card-block-center">
+                <div class="bookmarked-article-card-title">Nora Ephron – A Few Words...</div>
+                <div class="bookmarked-article-card-description">We tend to think that simply giving people ...</div>
+            </div>
+            <div class="bookmarked-article-card-block-right">
+                <div>source icon</div>
+            <div>more ...</div>
+            </div>
+        </div>
+
+        
     </div>
 
     <div class="containers">
