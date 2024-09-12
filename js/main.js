@@ -145,6 +145,7 @@ function write_card(data) {
     index = today.getWeek(); // using this function now, source: https://weeknumber.com/how-to/javascript
     console.log("Writing card with data index = ", index)
     document.getElementById("article-title").innerHTML = data[index].title;
+    document.getElementById("topic").innerHTML = String("#" + data[index].topic);
     document.getElementById("article-description").innerHTML = data[index].description;
 
     if (data[index].image.startsWith("http", 0)) {
