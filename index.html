@@ -58,7 +58,7 @@
             --card-gradient-only: linear-gradient(to right, #ffffff 0%, #f0f0f0 50%, #ffffff 100%);
             --foreground-text-color: #222222;
             --text-color: #222222;
-            --ui-font: "Share Tech Mono", "Ubuntu Mono";
+            --ui-font: "Ubuntu Mono", "Share Tech Mono", "Inter";
             --headline-font: "Manolo-mono";
             --body-text: "Saira", "Concert One";
 
@@ -79,7 +79,7 @@
         body {
             text-align: center;
             /* background: var(--background-gradient); */
-            background: hsl(0, 0%, 100%);
+            background: hsl(0, 0%, 96%);
             background-repeat: no-repeat;
             margin: 0;
             /* padding-left: 25px;
@@ -119,16 +119,17 @@
             margin: auto;
 
             padding-left: 16px;
-            padding-right: 16px;;
+            padding-right: 16px;
+            ;
             padding-bottom: 8px;
             margin-bottom: 8px;
 
-            
+
 
 
         }
 
-       
+
 
         .today {
             font-family: var(--ui-font), sans-serif;
@@ -160,6 +161,7 @@
 
 
         .article-pic {
+            /* Needs overlay: https://www.w3schools.com/howto/howto_css_image_overlay_title.asp */
             background: #000000;
             background-size: cover;
             background-position: center;
@@ -210,7 +212,7 @@
         #topic {
             font-family: sans-serif;
             font-size: 10px;
-            color: white;
+            color: #222222;
             padding: 4px;
             padding-left: 8px;
             padding-right: 8px;
@@ -220,16 +222,17 @@
 
 
             text-align: left;
-            background-color: #592033;
+            background-color: #e1e4e7;
             border-radius: 3px;
             display: inline-block;
 
         }
 
         .article-description {
-            font-family: "Crimson Text", "Noto Sans", var(--body-text), "Noto Sans", sans-serif;
+            font-family: "Inter" ,"Crimson Text", "Noto Sans", var(--body-text), "Noto Sans", sans-serif;
             font-weight: 300;
-            letter-spacing: 0.3px;
+            /* letter-spacing: 0.3px; */
+            line-height: 1.5;
             font-size: 16px;
             margin-top: 6px;
             text-align: left;
@@ -265,7 +268,7 @@
         .article-actions {
             text-align: left;
             margin-top: 48px;
-            margin-bottom: 12px;
+            margin-bottom: 0px;
 
         }
 
@@ -468,7 +471,7 @@
             margin-right: 8px;
             width: 48px;
             height: 48px;
-            border-radius: 2px;
+            border-radius: 4px;
         }
 
         .bookmarked-article-card-block-left {}
@@ -524,6 +527,89 @@
             border-radius: 1px;
 
         }
+
+        #snackbar {
+            visibility: hidden;
+            max-width: 360px;
+            min-width: 210px;
+            left: 50%;
+            position: fixed;
+            z-index: 1;
+            bottom: 30px;
+            transform: translate(-50%, 0px);
+
+            background-color: #333333;
+            box-shadow: 0px 20px 40px 10px #0f14213c;
+
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+        }
+
+        #snack-message {
+            display: inline-block;
+            color: #ffffff;
+            font-family: var(--ui-font);
+            font-size: 12px;
+        }
+
+        #snackbar.show {
+            visibility: visible;
+            /* Show the snackbar */
+            /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        /* Animations to fade the snackbar in and out */
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
     </style>
 
 
@@ -541,6 +627,10 @@
 <body>
     <div class="show-on-desktop-only">Best viewed on Mobile</div>
     <div id="dev-tool-clicker" class="title-image"><img src="images/bread_icon.png" alt=""></div>
+
+    <div id="snackbar">
+        <div id="snack-message">Snack! here your messages will appear. and it can be long too.</div>
+    </div>
 
     <div class="title">toastreads</div>
     <div class="subtitle">Read one thing, once a day</div>
@@ -688,23 +778,11 @@
     <div class="footer">Submit an article | Report an article | Get in touch</div>
     <div class="spacer"></div>
 
+    <!-- <script src="https://unpkg.com/color.js@1.2.0/dist/color.js"></script> -->
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/meme.js"></script>
     <script type="text/javascript" src="js/bookmarks.js"></script>
     <script type="text/javascript" src="https://unpkg.com/tone"></script>
     <script type="text/javascript" src="js/focus.js"></script>
 </body>
-
-
-<script>
-    // Get current date and time
-    var now = new Date();
-    var datetime = now.toDateString().substring(0, 3).concat(",", now.toDateString().substring(3, 10));
-
-    // Insert date and time into HTML
-    document.getElementById("today").innerHTML = datetime;
-</script>
-
-
-
 </html>

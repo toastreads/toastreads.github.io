@@ -15,14 +15,14 @@ let today = new Date()
 
 
 
-function encode_date(inputDate){
+function encode_date(inputDate) {
 
     dateInmillisecondFormat = Date.parse(inputDate)
     encodedtoString = dateInmillisecondFormat.toString(36)
 
     return encodedtoString
 }
-function decode_date(inputDate){
+function decode_date(inputDate) {
     decodedDate = new Date(parseInt(inputDate, 36))
 
     return decodedDate
@@ -57,8 +57,11 @@ document.onload = populate_card();
 
 function populate_card() {
 
+    // Insert date and time into HTML
+    document.getElementById("today").innerHTML = today.toDateString().substring(0, 3).concat(",", today.toDateString().substring(3, 10));
 
-   
+
+
 
 
     //File paths for different days lists
@@ -136,7 +139,7 @@ function fetch_and_write(jsonFilePath) {
 function write_card(data) {
 
     //dev tool stuff  -----
-    
+
 
 
 
@@ -151,10 +154,23 @@ function write_card(data) {
     if (data[index].image.startsWith("http", 0)) {
 
 
+
+
         imageURL = String("url(\"" + (data[index].image).toString() + "\")")
         gradientOverlay = "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%)"
         combinedImageGradientOverlay = String(gradientOverlay + "," + imageURL)
         document.getElementById("article-pic").style.backgroundImage = combinedImageGradientOverlay;
+
+        // try {
+        //     colorjs.prominent(String(data[index].image + "?not-from-cache-please"), { amount: 1 }).then(color => {
+        //         console.info("Extracted color= ", color) // [241, 221, 63]
+        //         document.getElementById("topic").style.backgroundColor = String("rgb(" + color + ")")
+        //     })
+
+        // } catch (error) {
+        //     console.error("Color extraction failed")
+        // }
+
 
     } else {
         gradient_with_no_image = String("linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%)" + "," + no_image)
@@ -218,11 +234,12 @@ function extractDomain(url) {
 }
 
 
+
 function setup_share_button(titleToShare, dateOfShare) {
 
     encodedDateOfShare = encode_date(dateOfShare)
     linkToShare = String("https://toastreads.com/?sd=" + encodedDateOfShare)
-    
+
     console.log("DEEP LINK: ", linkToShare)
     if (navigator.share) {
         const shareButton = document.getElementById('share-button');
@@ -243,17 +260,26 @@ function setup_share_button(titleToShare, dateOfShare) {
         console.warn('Web Share API not supported on this browser');
         //change icon to copy-icon and raise a toast with link copied to clipboard on clicking
         const copyButton = document.getElementById('share-button');
-        copyButton.addEventListener('click', function(event){
+        copyButton.addEventListener('click', function (event) {
             navigator.clipboard.writeText(linkToShare)
-            alert("Link copied to clipboard: " + linkToShare)
+            //alert("Link copied to clipboard: " + linkToShare)
+            snack(String("Link copied to clipboard:<br>" + linkToShare))
         })
-        
+
     }
 
 }
 
 
+function snack(message) {
+    // Add the "show" class to DIV
 
+    document.getElementById("snack-message").innerHTML = message
+    document.getElementById("snackbar").className = "show";
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function () { document.getElementById("snackbar").className = document.getElementById("snackbar").className.replace("show", ""); }, 3000);
+}
 
 
 // This script is released to the public domain and may be used, modified and
@@ -261,7 +287,7 @@ function setup_share_button(titleToShare, dateOfShare) {
 // Source: https://weeknumber.com/how-to/javascript
 
 // Returns the ISO week of the date.
-Date.prototype.getWeek = function() {
+Date.prototype.getWeek = function () {
     var date = new Date(this.getTime());
     date.setHours(0, 0, 0, 0);
     // Thursday in current week decides the year.
@@ -270,18 +296,18 @@ Date.prototype.getWeek = function() {
     var week1 = new Date(date.getFullYear(), 0, 4);
     // Adjust to Thursday in week 1 and count number of weeks from date to week1.
     return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000
-                          - 3 + (week1.getDay() + 6) % 7) / 7);
-  }
-  
-  // Returns the four-digit year corresponding to the ISO week of the date.
-  Date.prototype.getWeekYear = function() {
+        - 3 + (week1.getDay() + 6) % 7) / 7);
+}
+
+// Returns the four-digit year corresponding to the ISO week of the date.
+Date.prototype.getWeekYear = function () {
     var date = new Date(this.getTime());
     date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
     return date.getFullYear();
-  }
+}
 
-  console.log("Week of the year from the new function: ", today.getWeek());
-  
+console.log("Week of the year from the new function: ", today.getWeek());
+
 
 
 
@@ -295,3 +321,4 @@ Date.prototype.getWeek = function() {
 //  https://stackoverflow.com/questions/1034621/get-the-current-url-with-javascript
 
 
+//Use indexedDB for bookmark, read, and notes etc: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage#storing_complex_data_%E2%80%94_indexeddb
