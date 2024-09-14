@@ -161,16 +161,6 @@ function write_card(data) {
         combinedImageGradientOverlay = String(gradientOverlay + "," + imageURL)
         document.getElementById("article-pic").style.backgroundImage = combinedImageGradientOverlay;
 
-        // try {
-        //     colorjs.prominent(String(data[index].image + "?not-from-cache-please"), { amount: 1 }).then(color => {
-        //         console.info("Extracted color= ", color) // [241, 221, 63]
-        //         document.getElementById("topic").style.backgroundColor = String("rgb(" + color + ")")
-        //     })
-
-        // } catch (error) {
-        //     console.error("Color extraction failed")
-        // }
-
 
     } else {
         gradient_with_no_image = String("linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%)" + "," + no_image)
