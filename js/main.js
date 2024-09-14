@@ -202,6 +202,9 @@ function write_card(data) {
 
 
     setup_share_button(data[index].title, today);
+    setup_save_button();
+    setup_done_button();
+    setup_note_button();
 
 
 }
@@ -268,6 +271,25 @@ function setup_share_button(titleToShare, dateOfShare) {
 
     }
 
+}
+
+function setup_save_button() {
+    document.getElementById('save-button').addEventListener('click', function (event) {
+        snack("Save coming soon!")
+
+    })
+}
+
+function setup_done_button() {
+    document.getElementById('done-button').addEventListener('click', function(event) {
+        snack("Yay! Your a Champ!")
+    })
+}
+
+function setup_note_button() {
+    document.getElementById('note-button').addEventListener('click', function(event) {
+        snack("Notes coming soon!")
+    })
 }
 
 
