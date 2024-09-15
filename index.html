@@ -445,13 +445,15 @@
 
         .bookmarked-article-card {
             /* background: var(--card-gradient-only); */
+
+
+
             background-color: #fafafa;
             text-align: left;
             margin-top: 8px;
             margin-bottom: 16px;
             border-radius: 4px;
             padding: 8px;
-            display: flex;
             min-height: 48px;
             background-repeat: repeat;
             /* max-width: 300px; */
@@ -465,6 +467,8 @@
             /*border-radius: 37px;*/
             border-radius: 8px;
             color: var(--text-color);
+
+            display: none;
         }
 
         .bookmarked-article-card-pic {
@@ -613,8 +617,28 @@
             }
         }
 
+        #empty-saved {
+            background-color: #e3e4ef;
+            background-image: url('images/saved_empty.png');
+            background-size: 100px;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 300px;
+            border-radius: 8px;
+            filter: opacity(0.8);
+        }
+        #empty-saved-message {
+            font-family: var(--ui-font);
+            font-size: 12px;
+            text-align: center;
+            margin-top: 12px;
+            position: relative;
+            
+            top: 80%;   
+        }
+
         #empty-rack {
-            background-color: #E3E4EF;
+            background-color: #e3e4ef;
             background-image: url('images/rack_empty.png');
             background-size: 100px;
             background-repeat: no-repeat;
@@ -630,12 +654,7 @@
             margin-top: 12px;
             position: relative;
             
-            top: 80%;
-            
-
-
-
-           
+            top: 80%;   
         }
     </style>
 
@@ -738,7 +757,11 @@
             <span>Saved articles</span>
         </div>
 
-        <div class="bookmarked-article-card space-betweeners">
+        <div id="empty-saved">
+            <div id="empty-saved-message">Nothing yet</div>
+        </div>
+
+        <div class="bookmarked-article-card">
             <div class="bookmarked-article-card-block-left">
                 <div class="bookmarked-article-card-pic"></div>
             </div>
@@ -753,35 +776,7 @@
             </div>
         </div>
 
-        <div class="bookmarked-article-card space-betweeners">
-            <div class="bookmarked-article-card-block-left">
-                <div class="bookmarked-article-card-pic"></div>
-            </div>
-            <div class="bookmarked-article-card-block-center">
-                <div class="bookmarked-article-card-title">Pearls before breakfast</div>
-                <div class="bookmarked-article-card-description">Joshua Bell is one of the world's greatest ...</div>
-            </div>
-            <div class="bookmarked-article-card-block-right">
-                <div>source icon</div>
-                <div>more ...</div>
-                <div>Notes ...</div>
-            </div>
-        </div>
 
-        <div class="bookmarked-article-card space-betweeners">
-            <div class="bookmarked-article-card-block-left">
-                <div class="bookmarked-article-card-pic"></div>
-            </div>
-            <div class="bookmarked-article-card-block-center">
-                <div class="bookmarked-article-card-title">Nora Ephron – A Few Words...</div>
-                <div class="bookmarked-article-card-description">We tend to think that simply giving people ...</div>
-            </div>
-            <div class="bookmarked-article-card-block-right">
-                <div>source icon</div>
-                <div>more ...</div>
-                <div>Notes ...</div>
-            </div>
-        </div>
 
 
     </div>
