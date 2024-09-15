@@ -612,6 +612,29 @@
                 opacity: 0;
             }
         }
+
+        #empty-rack {
+            background-color: #e3e3f0;
+            background-image: url('images/rack_empty.png');
+            background-size: 100px;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 300px;
+            border-radius: 8px;
+        }
+        #empty-rack-message {
+            font-family: var(--ui-font);
+            font-size: 12px;
+            text-align: center;
+            margin-top: 12px;
+            position: relative;
+            
+            top: 70%;
+
+
+
+           
+        }
     </style>
 
 
@@ -765,6 +788,9 @@
         <div class="container-header">
             <img src="images/check_icon.png" class="container-header-icon" alt="">
             <span>Rack (Yes you read them all!)</span>
+        </div>
+        <div id="empty-rack">
+            <div id="empty-rack-message">Nothing yet</div>
         </div>
     </div>
 
