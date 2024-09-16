@@ -79,3 +79,9 @@ binauralButton.addEventListener("click", () => {
     binauralButton.classList.remove("focus-buttons-active")
   }
 });
+
+//Rainfall
+rainButton = document.querySelector("#rain-button");
+rainButton.addEventListener("click", () => {
+  snack("Rainfall-sounds is coming soon")
+})
