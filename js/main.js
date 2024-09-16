@@ -192,7 +192,7 @@ function write_card(data) {
 
 
     setup_share_button(data[index].title, today);
-    setup_save_button();
+    setup_save_button(data[index].title, data[index].description, data[index].link, encode_date(today));
     setup_done_button();
     setup_note_button();
 
@@ -263,9 +263,11 @@ function setup_share_button(titleToShare, dateOfShare) {
 
 }
 
-function setup_save_button() {
+function setup_save_button(title, description, link, datecode) {
     document.getElementById('save-button').addEventListener('click', function (event) {
         snack("Save coming soon!")
+        write_to_saved_articles_os(title, description, link, datecode)
+
 
     })
 }
