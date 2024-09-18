@@ -23,7 +23,8 @@ function fetch_meme() {
         
         if (jsonData.url) {
             document.getElementById("meme-pic").src = jsonData.url;
-            console.log("/meme.js/Meme selected:", jsonData.url);
+            document.getElementById("meme-source").innerHTML = jsonData.url
+            document.getElementById("meme-source").href = jsonData.url
         }
         
     }

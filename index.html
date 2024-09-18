@@ -58,9 +58,10 @@
             --card-gradient-only: linear-gradient(to right, #ffffff 0%, #f0f0f0 50%, #ffffff 100%);
             --foreground-text-color: #222222;
             --text-color: #222222;
-            --ui-font: "Ubuntu Mono", "Share Tech Mono", "Inter";
+            --ui-mono-font: "Ubuntu Mono", "Share Tech Mono", "Inter", sans-serif;
+            --ui-general-font: "Inter", sans-serif;
             --headline-font: "Manolo-mono";
-            --body-text: "Saira", "Concert One";
+            --body-text: "Saira", "Concert One", sans-serif;
 
         }
 
@@ -107,7 +108,7 @@
         }
 
         .subtitle {
-            font-family: var(--ui-font), "Mystery Quest", "Mali", sans-serif;
+            font-family: var(--ui-general-font), "Mystery Quest", "Mali", sans-serif;
             font-size: 12px;
             color: #bbbbbb;
             margin-top: 48px;
@@ -132,7 +133,7 @@
 
 
         /* .today {
-            font-family: var(--ui-font), sans-serif;
+            font-family: var(--ui-mono-font), sans-serif;
             font-size: 7px;
             color: var(--text-color);
             display: inline-block;
@@ -171,8 +172,8 @@
         }
 
         .today {
-            font-family: var(--ui-font), sans-serif;
-            font-size: 7px;
+            font-family: var(--ui-mono-font), sans-serif;
+            font-size: 8px;
             color: white;
             text-align: left;
             padding: 16px;
@@ -192,7 +193,7 @@
             float: right;
             margin-right: 16px;
             margin-top: -8px;
-            font-family: var(--ui-font);
+            font-family: var(--ui-mono-font);
             font-size: 8px;
             border-radius: 2px;
             padding: 4px;
@@ -293,7 +294,7 @@
 
             border-radius: 4px;
             color: #222222;
-            font-family: var(--ui-font);
+            font-family: var(--ui-general-font);
             font-size: 12px;
             padding: 14px;
 
@@ -336,7 +337,7 @@
 
         .footer {
             margin-top: 64px;
-            font-family: var(--ui-font), "Noto Sans", sans-serif;
+            font-family: var(--ui-mono-font), "Noto Sans", sans-serif;
             font-size: 8px;
         }
 
@@ -349,7 +350,7 @@
             padding: 16px;
             padding-top: 24px;
             padding-bottom: 24px;
-            font-family: var(--ui-font);
+            font-family: var(--ui-general-font);
             font-size: 12px;
             color: #222222;
             max-width: 390px;
@@ -357,8 +358,8 @@
             margin: 8px auto;
             margin-top: 32px;
             text-align: left;
-            border-top: #666666 solid 1px;
-            border-bottom: #666666 solid 1px;
+            border-top: #999999 solid 1px;
+            border-bottom: #999999 solid 1px;
         }
 
         #focus-mode-header {
@@ -392,7 +393,7 @@
             /* background-color: #babec2; */
             border: 0;
             color: #222222;
-            font-family: var(--ui-font);
+            font-family: var(--ui-mono-font);
             text-transform: uppercase;
             font-size: 10px;
             width: 64px;
@@ -440,7 +441,7 @@
             /* background-color: #484d5b15; */
             padding: 16px;
 
-            font-family: var(--ui-font);
+            font-family: var(--ui-general-font);
             font-size: 12px;
             color: #222222;
             max-width: 390px;
@@ -449,7 +450,7 @@
             margin: 8px auto;
             text-align: left;
 
-            border-bottom: #666666 solid 1px;
+            border-bottom: #999999 solid 1px;
         }
 
         .container-header {
@@ -521,7 +522,7 @@
             display: block;
             background-color: #484d5b;
             color: #cccccc;
-            font-family: var(--ui-font);
+            font-family: var(--ui-mono-font);
             font-size: 10px;
             padding: 4px;
             margin: 0px -8px 0px -8px;
@@ -573,7 +574,7 @@
         #snack-message {
             display: inline-block;
             color: #ffffff;
-            font-family: var(--ui-font);
+            font-family: var(--ui-mono-font);
             font-size: 12px;
         }
 
@@ -647,7 +648,7 @@
         }
 
         #empty-saved-message {
-            font-family: var(--ui-font);
+            font-family: var(--ui-mono-font);
             font-size: 12px;
             text-align: center;
             margin-top: 12px;
@@ -668,7 +669,7 @@
         }
 
         #empty-rack-message {
-            font-family: var(--ui-font);
+            font-family: var(--ui-mono-font);
             font-size: 12px;
             text-align: center;
             margin-top: 12px;
@@ -753,7 +754,7 @@
 
 <body>
     <div class="show-on-desktop-only">Best viewed on Mobile</div>
-    <div id="dev-tool-clicker" style="font-family: var(--ui-font); font-size: 10px; color: #aeaeae;">Careful, this site is under construction</div>
+    <div id="dev-tool-clicker" style="font-family: var(--ui-mono-font); font-size: 10px; color: #d6d6d6;">Careful, this site is under construction</div>
     <div class="title-image"><img src="images/bread_icon.png" alt=""></div>
 
     <div id="snackbar">
@@ -762,7 +763,7 @@
 
     <div class="title">toastreads</div>
     <!-- <div><img src="images/toast_logo.png" class="title" height="24px" alt=""></div> -->
-    <div class="subtitle">Read, one step at a time</div>
+    <div class="subtitle">Read, one at a time</div>
 
     <!-- <div id="card-header" class="space-betweeners">
         <div class="today" id="today">Today</div>
@@ -900,7 +901,8 @@
         </div>
         <div>
             <img src="" alt="" id="meme-pic">
-            Source: reddit
+            <div class="spacer"></div>
+            <div><span>Source: </span><span><a id="meme-source" target="_blank" href="">acquiring-source</a></span></div>
         </div>
     </div>
 
