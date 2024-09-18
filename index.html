@@ -91,7 +91,8 @@
         .title-image img {
             height: 64px;
             /*was 48*/
-            margin-top: 77px;
+            /* margin-top: 77px; */
+            margin-top: 32px;
             filter: drop-shadow(16px -10px 0px #4525652d);
         }
 
@@ -100,8 +101,8 @@
             font-size: 20px;
             font-weight: 400;
             color: #222222;
-            margin-top: 26px;
-            display: non;
+            /* margin-top: 26px; */
+            margin-top: 16px;
 
         }
 
@@ -109,8 +110,8 @@
             font-family: var(--ui-font), "Mystery Quest", "Mali", sans-serif;
             font-size: 12px;
             color: #bbbbbb;
-            margin-top: 8px;
-            margin-bottom: 32px;
+            margin-top: 48px;
+            margin-bottom: 8px;
         }
 
         #card-header {
@@ -120,7 +121,6 @@
 
             padding-left: 16px;
             padding-right: 16px;
-            ;
             padding-bottom: 8px;
             margin-bottom: 8px;
 
@@ -131,13 +131,13 @@
 
 
 
-        .today {
+        /* .today {
             font-family: var(--ui-font), sans-serif;
             font-size: 7px;
             color: var(--text-color);
             display: inline-block;
 
-        }
+        } */
 
 
         .article-card {
@@ -168,6 +168,15 @@
             height: 192px;
             border-radius: 2px;
             filter: saturate(0.5);
+        }
+
+        .today {
+            font-family: var(--ui-font), sans-serif;
+            font-size: 7px;
+            color: white;
+            text-align: left;
+            padding: 16px;
+
         }
 
         .big-arrow {
@@ -744,8 +753,8 @@
 
 <body>
     <div class="show-on-desktop-only">Best viewed on Mobile</div>
-    <div style="font-family: var(--ui-font); font-size: 10px;">Careful, this site is under construction</div>
-    <div id="dev-tool-clicker" class="title-image"><img src="images/bread_icon.png" alt=""></div>
+    <div id="dev-tool-clicker" style="font-family: var(--ui-font); font-size: 10px; color: #aeaeae;">Careful, this site is under construction</div>
+    <div class="title-image"><img src="images/bread_icon.png" alt=""></div>
 
     <div id="snackbar">
         <div id="snack-message">Snack!</div>
@@ -755,10 +764,10 @@
     <!-- <div><img src="images/toast_logo.png" class="title" height="24px" alt=""></div> -->
     <div class="subtitle">Read, one step at a time</div>
 
-    <div id="card-header" class="space-betweeners">
+    <!-- <div id="card-header" class="space-betweeners">
         <div class="today" id="today">Today</div>
 
-    </div>
+    </div> -->
 
 
     <div class="article-card">
@@ -766,8 +775,15 @@
 
         <div id="clickable-area" style="cursor: pointer;">
             <div class="article-pic" id="article-pic">
-                <div class="big-arrow"><img src="images/big_arrow.svg" alt=""></div>
-                <div id="time-to-read">25 min</div>
+                <div class="space-betweeners">
+                    <div class="today" id="today">Wed, Sep 18</div>
+                    <div>
+                        <div class="big-arrow"><img src="images/big_arrow.svg" alt=""></div>
+                        <div id="time-to-read">25 min</div>
+                    </div>
+
+                    
+                </div>
             </div>
             <div class="article-title" id="article-title">
                 WHY EVER STOP PLAYING VIDEO GAMES
