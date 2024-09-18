@@ -315,7 +315,7 @@
             background-color: #222222;
             border: #202020 solid 1px;
             color: #ffffff;
-            
+
         }
 
 
@@ -395,8 +395,8 @@
             margin-right: 4px;
             cursor: pointer;
             transition: background-color 0.2s;
-            
-            
+
+
 
 
 
@@ -408,7 +408,7 @@
                 color: #9d6518;
                 border: #f7c278 solid 2px;
                 box-shadow: 0px 0px 20px 10px #ffd49745;
-                
+
             }
 
             to {
@@ -454,9 +454,9 @@
 
 
             background-color: #fafafa;
-            text-align: left;
+
             margin: 8px;
-            border-radius: 4px;
+
             padding: 8px;
             /* min-height: 48px; */
             background-repeat: repeat;
@@ -472,7 +472,7 @@
             border-radius: 8px;
             color: var(--text-color);
 
-            display: none;
+            /* display: none; */
         }
 
         .saved-article-card-pic {
@@ -482,25 +482,30 @@
             width: 48px;
             height: 48px;
             border-radius: 4px;
+            display: inline-block;
         }
 
         .saved-article-card-block-left {}
 
-        .saved-article-card-block-center {}
+        .saved-article-card-content {
+            display: inline-block;
+            vertical-align: top;
+        }
 
         .saved-article-card-block-right {}
 
         .saved-article-card-title {
+
             font-family: "Playfair Display", var(--headline-font);
             font-weight: 500;
             font-size: 16px;
-            margin-top: 4px;
+
         }
 
         .saved-article-card-description {
             font-family: "Crimson Text", var(--body-text);
             font-size: 12px;
-            margin-top: 4px;
+
         }
 
         .show-on-desktop-only {
@@ -631,14 +636,15 @@
             border-radius: 8px;
             filter: opacity(0.8);
         }
+
         #empty-saved-message {
             font-family: var(--ui-font);
             font-size: 12px;
             text-align: center;
             margin-top: 12px;
             position: relative;
-            
-            top: 80%;   
+
+            top: 80%;
         }
 
         #empty-rack {
@@ -651,14 +657,76 @@
             border-radius: 8px;
             filter: opacity(0.8);
         }
+
         #empty-rack-message {
             font-family: var(--ui-font);
             font-size: 12px;
             text-align: center;
             margin-top: 12px;
             position: relative;
-            
-            top: 80%;   
+
+            top: 80%;
+        }
+
+
+
+
+        @-webkit-keyframes shake {
+
+            0%,
+            100% {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                -webkit-transform: translate3d(-5px, 0, 0);
+                transform: translate3d(-5px, 0, 0)
+            }
+
+            20%,
+            40%,
+            60%,
+            80% {
+                -webkit-transform: translate3d(5px, 0, 0);
+                transform: translate3d(5px, 0, 0)
+            }
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                -webkit-transform: translate3d(-5px, 0, 0);
+                transform: translate3d(-10px, 0, 0)
+            }
+
+            20%,
+            40%,
+            60%,
+            80% {
+                -webkit-transform: translate3d(5px, 0, 0);
+                transform: translate3d(5px, 0, 0)
+            }
+        }
+
+        .shake {
+            -webkit-animation-name: shake;
+            animation-name: shake;
+            animation-duration: 0.3s;
         }
     </style>
 
@@ -683,7 +751,8 @@
         <div id="snack-message">Snack!</div>
     </div>
 
-    <div class="title">toastreads</div>
+    <!-- <div class="title">toastreads</div> -->
+    <div><img src="images/toast_logo.png" class="title" height="24px" alt=""></div>
     <div class="subtitle">Read, one step at a time</div>
 
     <div id="card-header" class="space-betweeners">
@@ -760,19 +829,29 @@
             <img src="images/bookmark_icon.png" class="container-header-icon" alt="">
             <span>Saved articles (Articles you save will appear here)</span>
         </div>
-        
+
 
         <div id="empty-saved">
             <div id="empty-saved-message">All you saved is Cheese?</div>
-            
+
         </div>
 
         <div id="saved-list-parent">
             <div class="saved-article-card">
+
+                <div class="saved-article-card-pic"></div>
+
+                <div class="saved-article-card-content">
+                    <div class="saved-article-card-title">Why we should give free money...</div>
+                    <div class="saved-article-card-description">We tend to think that simply giving people ...</div>
+                </div>
+
+            </div>
+            <!-- <div class="saved-article-card"></div>
                 <div class="saved-article-card-block-left">
                     <div class="saved-article-card-pic"></div>
                 </div>
-                <div class="saved-article-card-block-center">
+                <div class="saved-article-card-content">
                     <div class="saved-article-card-title">Why we should give free money...</div>
                     <div class="saved-article-card-description">We tend to think that simply giving people ...</div>
                 </div>
@@ -781,10 +860,10 @@
                     <div>more ...</div>
                     <div>Notes ...</div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
-        
+
 
     </div>
 
@@ -813,13 +892,15 @@
     <div class="subtitle">Delightfully useful reads and useless memes, toasted once a day</div>
     <div class="spacer"></div>
 
-    <div class="footer"><a href="submit_article.html">Submit an article</a> | <a href="report_something.html">Report something</a> | <a href="get_in_touch.html">Get in touch</a></div>
+    <div class="footer"><a href="submit_article.html">Submit an article</a> | <a href="report_something.html">Report
+            something</a> | <a href="get_in_touch.html">Get in touch</a></div>
     <div class="spacer"></div>
 
     <script type="text/javascript" src="js/main.js"></script>
-    <!-- <script type="text/javascript" src="js/idb.js"></script> -->
+    <script type="text/javascript" src="js/idb.js"></script>
     <script type="text/javascript" src="js/meme.js"></script>
     <script type="text/javascript" src="https://unpkg.com/tone"></script>
     <script type="text/javascript" src="js/focus.js"></script>
 </body>
+
 </html>
