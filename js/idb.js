@@ -80,6 +80,7 @@ function display_data() {
         if (cursor) {
 
             document.querySelector("#empty-saved").style.display = "none";
+            document.querySelector("#saved-list-parent").style.display = "block";
 
             let listItem = listItemTemplate.cloneNode(true);
             list.appendChild(listItem);
@@ -87,7 +88,7 @@ function display_data() {
 
 
             listItem.querySelector(".saved-article-card-title").innerHTML = cursor.value.title;
-            listItem.querySelector(".saved-article-card-description").innerHTML = cursor.value.description;
+            // listItem.querySelector(".saved-article-card-description").innerHTML = cursor.value.description;
             listItem.setAttribute("data-note-id", cursor.value.id);
 
             
@@ -104,6 +105,7 @@ function display_data() {
 
             if (!list.firstChild) {
                 document.querySelector("#empty-saved").style.display = "block";
+                document.querySelector("#saved-list-parent").style.display = "none";
             }
 
             console.log("Notes all displayed");
