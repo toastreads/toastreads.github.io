@@ -265,7 +265,7 @@ function setup_share_button(titleToShare, dateOfShare) {
 
 function setup_save_button(title, description, link, datecode) {
     document.getElementById('save-button').addEventListener('click', function (event) {
-        snack("Save coming soon!")
+        snack("This Article has been saved!")
         write_to_saved_articles_os(title, description, link, datecode)
 
 
