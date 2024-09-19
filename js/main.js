@@ -192,7 +192,7 @@ function write_card(data) {
 
 
     setup_share_button(data[index].title, today);
-    setup_save_button(data[index].title, data[index].description, data[index].link, sourceLogoURL, encode_date(today));
+    setup_save_button(data[index].title, data[index].description, data[index].link, data[index].image, sourceLogoURL, encode_date(today));
     setup_done_button();
     setup_note_button();
 
@@ -263,10 +263,10 @@ function setup_share_button(titleToShare, dateOfShare) {
 
 }
 
-function setup_save_button(title, description, link, sourcelogo, datecode) {
+function setup_save_button(title, description, link, pic, sourcelogo, datecode) {
     document.getElementById('save-button').addEventListener('click', function (event) {
         snack("This Article has been saved!")
-        write_to_saved_articles_os(title, description, link, sourcelogo, datecode)
+        write_to_saved_articles_os(title, description, link, pic, sourcelogo, datecode)
 
 
     })
