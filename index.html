@@ -484,21 +484,18 @@
 
             color: var(--text-color);
 
-            height: 48px;
+            height: 64px;
 
             margin-bottom: 8px;
-
-
-
-
+            
         }
 
         .saved-article-card-pic {
             background: #e1e4e7;
             background-size: contain;
             margin-right: 8px;
-            width: 48px;
-            height: 48px;
+            width: 64px;
+            height: 64px;
             border-radius: 4px;
             float: left;
         }
@@ -511,18 +508,36 @@
             font-weight: 600;
             font-size: 16px;
 
-
-
-            margin-left: 52px;
             height: 40px;
 
             overflow: hidden;
 
+        }
+
+        .saved-article-source {
+            font-family: "Noto Sans", var(--body-text), sans-serif;
+            font-size: 10px;
+            font-weight: 600;
             
+           
+            text-align: left;
+            display: flex;
+            align-items: center;
 
+            margin-top: 4px;
+        }
 
-
-
+        .saved-article-source-logo {
+            background: url("images/globe_icon.png"), #eeeeee;
+            background-size: contain;
+            background-repeat: no-repeat;
+            border-radius: 100px;
+            border-style: solid;
+            border-color: #222222;
+            border-width: 1px;
+            height: 16px;
+            width: 16px;
+            margin-right: 4px;
         }
 
 
@@ -866,6 +881,13 @@
             <div class="saved-article-card">
                 <div class="saved-article-card-pic"></div>
                 <div class="saved-article-card-title">Loading title...</div>
+                <div class="saved-article-source">
+                    <span class="saved-article-source-logo"></span>
+                    <span class="saved-article-source-name">
+                        Source of this article
+                    </span>
+                </div>
+                
 
             </div>
             <!-- <div class="saved-article-card"></div>

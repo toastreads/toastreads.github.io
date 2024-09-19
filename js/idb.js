@@ -24,18 +24,20 @@ openRequest.addEventListener("upgradeneeded", (e) => {
     objectStore.createIndex("title", "title", { unique: false });
     objectStore.createIndex("description", "description", { unique: false });
     objectStore.createIndex("link", "link", { unique: true });
+    objectStore.createIndex("sourcelogo", "sourcelogo", { unique: false });
     objectStore.createIndex("datecode", "datecode", { unique: false });
 
     console.log("Database setup complete");
 })
 
-function write_to_saved_articles_os(article_title, article_description, article_link, article_datecode) {
+function write_to_saved_articles_os(article_title, article_description, article_link, article_source_logo, article_datecode) {
     console.log("writing to database");
 
     const newItem = {
         title: article_title,
         description: article_description,
         link: article_link,
+        sourcelogo: article_source_logo,
         datecode: article_datecode
     };
 
@@ -88,6 +90,8 @@ function display_data() {
 
 
             listItem.querySelector(".saved-article-card-title").innerHTML = cursor.value.title;
+            listItem.querySelector(".saved-article-source-name").innerHTML = extractDomain(cursor.value.link);
+            listItem.querySelector(".saved-article-source-logo").style.backgroundImage = cursor.value.sourcelogo;
             // listItem.querySelector(".saved-article-card-description").innerHTML = cursor.value.description;
             listItem.setAttribute("data-note-id", cursor.value.id);
 
