@@ -2,19 +2,8 @@
 console.clear();
 console.log("/main.js/ loaded")
 
-let today = new Date()
-// console.log("today is actually = ", today)
-// console.log("date.parse(today): ", Date.parse(today))
-// console.log("Date(date.parse(today)): ", Date(Date.parse(today)))
-// console.log("to String radix 36 of above: ", (Date.parse(today)).toString(36))
-// console.log("Reverse of above: ", parseInt((Date.parse(today)).toString(36),36))
-// console.log("Encoded date: ", encode_date(today));
-// console.log("Decoded date: ", decode_date(encode_date(today)));
-// console.log("is this a date or not: ", decode_date(encode_date(today)).getDay());
 
-
-
-
+//functions defined for use
 function encode_date(inputDate) {
 
     dateInmillisecondFormat = Date.parse(inputDate)
@@ -28,10 +17,41 @@ function decode_date(inputDate) {
     return decodedDate
 }
 
+// This script is released to the public domain and may be used, modified and
+// distributed without restrictions. Attribution not necessary but appreciated.
+// Source: https://weeknumber.com/how-to/javascript
 
+// Returns the ISO week of the date.
+Date.prototype.getWeek = function () {
+    var date = new Date(this.getTime());
+    date.setHours(0, 0, 0, 0);
+    // Thursday in current week decides the year.
+    date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
+    // January 4 is always in week 1.
+    var week1 = new Date(date.getFullYear(), 0, 4);
+    // Adjust to Thursday in week 1 and count number of weeks from date to week1.
+    return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000
+        - 3 + (week1.getDay() + 6) % 7) / 7);
+}
+
+// Returns the four-digit year corresponding to the ISO week of the date.
+Date.prototype.getWeekYear = function () {
+    var date = new Date(this.getTime());
+    date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
+    return date.getFullYear();
+}
+
+Date.prototype.getDateWithoutTime = function () {
+    return new Date(this.toDateString());
+}
+
+
+
+let today = new Date()
 
 let no_image = "url('images/sunday_no_image.jpg')"
 
+//sd is shared date
 let sd = (new URLSearchParams(window.location.search)).get("sd");
 if (sd) {
     //bla = console.log(sd.replace(/['"]+/g, ''));
@@ -41,7 +61,7 @@ if (sd) {
     console.log("today will be considered to be = ", today)
 } else {
     console.log("There is NO sd in the URL")
-    today = new Date()
+    today = new Date().getDateWithoutTime()
     console.log("today will be considered to be = ", today)
 }
 
@@ -50,7 +70,7 @@ document.getElementById("dev-tool-clicker").addEventListener("click", function (
     populate_card()
 });
 
-document.onload = populate_card();
+populate_card();
 
 
 
@@ -273,13 +293,13 @@ function setup_save_button(title, description, link, pic, sourcelogo, datecode) 
 }
 
 function setup_done_button() {
-    document.getElementById('done-button').addEventListener('click', function(event) {
+    document.getElementById('done-button').addEventListener('click', function (event) {
         snack("Yay! Your a Champ!")
     })
 }
 
 function setup_note_button() {
-    document.getElementById('note-button').addEventListener('click', function(event) {
+    document.getElementById('note-button').addEventListener('click', function (event) {
         snack("Notes coming soon!")
     })
 }
@@ -296,31 +316,8 @@ function snack(message) {
 }
 
 
-// This script is released to the public domain and may be used, modified and
-// distributed without restrictions. Attribution not necessary but appreciated.
-// Source: https://weeknumber.com/how-to/javascript
 
-// Returns the ISO week of the date.
-Date.prototype.getWeek = function () {
-    var date = new Date(this.getTime());
-    date.setHours(0, 0, 0, 0);
-    // Thursday in current week decides the year.
-    date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
-    // January 4 is always in week 1.
-    var week1 = new Date(date.getFullYear(), 0, 4);
-    // Adjust to Thursday in week 1 and count number of weeks from date to week1.
-    return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000
-        - 3 + (week1.getDay() + 6) % 7) / 7);
-}
 
-// Returns the four-digit year corresponding to the ISO week of the date.
-Date.prototype.getWeekYear = function () {
-    var date = new Date(this.getTime());
-    date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
-    return date.getFullYear();
-}
-
-console.log("Week of the year from the new function: ", today.getWeek());
 
 
 
