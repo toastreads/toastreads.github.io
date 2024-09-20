@@ -163,8 +163,7 @@ function write_card(data) {
 
 
 
-    console.log("writing card with the following data: ", data)
-    // index = week_of_the_year(222);
+
     index = today.getWeek(); // using this function now, source: https://weeknumber.com/how-to/javascript
     console.log("Writing card with data index = ", index)
     document.getElementById("article-title").innerHTML = data[index].title;

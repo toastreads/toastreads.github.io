@@ -285,7 +285,7 @@
 
         }
 
-        .article-action-buttons {
+        .secondary-button {
 
 
             display: inline-block;
@@ -294,6 +294,8 @@
 
 
             border-radius: 4px;
+            border: none;
+            background: none;
             color: #222222;
             font-family: var(--ui-general-font);
             font-size: 12px;
@@ -309,7 +311,7 @@
         }
 
 
-        .article-action-button-icons {
+        .secondary-button-icon {
 
             height: 16px;
             vertical-align: middle;
@@ -322,16 +324,25 @@
 
         }
 
-        #share-button {}
 
-        #save-button {}
+        .primary-button {
+            display: inline-block;
 
-        #done-button {
+            border-radius: 4px;
+            border: none;
+
             background-color: #222222;
-            /* border: #202020 solid 1px; */
             color: #ffffff;
-            font-weight: 600;
 
+            font-family: var(--ui-general-font);
+            font-size: 12px;
+
+            font-weight: 600;
+            padding: 10px;
+            padding-left: 14px;
+            padding-right: 14px;
+
+            cursor: pointer;
         }
 
 
@@ -468,7 +479,7 @@
             background-color: #e3e4ef;
             padding: 8px;
             padding-bottom: 1px;
-            
+
             border-radius: 8px;
         }
 
@@ -486,10 +497,15 @@
 
             color: var(--text-color);
 
-            height: 64px;
+            /* height: 64px; */
 
             margin-bottom: 7px;
-            
+
+
+        }
+
+        .saved-artice-card-content {
+            height: 64px;
         }
 
         .saved-article-card-pic {
@@ -525,8 +541,8 @@
             font-size: 10px;
             font-weight: 400;
             color: #222222;
-            
-           
+
+
             text-align: left;
             display: flex;
             align-items: center;
@@ -545,6 +561,18 @@
             height: 16px;
             width: 16px;
             margin-right: 4px;
+        }
+
+        .saved-article-card-buttons {
+
+            margin-top: 6px;
+            background-color: #f2f1f7;
+            padding: 4px;
+            border-radius: 4px;
+            /* display: none; */
+
+
+
         }
 
 
@@ -839,16 +867,16 @@
 
         <div class="article-actions space-betweeners">
             <div>
-                <div class="article-action-buttons" id="save-button"><img src="images/bookmark_add_icon.png" alt=""
-                        class="article-action-button-icons">Save</div>
-                <div class="article-action-buttons" id="share-button"><img src="images/share_icon.png" alt=""
-                        class="article-action-button-icons">Share</div>
-                <div class="article-action-buttons" id="note-button"><img src="images/note_icon.png" alt=""
-                        class="article-action-button-icons"></div>
+                <button class="secondary-button" id="save-button"><img src="images/bookmark_add_icon.png" alt=""
+                        class="secondary-button-icon">Save</button>
+                <button class="secondary-button" id="share-button"><img src="images/share_icon.png" alt=""
+                        class="secondary-button-icon">Share</button>
+                <button class="secondary-button" id="note-button"><img src="images/note_icon.png" alt=""
+                        class="secondary-button-icon"></button>
             </div>
             <div>
-                <div class="article-action-buttons" id="done-button"><img src="images/done_icon.png" alt=""
-                        class="article-action-button-icons">Finish</div>
+                <button class="primary-button" id="done-button"><img src="images/done_icon.png" alt=""
+                        class="secondary-button-icon">Finish</button>
             </div>
         </div>
 
@@ -885,16 +913,36 @@
         </div>
 
         <div id="saved-list-parent">
+
             <div class="saved-article-card">
-                <div class="saved-article-card-pic"></div>
-                <div class="saved-article-card-title">Loading title...</div>
-                <div class="saved-article-source">
-                    <span class="saved-article-source-logo"></span>
-                    <span class="saved-article-source-name">
-                        Source of this article
-                    </span>
+                <div class="saved-artice-card-content">
+                    <div class="saved-article-card-pic"></div>
+                    <div class="saved-article-card-title">Loading title...</div>
+                    <div class="saved-article-source">
+                        <span class="saved-article-source-logo"></span>
+                        <span class="saved-article-source-name">
+                            Source of this article
+                        </span>
+                    </div>
+                </div>
+
+                <div class="saved-article-card-buttons">
+                    <div class="space-betweeners">
+                        <div>
+                            <button class="secondary-button"><img src="images/share_icon.png" alt=""
+                                    class="secondary-button-icon">Share</button>
+                            <button class="secondary-button"><img src="images/note_icon.png" alt=""
+                                    class="secondary-button-icon">Note</button>
+                            <button class="secondary-button delete-button"><img src="images/delete_icon.png" alt=""
+                                    class="secondary-button-icon"></button>
+                        </div>
+
+                        <button class="primary-button">Finish</button>
+                    </div>
+
                 </div>
             </div>
+
         </div>
 
 

@@ -101,10 +101,10 @@ function display_data() {
             
 
 
-            // const deleteBtn = document.createElement("button");
+            const deleteBtn = listItem.querySelector(".delete-button");
             // listItem.appendChild(deleteBtn);
             // deleteBtn.textContent = "Delete";
-            // deleteBtn.addEventListener("click", deleteItem);
+            deleteBtn.addEventListener("click", delete_item);
 
 
             cursor.continue();
@@ -120,3 +120,32 @@ function display_data() {
     });
 }
 
+// Define the deleteItem() function
+function delete_item(e) {
+    // retrieve the name of the task we want to delete. We need
+    // to convert it to a number before trying to use it with IDB; IDB key
+    // values are type-sensitive.
+    const noteId = Number(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.getAttribute("data-note-id"));
+    console.log("NOTE ID = ", noteId);
+    
+  
+    // open a database transaction and delete the task, finding it using the id we retrieved above
+    const transaction = db.transaction(["saved_articles_os"], "readwrite");
+    const objectStore = transaction.objectStore("saved_articles_os");
+    const deleteRequest = objectStore.delete(noteId);
+  
+    // report that the data item has been deleted
+    transaction.addEventListener("complete", () => {
+      // delete the parent of the button
+      // which is the list item, so it is no longer displayed
+      //display_data();
+      e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode.parentNode.parentNode);
+      console.log(`Note ${noteId} deleted.`);
+  
+      // Again, if list item is empty, display a 'No notes stored' message
+      if (!list.firstChild) {
+        document.querySelector("#empty-saved").style.display = "block";
+      }
+    });
+  }
+  
