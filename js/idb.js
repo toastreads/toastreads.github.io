@@ -106,6 +106,9 @@ function display_data() {
             // deleteBtn.textContent = "Delete";
             deleteBtn.addEventListener("click", delete_item);
 
+            const expandButton = listItem.querySelector(".expand-button");
+            expandButton.addEventListener("click", expand_card);
+
 
             cursor.continue();
         } else {
@@ -118,6 +121,15 @@ function display_data() {
             console.log("Notes all displayed");
         }
     });
+}
+
+function expand_card(e){
+    console.log("Expanding");
+    const noteId = Number(e.target.parentNode.parentNode.parentNode.parentNode.getAttribute("data-note-id"));
+    console.log("NOTE ID = ", noteId);
+
+    const extendedArea = e.target.parentNode.parentNode.parentNode.parentNode.querySelector(".saved-article-card-extended-area");
+    extendedArea.style.display = "block";
 }
 
 // Define the deleteItem() function
