@@ -101,6 +101,9 @@ function display_data() {
             listItem.querySelector(".saved-article-card-clickable-area").addEventListener("click", function (event) {
                 window.open(cursor.value.link, '_blank')
             });
+            listItem.querySelector(".read-button").addEventListener("click", function (event) {
+                window.open(cursor.value.link, '_blank')
+            });
 
             const deleteBtn = listItem.querySelector(".delete-button");
             // listItem.appendChild(deleteBtn);
