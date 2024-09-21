@@ -28,7 +28,7 @@ body {
 .title-image img {
     height: 64px;
     margin-top: 32px;
-    filter: drop-shadow(16px -10px 0px #4525652d);
+    /* filter: drop-shadow(16px -10px 0px #4525652d); */
 }
 
 .title {

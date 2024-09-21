@@ -135,11 +135,17 @@ function expand_card(e) {
     // console.log("NOTE ID = ", noteId);
 
     const extendedArea = e.target.closest('.saved-article-card').querySelector(".saved-article-card-extended-area");
+    const thisButton = e.target
+    console.log(thisButton);
+    
+    
     
     if (window.getComputedStyle(extendedArea).getPropertyValue('display') == 'none') {
-        extendedArea.style.display = "block";        
+        extendedArea.style.display = "block";
+        thisButton.src = "/images/arrow_down_filled.png"
     } else {
         extendedArea.style.display = "none";
+        thisButton.src = "/images/arrow_down.png"
     }
 
 }
@@ -165,6 +171,7 @@ function delete_item(e) {
         //display_data();
         e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode.parentNode.parentNode);
         console.log(`Note ${noteId} deleted.`);
+        snack("Deleted!")
 
         // Again, if list item is empty, display a 'No notes stored' message
         if (!list.firstChild) {
