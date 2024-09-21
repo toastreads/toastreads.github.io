@@ -90,6 +90,9 @@ function display_data() {
             list.appendChild(listItem);
 
 
+            
+
+
 
             listItem.querySelector(".saved-article-card-title").innerHTML = cursor.value.title;
             listItem.querySelector(".saved-article-source-name").innerHTML = extractDomain(cursor.value.link);
@@ -98,11 +101,13 @@ function display_data() {
             // listItem.querySelector(".saved-article-card-description").innerHTML = cursor.value.description;
             listItem.setAttribute("data-note-id", cursor.value.id);
 
+            //I'm defining linkOfThisArticle here because for soe reason, cursor.value.link evaluates to undefined inside the addEventListener. This happens only is Safari btw. Weird.
+            linkOfThisArticle = cursor.value.link;
             listItem.querySelector(".saved-article-card-clickable-area").addEventListener("click", function (event) {
-                window.open(cursor.value.link, '_blank')
+                window.open(linkOfThisArticle, '_blank')
             });
             listItem.querySelector(".read-button").addEventListener("click", function (event) {
-                window.open(cursor.value.link, '_blank')
+                window.open(linkOfThisArticle, '_blank')
             });
 
             const deleteBtn = listItem.querySelector(".delete-button");
