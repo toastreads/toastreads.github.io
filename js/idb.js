@@ -106,9 +106,6 @@ function display_data() {
             listItem.querySelector(".saved-article-card-clickable-area").addEventListener("click", function (event) {
                 window.open(linkOfThisArticle, '_blank')
             });
-            listItem.querySelector(".read-button").addEventListener("click", function (event) {
-                window.open(linkOfThisArticle, '_blank')
-            });
 
             const deleteBtn = listItem.querySelector(".delete-button");
             // listItem.appendChild(deleteBtn);
