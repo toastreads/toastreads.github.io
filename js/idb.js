@@ -98,7 +98,9 @@ function display_data() {
             // listItem.querySelector(".saved-article-card-description").innerHTML = cursor.value.description;
             listItem.setAttribute("data-note-id", cursor.value.id);
 
-            
+            listItem.querySelector(".saved-article-card-clickable-area").addEventListener("click", function(event) {
+                window.open(cursor.value.link, '_blank');
+            });
 
 
             const deleteBtn = listItem.querySelector(".delete-button");
