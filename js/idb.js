@@ -99,9 +99,8 @@ function display_data() {
             listItem.setAttribute("data-note-id", cursor.value.id);
 
             listItem.querySelector(".saved-article-card-clickable-area").addEventListener("click", function (event) {
-                window.open(cursor.value.link, '_blank');
+                window.open(cursor.value.link, '_blank')
             });
-
 
             const deleteBtn = listItem.querySelector(".delete-button");
             // listItem.appendChild(deleteBtn);
