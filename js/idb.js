@@ -76,7 +76,7 @@ function display_data() {
     }
 
     const objectStore = db.transaction("saved_articles_os").objectStore("saved_articles_os");
-    objectStore.openCursor().addEventListener("success", (e) => {
+    objectStore.openCursor(null, 'prev').addEventListener("success", (e) => {
 
         const cursor = e.target.result;
 
