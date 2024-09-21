@@ -180,7 +180,7 @@ body {
 }
 
 #article-source-icon {
-    background: url("images/globe_icon.png"), #eeeeee;
+    background: url("/images/globe_icon.png"), #eeeeee;
     background-size: contain;
     background-repeat: no-repeat;
     border-radius: 100px;
@@ -510,7 +510,7 @@ body {
 }
 
 .saved-article-source-logo {
-    background: url("images/globe_icon.png"), #eeeeee;
+    background: url("/images/globe_icon.png"), #eeeeee;
     background-size: contain;
     background-repeat: no-repeat;
     border-radius: 100px;
@@ -681,7 +681,7 @@ However, delay the fade out process for 2.5 seconds */
 
 #empty-saved {
     background-color: #e3e4ef;
-    background-image: url('images/saved_empty.png');
+    background-image: url('/images/saved_empty.png');
     background-size: 100px;
     background-repeat: no-repeat;
     background-position: center;
@@ -702,7 +702,7 @@ However, delay the fade out process for 2.5 seconds */
 
 #empty-rack {
     background-color: #e3e4ef;
-    background-image: url('images/rack_empty.png');
+    background-image: url('/images/rack_empty.png');
     background-size: 100px;
     background-repeat: no-repeat;
     background-position: center;
