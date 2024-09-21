@@ -66,10 +66,10 @@ function display_data() {
     console.log("displaying from database");
 
     list = document.querySelector("#saved-list-parent");
-    if (document.getElementsByClassName("saved-article-card")[0]){
+    if (document.getElementsByClassName("saved-article-card")[0]) {
         listItemTemplate = document.getElementsByClassName("saved-article-card")[0];
     }
-    
+
 
     while (list.firstChild) {
         list.removeChild(list.firstChild);
@@ -88,17 +88,17 @@ function display_data() {
 
             let listItem = listItemTemplate.cloneNode(true);
             list.appendChild(listItem);
-            
+
 
 
             listItem.querySelector(".saved-article-card-title").innerHTML = cursor.value.title;
             listItem.querySelector(".saved-article-source-name").innerHTML = extractDomain(cursor.value.link);
-            listItem.querySelector(".saved-article-card-pic").style.backgroundImage = String("URL('"+cursor.value.pic+"')");
+            listItem.querySelector(".saved-article-card-pic").style.backgroundImage = String("URL('" + cursor.value.pic + "')");
             listItem.querySelector(".saved-article-source-logo").style.backgroundImage = cursor.value.sourcelogo;
             // listItem.querySelector(".saved-article-card-description").innerHTML = cursor.value.description;
             listItem.setAttribute("data-note-id", cursor.value.id);
 
-            listItem.querySelector(".saved-article-card-clickable-area").addEventListener("click", function(event) {
+            listItem.querySelector(".saved-article-card-clickable-area").addEventListener("click", function (event) {
                 window.open(cursor.value.link, '_blank');
             });
 
@@ -125,13 +125,19 @@ function display_data() {
     });
 }
 
-function expand_card(e){
-    console.log("Expanding");
-    const noteId = Number(e.target.parentNode.parentNode.parentNode.parentNode.getAttribute("data-note-id"));
-    console.log("NOTE ID = ", noteId);
+function expand_card(e) {
+    // console.log("Expanding");
+    // const noteId = Number(e.target.parentNode.parentNode.parentNode.parentNode.getAttribute("data-note-id"));
+    // console.log("NOTE ID = ", noteId);
 
-    const extendedArea = e.target.parentNode.parentNode.parentNode.parentNode.querySelector(".saved-article-card-extended-area");
-    extendedArea.style.display = "block";
+    const extendedArea = e.target.closest('.saved-article-card').querySelector(".saved-article-card-extended-area");
+    
+    if (window.getComputedStyle(extendedArea).getPropertyValue('display') == 'none') {
+        extendedArea.style.display = "block";        
+    } else {
+        extendedArea.style.display = "none";
+    }
+
 }
 
 // Define the deleteItem() function
@@ -141,25 +147,24 @@ function delete_item(e) {
     // values are type-sensitive.
     const noteId = Number(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.getAttribute("data-note-id"));
     console.log("NOTE ID = ", noteId);
-    
-  
+
+
     // open a database transaction and delete the task, finding it using the id we retrieved above
     const transaction = db.transaction(["saved_articles_os"], "readwrite");
     const objectStore = transaction.objectStore("saved_articles_os");
     const deleteRequest = objectStore.delete(noteId);
-  
+
     // report that the data item has been deleted
     transaction.addEventListener("complete", () => {
-      // delete the parent of the button
-      // which is the list item, so it is no longer displayed
-      //display_data();
-      e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode.parentNode.parentNode);
-      console.log(`Note ${noteId} deleted.`);
-  
-      // Again, if list item is empty, display a 'No notes stored' message
-      if (!list.firstChild) {
-        document.querySelector("#empty-saved").style.display = "block";
-      }
+        // delete the parent of the button
+        // which is the list item, so it is no longer displayed
+        //display_data();
+        e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode.parentNode.parentNode);
+        console.log(`Note ${noteId} deleted.`);
+
+        // Again, if list item is empty, display a 'No notes stored' message
+        if (!list.firstChild) {
+            document.querySelector("#empty-saved").style.display = "block";
+        }
     });
-  }
-  
+}

@@ -524,7 +524,7 @@
         }
 
         .saved-article-card-clickable-area {
-            /* background-color: rebeccapurple; */
+            cursor: pointer;
         }
 
 
@@ -635,6 +635,7 @@
             background-color: #f2f1f7;
             padding: 4px;
             border-radius: 4px;
+            
             display: none;
 
 
@@ -995,7 +996,8 @@
                         </div>
                     </div>
                     <div class="saved-article-card-control">
-                        <button class="secondary-button expand-button"><img src="images/arrow_down.png" alt=""
+                        <button class="secondary-button expand-button" data-expanded="false" role="switch"
+                        aria-checked="false"><img src="images/arrow_down.png" alt=""
                                 class="secondary-button-icon"></button>
                     </div>
                 </div>
