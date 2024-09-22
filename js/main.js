@@ -298,10 +298,20 @@ function setup_done_button() {
 }
 
 function setup_note_button() {
-    document.getElementById('note-button').addEventListener('click', function (event) {
+    noteButton = document.querySelector("#note-button")
+    noteButton.addEventListener('click', function (event) {
         snack("Notes coming soon!")
-        document.querySelector(".notepad-container").style.display = "block"
-        document.querySelector(".notepad-textarea").focus({preventScroll: false})
+        notepadContainer = document.querySelector(".notepad-container")
+
+        if (window.getComputedStyle(notepadContainer).getPropertyValue('display') == 'none') {
+            notepadContainer.style.display = "block";
+            document.querySelector(".notepad-textarea").focus({preventScroll: false})
+            noteButton.classList.add("secondary-button-pressed")
+        } else {
+            notepadContainer.style.display = "none";
+            noteButton.classList.remove("secondary-button-pressed")
+        }
+
     })
 }
 
