@@ -1,9 +1,4 @@
 :root {
-    --background-color: #C0CECD;
-    --card-color: #F0F0F0;
-    --card-gradient: linear-gradient(to right, #ffffff00 0%, #f0f0f0 50%, #ffffff00 100%);
-    --card-gradient-only: linear-gradient(to right, #ffffff 0%, #f0f0f0 50%, #ffffff 100%);
-    --foreground-text-color: #222222;
     --text-color: #222222;
     --ui-mono-font: "Ubuntu Mono", "Inter", sans-serif;
     --ui-general-font: "Inter", sans-serif;
@@ -65,7 +60,7 @@ body {
 }
 
 .article-card {
-    background: var(--card-gradient-only);
+    background: linear-gradient(to right, #ffffff 0%, #f8f7fe 50%, #ffffff 100%);
     background-color: #f7f7f7;
     background-repeat: repeat;
     max-width: 390px;
@@ -73,7 +68,7 @@ body {
     margin: auto;
     padding: 16px;
     /* box-shadow: 0px 10px 30px 10px #0f14211d, 0px 50px 30px -30px #0000001b; */
-    box-shadow: 0px 10px 30px 10px #0f14210b, 0px 50px 30px -30px #00000010;
+    box-shadow: 0px 5px 30px 10px #0010390f, 0px 20px 20px -30px #02004459;
     border: #ffffff;
     border-style: solid;
     border-width: 1px;
