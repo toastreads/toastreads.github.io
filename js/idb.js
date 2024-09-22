@@ -9,7 +9,7 @@ openRequest.addEventListener("error", () => {
 openRequest.addEventListener("success", () => {
     console.log("Database opened successfully");
     db = openRequest.result;
-    display_data();
+    display_saved_articles_data();
 })
 
 openRequest.addEventListener("upgradeneeded", (e) => {
@@ -29,6 +29,28 @@ openRequest.addEventListener("upgradeneeded", (e) => {
     objectStore.createIndex("datecode", "datecode", { unique: false });
 
     console.log("Database setup complete");
+
+
+
+
+    //second object store for finished articles.....
+    const objectStore2 = db.createObjectStore("finished_articles_os", {
+        keyPath: "id",
+        autoIncrement: true,
+    });
+
+    objectStore2.createIndex("title", "title", { unique: false });
+    objectStore2.createIndex("description", "description", { unique: false });
+    objectStore2.createIndex("link", "link", { unique: true });
+    objectStore2.createIndex("pic", "pic", { unique: false });
+    objectStore2.createIndex("sourcelogo", "sourcelogo", { unique: false });
+    objectStore2.createIndex("datecode", "datecode", { unique: false });
+
+    console.log("2nd Database setup complete");
+    //......
+
+
+
 })
 
 function write_to_saved_articles_os(article_title, article_description, article_link, article_pic, article_source_logo, article_datecode) {
@@ -54,7 +76,7 @@ function write_to_saved_articles_os(article_title, article_description, article_
 
     transaction.addEventListener("complete", () => {
         console.log("Transaction completed: database modification finished.");
-        display_data();
+        display_saved_articles_data();
     });
 
     transaction.addEventListener("error", () =>
@@ -62,7 +84,7 @@ function write_to_saved_articles_os(article_title, article_description, article_
     );
 }
 
-function display_data() {
+function display_saved_articles_data() {
     console.log("displaying from database");
 
     list = document.querySelector("#saved-list-parent");
@@ -89,32 +111,23 @@ function display_data() {
             let listItem = listItemTemplate.cloneNode(true);
             list.appendChild(listItem);
 
-
-            
-
-
-
             listItem.querySelector(".saved-article-card-title").innerHTML = cursor.value.title;
             listItem.querySelector(".saved-article-source-name").innerHTML = extractDomain(cursor.value.link);
             listItem.querySelector(".saved-article-card-pic").style.backgroundImage = String("URL('" + cursor.value.pic + "')");
             listItem.querySelector(".saved-article-source-logo").style.backgroundImage = cursor.value.sourcelogo;
-            // listItem.querySelector(".saved-article-card-description").innerHTML = cursor.value.description;
             listItem.setAttribute("data-note-id", cursor.value.id);
 
-            //I'm defining linkOfThisArticle here because for soe reason, cursor.value.link evaluates to undefined inside the addEventListener. This happens only is Safari btw. Weird.
+            //I'm defining linkOfThisArticle here because for some reason, cursor.value.link evaluates to undefined inside the addEventListener. This happens only is Safari btw. Weird.
             linkOfThisArticle = cursor.value.link;
             listItem.querySelector(".saved-article-card-clickable-area").addEventListener("click", function (event) {
                 window.open(linkOfThisArticle, '_blank')
             });
 
             const deleteBtn = listItem.querySelector(".delete-button");
-            // listItem.appendChild(deleteBtn);
-            // deleteBtn.textContent = "Delete";
             deleteBtn.addEventListener("click", delete_item);
 
             const expandButton = listItem.querySelector(".expand-button");
             expandButton.addEventListener("click", expand_card);
-
 
             cursor.continue();
         } else {
@@ -124,21 +137,16 @@ function display_data() {
                 document.querySelector("#saved-list-parent").style.display = "none";
             }
 
-            console.log("Notes all displayed");
+            console.log("Notes items displayed");
         }
     });
 }
 
-function expand_card(e) {
-    // console.log("Expanding");
-    // const noteId = Number(e.target.parentNode.parentNode.parentNode.parentNode.getAttribute("data-note-id"));
-    // console.log("NOTE ID = ", noteId);
 
+
+function expand_card(e) {
     const extendedArea = e.target.closest('.saved-article-card').querySelector(".saved-article-card-extended-area");
     const thisButton = e.target
-    console.log(thisButton);
-    
-    
     
     if (window.getComputedStyle(extendedArea).getPropertyValue('display') == 'none') {
         extendedArea.style.display = "block";
@@ -147,7 +155,6 @@ function expand_card(e) {
         extendedArea.style.display = "none";
         thisButton.src = "/images/arrow_down.png"
     }
-
 }
 
 // Define the deleteItem() function
@@ -168,7 +175,7 @@ function delete_item(e) {
     transaction.addEventListener("complete", () => {
         // delete the parent of the button
         // which is the list item, so it is no longer displayed
-        //display_data();
+        //display_saved_articles_data();
         e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode.parentNode.parentNode);
         console.log(`Note ${noteId} deleted.`);
         snack("Deleted!")

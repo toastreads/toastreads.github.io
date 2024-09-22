@@ -18,7 +18,8 @@ body {
 
 body {
     text-align: center;
-    background: hsl(0, 0%, 96%);
+    /* background: hsl(0, 0%, 96%); */
+    background-color: #f2f3f8;
     background-repeat: no-repeat;
     margin: 0;
     padding-left: 8px;
@@ -71,7 +72,8 @@ body {
     min-width: 210px;
     margin: auto;
     padding: 16px;
-    box-shadow: 0px 10px 30px 10px #0f14211d, 0px 50px 30px -30px #0000001b;
+    /* box-shadow: 0px 10px 30px 10px #0f14211d, 0px 50px 30px -30px #0000001b; */
+    box-shadow: 0px 10px 30px 10px #0f14210b, 0px 50px 30px -30px #00000010;
     border: #ffffff;
     border-style: solid;
     border-width: 1px;
@@ -207,7 +209,7 @@ body {
 
 
     display: inline-block;
-    /* margin-right: 4px; */
+    margin-right: 4px;
     vertical-align: middle;
 
 
@@ -221,11 +223,18 @@ body {
     letter-spacing: 0.5px;
 
 
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* padding: 10px;
     padding-left: 14px;
-    padding-right: 14px;
+    padding-right: 14px; */
+    
 
     cursor: pointer;
+
+
+
+
 
 
 
@@ -254,7 +263,8 @@ body {
     border-radius: 4px;
     border: none;
 
-    background-color: #151137;
+    /* background-color: #151137; */
+    background-color: #222233;
     color: #ffffff;
 
     font-family: var(--ui-general-font);
@@ -400,7 +410,8 @@ body {
 }
 
 #saved-list-parent {
-    background-color: #e3e4ef;
+    /* background-color: #e3e4ef; */
+    background-color: #00148a08;
     padding: 8px;
     padding-bottom: 1px;
 
@@ -549,10 +560,11 @@ body {
 
 .saved-article-card-extended-area {
 
-    margin-top: 6px;
-    background-color: #f2f1f7;
+    margin-top: 8px;
+    /* background-color: #f2f1f7; */
     padding: 4px;
-    border-radius: 4px;
+    /* border-radius: 4px; */
+
     
     display: none;
 
@@ -680,7 +692,8 @@ However, delay the fade out process for 2.5 seconds */
 }
 
 #empty-saved {
-    background-color: #e3e4ef;
+    /* background-color: #e3e4ef; */
+    background-color: #00148a08;
     background-image: url('/images/saved_empty.png');
     background-size: 100px;
     background-repeat: no-repeat;
@@ -701,7 +714,8 @@ However, delay the fade out process for 2.5 seconds */
 }
 
 #empty-rack {
-    background-color: #e3e4ef;
+    /* background-color: #e3e4ef; */
+    background-color: #00148a08;
     background-image: url('/images/rack_empty.png');
     background-size: 100px;
     background-repeat: no-repeat;
