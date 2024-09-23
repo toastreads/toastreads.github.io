@@ -77,13 +77,14 @@ body {
 }
 .notepad-container {
     position: relative;
-    max-width: 390px;
+    max-width: 420px;
     min-width: 210px;
-    height: 265px;
+    height: 290px;
     margin: auto;
     padding: 0;
 
-    display: none;
+
+    /* display: none; */
 
     
 }
@@ -94,10 +95,9 @@ body {
     width: 100%;
     height: 100%;
 
-    border: #ffffff;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 0 0 16px 16px;
+    
+
+    border-radius: 0 0 8px 8px;
 
     z-index: -1;
     position: absolute;
@@ -124,9 +124,9 @@ body {
     resize: none;
 
     position: relative;
-    height: 150px;
+    height: 146px;
 
-    top: 20px;
+    top: 16px;
 
 
     width: 90%;
@@ -142,9 +142,10 @@ body {
 }
 .notepad-actions {
     position: relative;
-    top:20px;
-    float: right;
-    right: 20px;
+    padding: 16px;
+    margin-top: 8px;
+
+
 }
 
 
@@ -153,7 +154,8 @@ body {
     background: #000000;
     background-size: cover;
     background-position: center;
-    height: 192px;
+    /* height: 192px; */
+    height: 224px;
     border-radius: 2px;
     filter: saturate(0.5);
 }
