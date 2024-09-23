@@ -27,6 +27,8 @@ openRequest.addEventListener("upgradeneeded", (e) => {
     objectStore.createIndex("pic", "pic", { unique: false });
     objectStore.createIndex("sourcelogo", "sourcelogo", { unique: false });
     objectStore.createIndex("datecode", "datecode", { unique: false });
+    objectStore.createIndex("notes", "notes", { unique: false });
+    
 
     console.log("Database setup complete");
 
@@ -45,6 +47,7 @@ openRequest.addEventListener("upgradeneeded", (e) => {
     objectStore2.createIndex("pic", "pic", { unique: false });
     objectStore2.createIndex("sourcelogo", "sourcelogo", { unique: false });
     objectStore2.createIndex("datecode", "datecode", { unique: false });
+    objectStore2.createIndex("notes", "notes", { unique: false });
 
     console.log("2nd Database setup complete");
     //......
