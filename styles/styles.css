@@ -77,23 +77,21 @@ body {
 }
 .notepad-container {
     position: relative;
-    max-width: 420px;
+    max-width: 422px;
     min-width: 210px;
-    height: 290px;
+    /* height: 300px; */
     margin: auto;
-    padding: 0;
-
+    padding: 0px;
 
     display: none;
-
-    
 }
 .notepad-bg {
 
-    background-color: #fbfbfe;
+    /* background-color: #fbfbfe; */
+    background-color: #ffffff;
 
     width: 100%;
-    height: 100%;
+    height: calc(100% + 8px);
 
     
 
@@ -112,26 +110,21 @@ body {
     text-align: left;
     font-family: "Inter", var(--body-text), sans-serif;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
     color: #666666;
 
-    margin-left: 16px;
-    padding-top: 16px;
+    padding: 16px;
 }
 .notepad-textarea {
     border: none;
     outline: none;
     resize: none;
 
-    position: relative;
-    height: 146px;
-
-    top: 16px;
-
+    height: 160px;
 
     width: 90%;
     background: none;
-    border-bottom: #00075808 solid 1px;
+    /* border-bottom: #00075808 solid 1px; */
 
     font-family: "Inter", var(--body-text), sans-serif;
     font-weight: 400;
@@ -140,12 +133,12 @@ body {
     text-align: left;
 
 }
+.notepad-textarea::placeholder {
+    color: #cccccc;
+}
 .notepad-actions {
     position: relative;
     padding: 16px;
-    margin-top: 8px;
-
-
 }
 
 
@@ -310,13 +303,35 @@ body {
 
     height: 16px;
     vertical-align: middle;
-    margin-bottom: 2px;
+    /* margin-bottom: 2px; */
     /*center correction*/
+    /* margin-right: 4px; */
+    margin: 2px;
+
+
+
+
+}
+.process-indicator {
+    display: inline-block;
     margin-right: 4px;
+    vertical-align: middle;
+
+    border-radius: 4px;
+    border: none;
+    background: none;
+    color: #222222;
+    font-family: var(--ui-mono-font);
+    font-size: 10px;
+    letter-spacing: 0.5px;
 
 
 
+    padding: 10px;
 
+    
+    cursor: pointer;
+    filter: opacity(0.5);
 }
 
 
@@ -661,6 +676,7 @@ body {
 .space-betweeners {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 hr {
