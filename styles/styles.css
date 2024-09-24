@@ -778,7 +778,7 @@ However, delay the fade out process for 2.5 seconds */
     background-position: center;
     height: 300px;
     border-radius: 8px;
-    filter: opacity(0.8);
+    /* filter: opacity(0.8); */
 }
 
 #empty-saved-message {
@@ -800,7 +800,7 @@ However, delay the fade out process for 2.5 seconds */
     background-position: center;
     height: 300px;
     border-radius: 8px;
-    filter: opacity(0.8);
+    /* filter: opacity(0.8); */
 }
 
 #empty-rack-message {
