@@ -56,7 +56,7 @@ openRequest.addEventListener("upgradeneeded", (e) => {
 
 })
 
-function write_to_saved_articles_os(article_title, article_description, article_link, article_pic, article_source_logo, article_datecode) {
+function write_to_saved_articles_os(article_title, article_description, article_link, article_pic, article_source_logo, article_datecode, article_notes="") {
     console.log("writing to database");
 
     const newItem = {
@@ -65,7 +65,8 @@ function write_to_saved_articles_os(article_title, article_description, article_
         link: article_link,
         pic: article_pic,
         sourcelogo: article_source_logo,
-        datecode: article_datecode
+        datecode: article_datecode,
+        notes: article_notes
     };
 
     const transaction = db.transaction(["saved_articles_os"], "readwrite");
@@ -153,10 +154,10 @@ function expand_card(e) {
     
     if (window.getComputedStyle(extendedArea).getPropertyValue('display') == 'none') {
         extendedArea.style.display = "block";
-        thisButton.src = "/images/arrow_down_filled.png"
+        thisButton.closest(".expand-button").classList.add("secondary-button-pressed")
     } else {
         extendedArea.style.display = "none";
-        thisButton.src = "/images/arrow_down.png"
+        thisButton.closest(".expand-button").classList.remove("secondary-button-pressed")
     }
 }
 

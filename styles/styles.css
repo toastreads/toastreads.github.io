@@ -17,8 +17,8 @@ body {
     background-color: #f2f3f8;
     background-repeat: no-repeat;
     margin: 0;
-    padding-left: 8px;
-    padding-right: 8px;
+    /* padding-left: 8px;
+    padding-right: 8px; */
 }
 
 .title-image img {

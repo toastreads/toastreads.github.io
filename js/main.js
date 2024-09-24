@@ -214,6 +214,7 @@ function write_card(data) {
     setup_save_button(data[index].title, data[index].description, data[index].link, data[index].image, sourceLogoURL, encode_date(today));
     setup_done_button();
     setup_note_button();
+    setup_textarea(data[index].title, data[index].description, data[index].link, data[index].image, sourceLogoURL, encode_date(today));
 
 
 }
@@ -284,7 +285,7 @@ function setup_share_button(titleToShare, dateOfShare) {
 
 function setup_save_button(title, description, link, pic, sourcelogo, datecode) {
     document.getElementById('save-button').addEventListener('click', function (event) {
-        snack("This Article has been saved!")
+        snack("Saved!")
         write_to_saved_articles_os(title, description, link, pic, sourcelogo, datecode)
 
 
@@ -300,17 +301,35 @@ function setup_done_button() {
 function setup_note_button() {
     noteButton = document.querySelector("#note-button")
     noteButton.addEventListener('click', function (event) {
-        snack("Notes coming soon!")
+        // snack("Notes coming soon!")
         notepadContainer = document.querySelector(".notepad-container")
 
         if (window.getComputedStyle(notepadContainer).getPropertyValue('display') == 'none') {
             notepadContainer.style.display = "block";
-            document.querySelector(".notepad-textarea").focus({preventScroll: false})
+            document.querySelector(".notepad-textarea").focus({ preventScroll: false })
             noteButton.classList.add("secondary-button-pressed")
         } else {
             notepadContainer.style.display = "none";
             noteButton.classList.remove("secondary-button-pressed")
         }
+
+    })
+
+    closeNoteButton = document.querySelector("#close-note-button")
+    closeNoteButton.addEventListener("click", function (event) {
+        notepadContainer.style.display = "none"
+        noteButton.classList.remove("secondary-button-pressed")
+
+    })
+}
+
+function setup_textarea(title, description, link, pic, sourcelogo, datecode) {
+    textArea = document.querySelector("#note-textarea")
+    textArea.addEventListener("input", function () {
+        console.log("User is typing ...", textArea.value);
+        write_to_saved_articles_os(title, description, link, pic, sourcelogo, datecode, "something")
+
+
 
     })
 }
