@@ -86,24 +86,21 @@ body {
 }
 .notepad-bg {
 
-    /* background-color: #fbfbfe; */
+    position: absolute;
+    top: -8px;
+    left: -1px;
     background-color: #ffffff;
 
-    width: 100%;
+    width: calc(100% + 2px);
     height: calc(100% + 8px);
-
-    
 
     border-radius: 0 0 8px 8px;
 
     z-index: -1;
-    position: absolute;
-    top: -8px;
+    
     color: var(--text-color);
     font-family: var(--body-text);
-
     box-shadow: 0px 3px 20px 5px #0010390f;
-
 }
 .notepad-header {
     text-align: left;
@@ -138,6 +135,18 @@ body {
 .notepad-actions {
     position: relative;
     padding: 16px;
+    padding-bottom: 0px;
+}
+.small-line-container {
+    padding: 8px;
+
+}
+.small-line {
+    width: 8px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #dddfec;
+    margin: auto;
 }
 
 
@@ -673,6 +682,11 @@ body {
 }
 
 .space-betweeners {
+    display: flex;
+    justify-content: space-between;
+
+}
+.space-betweeners-aligned-center {
     display: flex;
     justify-content: space-between;
     align-items: center;
