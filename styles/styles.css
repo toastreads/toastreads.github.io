@@ -721,8 +721,8 @@ hr {
 #snack-message {
     display: inline-block;
     color: #ffffff;
-    font-family: var(--ui-mono-font);
-    font-size: 12px;
+    font-family: var(--ui-general-font);
+    font-size: 14px;
 }
 
 #snackbar.show {

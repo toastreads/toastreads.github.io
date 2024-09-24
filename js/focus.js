@@ -83,5 +83,5 @@ binauralButton.addEventListener("click", () => {
 //Rainfall
 rainButton = document.querySelector("#rain-button");
 rainButton.addEventListener("click", () => {
-  snack("Rainfall-sounds is coming soon")
+  snack("Coming Soon")
 })

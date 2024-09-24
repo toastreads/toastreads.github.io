@@ -294,7 +294,7 @@ function setup_save_button(title, description, link, pic, sourcelogo, datecode) 
 
 function setup_done_button() {
     document.getElementById('done-button').addEventListener('click', function (event) {
-        snack("Yay! Your a Champ!")
+        snack("Your a Champ!")
     })
 }
 

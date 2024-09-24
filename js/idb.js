@@ -133,6 +133,9 @@ function display_saved_articles_data() {
             const expandButton = listItem.querySelector(".expand-button");
             expandButton.addEventListener("click", expand_card);
 
+            console.log("Hi");
+            
+
             cursor.continue();
         } else {
 
@@ -141,7 +144,7 @@ function display_saved_articles_data() {
                 document.querySelector("#saved-list-parent").style.display = "none";
             }
 
-            console.log("Notes items displayed");
+            console.log("All items displayed");
         }
     });
 }
