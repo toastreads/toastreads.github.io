@@ -21,38 +21,19 @@ openRequest.addEventListener("upgradeneeded", (e) => {
         autoIncrement: true,
     });
 
+    objectStore.createIndex("datecode", "datecode", { unique: true });
     objectStore.createIndex("title", "title", { unique: false });
     objectStore.createIndex("description", "description", { unique: false });
     objectStore.createIndex("link", "link", { unique: true });
     objectStore.createIndex("pic", "pic", { unique: false });
     objectStore.createIndex("sourcelogo", "sourcelogo", { unique: false });
-    objectStore.createIndex("datecode", "datecode", { unique: false });
     objectStore.createIndex("notes", "notes", { unique: false });
+    objectStore.createIndex("favorite", "favorite", { unique: false });
+    objectStore.createIndex("started", "started", { unique: false });
+    objectStore.createIndex("finished", "finished", { unique: false });
     
 
     console.log("Database setup complete");
-
-
-
-
-    //second object store for finished articles.....
-    const objectStore2 = db.createObjectStore("finished_articles_os", {
-        keyPath: "id",
-        autoIncrement: true,
-    });
-
-    objectStore2.createIndex("title", "title", { unique: false });
-    objectStore2.createIndex("description", "description", { unique: false });
-    objectStore2.createIndex("link", "link", { unique: true });
-    objectStore2.createIndex("pic", "pic", { unique: false });
-    objectStore2.createIndex("sourcelogo", "sourcelogo", { unique: false });
-    objectStore2.createIndex("datecode", "datecode", { unique: false });
-    objectStore2.createIndex("notes", "notes", { unique: false });
-
-    console.log("2nd Database setup complete");
-    //......
-
-
 
 })
 
