@@ -73,8 +73,8 @@ function display_saved_articles_data() {
     console.log("displaying from database");
 
     list = document.querySelector("#saved-list-parent");
-    if (document.getElementsByClassName("saved-article-card")[0]) {
-        listItemTemplate = document.getElementsByClassName("saved-article-card")[0];
+    if (list.getElementsByClassName("saved-article-card")[0]) {
+        listItemTemplate = list.getElementsByClassName("saved-article-card")[0];
     }
 
 
