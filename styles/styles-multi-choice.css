@@ -428,7 +428,7 @@ body {
 }
 
 .focus-buttons {
-    background-color: #e1e4e7;
+    background-color: #f2f3f8;
 
     border: 0;
 
@@ -440,16 +440,18 @@ body {
 
     width: 64px;
     height: 40px;
-    border-radius: 2px;
+    border-radius: 8px;
 
     display: inline-block;
     
     padding: 2px;
-    margin-right: 4px;
+    margin-right: 8px;
 
     cursor: pointer;
 
     transition: background-color 0.2s;
+
+    box-shadow: -3px -3px 5px 3px #ffffff ,1px 1px 5px 5px #0900ac1c;
 }
 
 @keyframes focus-button-color-change {
@@ -457,7 +459,7 @@ body {
         background-color: #ffc97d;
         color: #9d6518;
         border: #f7c278 solid 2px;
-        box-shadow: 0px 0px 20px 10px #ffd49745;
+        box-shadow: -3px -3px 5px 3px #fff7ed ,1px 1px 5px 5px #00ac481c;
 
     }
 
@@ -465,7 +467,7 @@ body {
         background-color: #f1b054;
         color: #58390e;
         border: #f1b054 solid 1px;
-        box-shadow: 0px 0px 0px 0px #ffffff00;
+        box-shadow: -3px -3px 5px 3px #ffefdc ,1px 1px 5px 5px #007c341c;
     }
 }
 
@@ -594,6 +596,13 @@ body {
 
 
     overflow: hidden;
+
+    
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* Truncate when no. of lines exceed 2 */
+    overflow: hidden;
+
 
 }
 
