@@ -64,6 +64,7 @@ body {
 
 }
 
+
 .article-card {
     background: linear-gradient(to right, #ffffff 0%, #f8f7fe 50%, #ffffff 100%);
     background-color: #f7f7f7;
@@ -78,6 +79,7 @@ body {
     border-width: 1px;
     /* border-radius: 8px; */
     color: var(--text-color);
+    margin-bottom: 16px;
 }
 
 
