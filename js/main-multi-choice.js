@@ -49,6 +49,7 @@ Date.prototype.getDateWithoutTime = function () {
 
 let today = new Date()
 
+
 let no_image = "url('images/sunday_no_image.jpg')"
 
 //sd is shared date
@@ -69,6 +70,7 @@ document.getElementById("dev-tool-clicker").addEventListener("click", function (
     today.setDate(today.getDate() + 1)
     populate_card()
 });
+
 
 populate_card();
 
@@ -97,17 +99,17 @@ function populate_card() {
     switch (today.getDay()) {
         case 0:
             console.log("Its a Sunday");
-            no_image = "url('images/sunday_no_image.jpg')"
+            no_image = "url('/images/sunday_no_image.jpg')"
             fetch_and_write(sunday_list)
             break;
         case 1:
             console.log("Its a Monday");
-            no_image = "url('images/monday_no_image.jpg')"
+            no_image = "url('/images/monday_no_image.jpg')"
             fetch_and_write(monday_list)
             break;
         case 2:
             console.log("Its a Tuesday");
-            no_image = "url('images/tuesday_no_image.jpg')"
+            no_image = "url('/images/tuesday_no_image.jpg')"
             fetch_and_write(tuesday_list)
             break;
         case 3:
@@ -116,16 +118,17 @@ function populate_card() {
             break;
         case 4:
             console.log("Its a Thursday");
-            no_image = "url('images/thursday_no_image.jpg')"
+            no_image = "url('/images/thursday_no_image.jpg')"
             fetch_and_write(thursday_list)
             break;
         case 5:
             console.log("Its a Friday");
-            no_image = "url('images/friday_no_image.jpg')"
+            no_image = "url('/images/friday_no_image.jpg')"
             fetch_and_write(friday_list)
             break;
         case 6:
             console.log("Its a Saturday");
+            no_image = "url('/images/saturday_no_image.jpg')"
             fetch_and_write(saturday_list)
             break;
 
@@ -155,11 +158,6 @@ function fetch_and_write(jsonFilePath) {
 }
 
 
-// i should give the week number and get back article data for specified topics
-function return_data_from_json(jsonFile){
-
-
-}
 
 function write_card(data) {
 
