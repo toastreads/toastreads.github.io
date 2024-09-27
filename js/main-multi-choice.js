@@ -155,6 +155,11 @@ function fetch_and_write(jsonFilePath) {
 }
 
 
+// i should give the week number and get back article data for specified topics
+function return_data_from_json(jsonFile){
+
+
+}
 
 function write_card(data) {
 
