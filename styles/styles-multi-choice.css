@@ -79,6 +79,7 @@ body {
     /* border-radius: 8px; */
     color: var(--text-color);
 }
+
 .notepad-container {
     position: relative;
     max-width: 422px;
@@ -89,6 +90,7 @@ body {
 
     display: none;
 }
+
 .notepad-bg {
 
     position: absolute;
@@ -102,11 +104,12 @@ body {
     border-radius: 0 0 8px 8px;
 
     z-index: -1;
-    
+
     color: var(--text-color);
     font-family: var(--body-text);
     box-shadow: 0px 3px 20px 5px #0010390f;
 }
+
 .notepad-header {
     text-align: left;
     font-family: "Inter", var(--body-text), sans-serif;
@@ -116,6 +119,7 @@ body {
 
     padding: 16px;
 }
+
 .notepad-textarea {
     border: none;
     outline: none;
@@ -134,18 +138,22 @@ body {
     text-align: left;
 
 }
+
 .notepad-textarea::placeholder {
     color: #cccccc;
 }
+
 .notepad-actions {
     position: relative;
     padding: 16px;
     padding-bottom: 0px;
 }
+
 .small-line-container {
     padding: 8px;
 
 }
+
 .small-line {
     width: 8px;
     height: 2px;
@@ -299,12 +307,14 @@ body {
 
     padding: 10px;
 
-    
+
     cursor: pointer;
 }
+
 .secondary-button:active {
     background-color: #e4e6f1;
 }
+
 .secondary-button-pressed {
     background-color: #dddfec;
 
@@ -325,6 +335,7 @@ body {
 
 
 }
+
 .process-indicator {
     display: inline-block;
     margin-right: 4px;
@@ -342,7 +353,7 @@ body {
 
     padding: 10px;
 
-    
+
     cursor: pointer;
     filter: opacity(0.5);
 }
@@ -430,6 +441,7 @@ body {
 .focus-button-container {
     display: inline-block;
 }
+
 .focus-button-led {
     margin: auto;
     text-align: center;
@@ -442,6 +454,23 @@ body {
     margin-bottom: 8px;
     /* box-shadow: 0px 0px 20px 3px #ff713ded; */
 }
+
+.focus-button-led-active {
+    animation: focus-button-led-color-change 0.9s infinite alternate;
+}
+
+@keyframes focus-button-led-color-change {
+    from {
+        background-color: #ff7434;
+        box-shadow: 0px 0px 30px 3px #ff713dee;
+    }
+
+    to {
+        background-color: #e7e7e7;
+        box-shadow: 0px 0px 0px 0px #ff440000;
+    }
+}
+
 .focus-buttons {
     background-color: #f2f3f8;
 
@@ -458,7 +487,7 @@ body {
     border-radius: 9px;
 
     display: inline-block;
-    
+
     padding: 2px;
     margin-right: 8px;
 
@@ -469,109 +498,33 @@ body {
     /* box-shadow: -3px -3px 5px 3px #ffffff ,1px 1px 5px 5px #0900ac1c; */
     /* box-shadow: -2px -2px 5px 0px #ffffff ,2px 2px 5px 0px #0900ac1c; */
 
-    box-shadow: -2px -2px 5px 0px #ffffff ,2px 2px 5px 0px #0900ac1c, 
-    inset 1px 1px 2px 0px #ffffff, inset -1px -1px 2px 0px #0900ac1c,
-    inset 4px 4px 10px 0px #0900ac0b, inset -4px -4px 9px 0px #ffffff51;
+    box-shadow: -2px -2px 5px 0px #ffffff, 2px 2px 5px 0px #0900ac1c,
+        inset 1px 1px 2px 0px #ffffff, inset -1px -1px 2px 0px #0900ac1c,
+        inset 4px 4px 10px 0px #0900ac0b, inset -4px -4px 9px 0px #ffffff51;
 }
-/* #rain-button {
-    background-color: #f8f4f2;
-    background-color: #fffcce;
-    background-color: #ffff5c;
 
-    border: 0;
-
-    color: #806a5c;
-    font-family: var(--ui-mono-font);
-    text-transform: uppercase;
-    font-size: 10px;
-    text-align: center;
-
-    width: 64px;
-    height: 40px;
-    border-radius: 8px;
-
-    display: inline-block;
-    
-    padding: 2px;
-    margin-right: 8px;
-
-    cursor: pointer;
-
-    transition: background-color 0.2s;
-
-    box-shadow: -3px -3px 5px 3px #ffffff ,1px 1px 5px 5px #0900ac1c, 0px 0px 20px 2px #ffc97d, inset 0px 0px 10px 0px #ffddae;
-
-    box-shadow: -3px -3px 5px 3px #fff8ed ,1px 1px 5px 5px #0900ac1c, 0px 0px 20px 2px #ffdc7d, inset 0px 0px 10px 0px #ffddae;
-
-    box-shadow: -3px -3px 5px 3px #ffe1a0 ,1px 1px 5px 3px #ecc05a, 0px 0px 50px 0px #ff7b0090, inset 0px 0px 30px 0px #ffbe3d;
-} */
-
-/* #rain-button {
-    background-color: #f8f4f2;
-
-
-    border: 0;
-
-    color: #806a5c;
-    font-family: var(--ui-mono-font);
-    text-transform: uppercase;
-    font-size: 10px;
-    text-align: center;
-
-    width: 64px;
-    height: 40px;
-    border-radius: 8px;
-
-    display: inline-block;
-    
-    padding: 2px;
-    margin-right: 8px;
-
-    cursor: pointer;
-
-    transition: background-color 0.2s;
-
-    box-shadow: -3px -3px 5px 3px #ffffff ,1px 1px 5px 5px #0900ac1c, 0px 0px 20px 2px #ffc97d, inset 0px 0px 10px 0px #ffddae;
-
-    box-shadow: -3px -3px 5px 3px #fff8ed ,1px 1px 5px 5px #0900ac1c, 0px 0px 20px 2px #ffdc7d, inset 0px 0px 10px 0px #ffddae;
-
-    box-shadow: -3px -3px 5px 3px #fffcf4 ,1px 1px 5px 3px #7e811848, 0px 0px 50px 0px #ff7b0000, inset 0px 0px 30px 0px #fff1d5;
-} */
 
 @keyframes focus-button-color-change {
     from {
-        background-color: #ffff5c;
-        color: #806a5c;
-        box-shadow: -3px -3px 5px 3px #ffe1a0 ,1px 1px 5px 3px #ecc05a, 0px 0px 50px 0px #ff7b0090, inset 0px 0px 30px 0px #ffbe3d;
+        color: var(--text-color);
+        box-shadow: 0px -4px 5px -4px #ff9c782f, inset 0px 2px 5px -2px #ff9c782f, -2px -2px 5px 0px #ffffff, 2px 2px 5px 0px #0900ac1c,
+            inset 1px 1px 2px 0px #ffffff, inset -1px -1px 2px 0px #0900ac1c,
+            inset 4px 4px 10px 0px #0900ac0b, inset -4px -4px 9px 0px #ffffff51;
 
     }
 
     to {
-        background-color: #f8f4f2;
-        color: var(--text-color);
-        box-shadow: -3px -3px 5px 3px #fffcf4 ,1px 1px 5px 3px #7e811848, 0px 0px 50px 0px #ff7b0000, inset 0px 0px 30px 0px #fff1d5;
+        color: #222b33;
+        box-shadow: 0px 0px 0px 0px #ff9c7800, inset 0px 0px 0px 0px #ff9c7800, -2px -2px 5px 0px #ffffff, 2px 2px 5px 0px #0900ac1c,
+            inset 1px 1px 2px 0px #ffffff, inset -1px -1px 2px 0px #0900ac1c,
+            inset 4px 4px 10px 0px #0900ac0b, inset -4px -4px 9px 0px #ffffff51;
     }
 }
-
-/* @keyframes focus-button-color-change {
-    from {
-        background-color: #ffff5c;
-        color: #806a5c;
-        box-shadow: -3px -3px 5px 3px #ffe1a0 ,1px 1px 5px 3px #ecc05a, 0px 0px 50px 0px #ff7b0090, inset 0px 0px 30px 0px #ffbe3d;
-
-    }
-
-    to {
-        background-color: #f8f4f2;
-        color: var(--text-color);
-        box-shadow: -3px -3px 5px 3px #fffcf4 ,1px 1px 5px 3px #7e811848, 0px 0px 50px 0px #ff7b0000, inset 0px 0px 30px 0px #fff1d5;
-    }
-} */
 
 
 
 .focus-buttons-active {
-    animation: focus-button-color-change 1.5s infinite alternate;
+    animation: focus-button-color-change 0.9s infinite alternate;
 
 }
 
@@ -605,7 +558,7 @@ body {
     border-radius: 8px;
     min-width: 290px;
 
-    
+
     overflow: hidden;
     overflow-y: scroll;
     resize: vertical;
@@ -694,10 +647,11 @@ body {
 
     overflow: hidden;
 
-    
+
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2; /* Truncate when no. of lines exceed 2 */
+    -webkit-line-clamp: 2;
+    /* Truncate when no. of lines exceed 2 */
     overflow: hidden;
 
 
@@ -765,7 +719,7 @@ body {
     padding: 4px;
     /* border-radius: 4px; */
 
-    
+
     display: none;
 
 
@@ -800,6 +754,7 @@ body {
     justify-content: space-between;
 
 }
+
 .space-betweeners-aligned-center {
     display: flex;
     justify-content: space-between;
