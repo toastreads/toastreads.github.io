@@ -453,21 +453,51 @@ body {
 
     box-shadow: -3px -3px 5px 3px #ffffff ,1px 1px 5px 5px #0900ac1c;
 }
+/* #rain-button {
+    background-color: #f8f4f2;
+    background-color: #fffcce;
+    background-color: #ffe694;
+
+    border: 0;
+
+    color: #222222;
+    font-family: var(--ui-mono-font);
+    text-transform: uppercase;
+    font-size: 10px;
+    text-align: center;
+
+    width: 64px;
+    height: 40px;
+    border-radius: 8px;
+
+    display: inline-block;
+    
+    padding: 2px;
+    margin-right: 8px;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s;
+
+    box-shadow: -3px -3px 5px 3px #ffffff ,1px 1px 5px 5px #0900ac1c, 0px 0px 20px 2px #ffc97d, inset 0px 0px 10px 0px #ffddae;
+
+    box-shadow: -3px -3px 5px 3px #fff8ed ,1px 1px 5px 5px #0900ac1c, 0px 0px 20px 2px #ffdc7d, inset 0px 0px 10px 0px #ffddae;
+
+    box-shadow: -3px -3px 5px 3px #ffe1a0 ,1px 1px 5px 5px #e8b644, 0px 0px 60px 2px #ff7b0090, inset 0px 0px 30px 0px #f3bc47;
+} */
 
 @keyframes focus-button-color-change {
     from {
-        background-color: #ffc97d;
+        background-color: #ffe694;
         color: #9d6518;
-        border: #f7c278 solid 2px;
-        box-shadow: -3px -3px 5px 3px #fff7ed ,1px 1px 5px 5px #00ac481c;
+        box-shadow: -3px -3px 5px 3px #ffe1a0 ,1px 1px 5px 5px #e8b644, 0px 0px 60px 2px #ff7b0090, inset 0px 0px 30px 0px #f3bc47;
 
     }
 
     to {
-        background-color: #f1b054;
+        background-color: #f2f3f8;
         color: #58390e;
-        border: #f1b054 solid 1px;
-        box-shadow: -3px -3px 5px 3px #ffefdc ,1px 1px 5px 5px #007c341c;
+        box-shadow: -3px -3px 5px 3px #ffffff ,1px 1px 5px 5px #0900ac1c;
     }
 }
 
