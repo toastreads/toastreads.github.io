@@ -442,10 +442,9 @@ body {
     border-radius: 2px;
     transform: translate(-4px);
     
-    background-color: #e7e7e7;
+    background-color: #00158a14;
     margin-bottom: 16px;
-    /* background-color: #ff8e42;
-    box-shadow: 0px -2px 3px 3px #fff1e1, 0px 0px 30px 3px #ff885dee; */
+
 }
 
 .focus-button-led-active {
@@ -454,17 +453,18 @@ body {
 
 @keyframes focus-button-led-color-change {
     from {
-        background-color: #ff8e42;
-        box-shadow: 0px -2px 3px 3px #fff1e1, 0px 0px 30px 3px #ff885dee;
+        background-color: #ff9e5d;
+        box-shadow: 1px 2px 1px 0px #fff1e0, inset -1px -1px 1px 0px #ffa264, 0px -2px 3px 3px #fff1e1, 0px 0px 30px 3px #ff885dee;
     }
 
     to {
-        background-color: #e7e7e7;
-        box-shadow: 0px 0px 0px 0px #fff1e1, 0px 0px 0px 0px #ff885d00;
+        background-color: #00158a14;
+        box-shadow: 0px 0px 0px 0px #fff1e0, inset 0px 0px 0px 0px #ffa264, 0px 0px 0px 0px #fff1e1, 0px 0px 30px 3px #ff885d00;
     }
 }
 
 .focus-buttons {
+    /*Sensory perception*/
     background-color: #f2f3f8;
 
     border: 0;
@@ -500,6 +500,7 @@ body {
 @keyframes focus-button-color-change {
     from {
         color: var(--text-color);
+        
         box-shadow: 0px -4px 5px -4px #ff9c782f, inset 0px 2px 5px -2px #ff9c782f, -2px -2px 5px 0px #ffffff, 2px 2px 5px 0px #0900ac1c,
             inset 1px 1px 2px 0px #ffffff, inset -1px -1px 2px 0px #0900ac1c,
             inset 4px 4px 10px 0px #0900ac0b, inset -4px -4px 9px 0px #ffffff51;
@@ -508,6 +509,7 @@ body {
 
     to {
         color: #222b33;
+
         box-shadow: 0px 0px 0px 0px #ff9c7800, inset 0px 0px 0px 0px #ff9c7800, -2px -2px 5px 0px #ffffff, 2px 2px 5px 0px #0900ac1c,
             inset 1px 1px 2px 0px #ffffff, inset -1px -1px 2px 0px #0900ac1c,
             inset 4px 4px 10px 0px #0900ac0b, inset -4px -4px 9px 0px #ffffff51;
