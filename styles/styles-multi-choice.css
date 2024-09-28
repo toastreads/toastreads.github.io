@@ -449,10 +449,11 @@ body {
     height: 4px;
     border-radius: 2px;
     transform: translate(-4px);
-    background-color: #ff7434;
+    
     background-color: #e7e7e7;
     margin-bottom: 8px;
-    /* box-shadow: 0px 0px 20px 3px #ff713ded; */
+    /* background-color: #ff8e42;
+    box-shadow: 0px -2px 3px 3px #fff1e1, 0px 0px 30px 3px #ff885dee; */
 }
 
 .focus-button-led-active {
@@ -461,13 +462,13 @@ body {
 
 @keyframes focus-button-led-color-change {
     from {
-        background-color: #ff7434;
-        box-shadow: 0px 0px 30px 3px #ff713dee;
+        background-color: #ff8e42;
+        box-shadow: 0px -2px 3px 3px #fff1e1, 0px 0px 30px 3px #ff885dee;
     }
 
     to {
         background-color: #e7e7e7;
-        box-shadow: 0px 0px 0px 0px #ff440000;
+        box-shadow: 0px 0px 0px 0px #fff1e1, 0px 0px 0px 0px #ff885d00;
     }
 }
 
