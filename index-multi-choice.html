@@ -56,8 +56,11 @@
     <div class="title-image"><img src="/images/bread_icon.png" alt=""></div>
     <div class="title">toastreads</div>
     <!-- <div class="subtitle">Take your time, read something</div> -->
-    <div class="message-box-container">
-        <div class="message-box space-betweeners">
+    <div id="bubble-button">
+        <div id="bubble-dot"></div>
+    </div>
+    <div class="message-box-container" id="message-box">
+        <div class="message-box-bubble space-betweeners">
             <div class="message-box-content">
                 <div class="message-box-header">Take your time!</div>
                 <div class="message-box-paragraph">
@@ -65,7 +68,7 @@
                     and more.
                 </div>
             </div>
-            <div><button class="secondary-button"><img class="secondary-button-icon"
+            <div><button class="secondary-button" id="message-box-close-button"><img class="secondary-button-icon"
                         src="images/close_icon_white.png" alt=""></button></div>
         </div>
     </div>
@@ -220,7 +223,8 @@
                 <span>Focus Mode</span>
             </div>
             <div>
-                <button class="secondary-button"><img class="secondary-button-icon" src="images/settings_icon.png" alt=""></button>
+                <button class="secondary-button"><img class="secondary-button-icon" src="images/settings_icon.png"
+                        alt=""></button>
             </div>
 
         </div>
@@ -326,6 +330,7 @@
     <script type="text/javascript" src="/js/meme.js"></script>
     <script type="text/javascript" src="https://unpkg.com/tone"></script>
     <script type="text/javascript" src="/js/focus-multi-choice.js"></script>
+    <script type="text/javascript" src="/js/ui.js"></script>
 </body>
 
 </html>
