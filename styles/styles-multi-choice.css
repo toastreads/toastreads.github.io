@@ -29,14 +29,16 @@ body {
 }
 
 .title-image img {
-    height: 64px;
+    /* height: 64px; */
+    height: 48px;
     margin-top: 16px;
     /* filter: drop-shadow(16px -10px 0px #4525652d); */
 }
 
 .title {
     font-family: "Mali", sans-serif;
-    font-size: 24px;
+    /* font-size: 24px; */
+    font-size: 16px;
     font-weight: 400;
     color: var(--text-color);
     margin-top: 4px;
@@ -47,6 +49,7 @@ body {
     font-family: var(--ui-general-font), "Mystery Quest", "Mali", sans-serif;
     font-size: 12px;
     color: var(--text-color);
+    color: #706f83;
     margin-top: 16px;
     margin-bottom: 8px;
 }
@@ -305,7 +308,7 @@ body {
     font-size: 12px;
     letter-spacing: 0.5px;
 
-
+    border-radius: 10px;
 
     padding: 10px;
 
@@ -332,6 +335,8 @@ body {
     /*center correction*/
     /* margin-right: 4px; */
     margin: 2px;
+
+    
 
 
 
@@ -367,6 +372,7 @@ body {
     border-radius: 4px;
     border: none;
 
+    
     /* background-color: #151137; */
     background-color: #222233;
     color: #ffffff;
@@ -429,9 +435,13 @@ body {
 }
 
 #focus-buttons-set {
-    display: flex;
+    /* display: flex;
     justify-content: space-evenly;
-    margin-top: 0px;
+    margin-top: 0px; */
+    text-align: center;
+}
+.focus-button-container {
+    display: inline-block;
 }
 
 
