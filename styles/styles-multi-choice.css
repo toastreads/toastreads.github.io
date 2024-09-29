@@ -403,7 +403,7 @@ body {
 
 
     /* background-color: #151137; */
-    background-color: #222233;
+    background-color: var(--text-color);
     color: #ffffff;
 
     font-family: var(--ui-general-font);
