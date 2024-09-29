@@ -32,7 +32,7 @@ body {
     /* height: 64px; */
     height: 48px;
     margin-top: 16px;
-    /* filter: drop-shadow(16px -10px 0px #4525652d); */
+    filter: hue-rotate(20deg);
 }
 
 .title {
@@ -78,17 +78,19 @@ body {
 
 }
 
-.message-box-container {
-    padding: 16px;
+.general-container {
+    padding-left: 16px;
+    padding-right: 16px;
     margin: auto;
     max-width: 390px;
     min-width: 210px;
 }
 
 .message-box-bubble {
+    margin-top: 16px;
     background-color: var(--text-color);
     padding: 8px;
-    border-radius: 18px;
+    border-radius: 8px;
     text-align: left;
 
     position: relative;
@@ -125,29 +127,13 @@ body {
 }
 
 .message-box-paragraph {
-    margin-top: 8px;
+    margin-top: 12px;
     color: #eeeeff;
     line-height: 1.4;
 }
 
-.invert-color {
-    filter: invert();
-}
-
-#card-header {
-    max-width: 390px;
-    min-width: 210px;
-    margin: auto;
-
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
 
 
-
-
-}
 
 .article-card {
     background: linear-gradient(to right, #ffffff 0%, #f8f7fe 50%, #ffffff 100%);
