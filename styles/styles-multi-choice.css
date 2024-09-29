@@ -62,7 +62,7 @@ body {
 .message-box {
     background-color: var(--text-color);
     padding: 8px;
-    border-radius: 16px;
+    border-radius: 18px;
     text-align: left;
 
     position: relative;
@@ -89,6 +89,18 @@ body {
     padding: 8px;
     color: #ffffff;
 }
+.message-box-header {
+    font-size: 16px;
+    font-weight: 500;
+    color: #eeeeff;
+
+}
+.message-box-paragraph {
+    margin-top: 8px;
+    color: #eeeeff;
+    line-height: 1.4;
+}
+
 .invert-color {
     filter: invert();
 }
@@ -462,7 +474,8 @@ body {
 
 .container-header {
     margin-top: 8px;
-    margin-bottom: 24px;
+    /* margin-bottom: 24px; */
+    margin-bottom: 8px;
 }
 
 .container-header-icon {
@@ -480,6 +493,7 @@ body {
 }
 .focus-button-container {
     display: inline-block;
+    /* margin-top: -16px; */
 }
 
 
