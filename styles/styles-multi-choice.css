@@ -126,6 +126,17 @@ body {
     line-height: 1.4;
 }
 
+.today-headline {
+    font-size: 16px;
+    font-weight: 600;
+    font-style: italic;
+}
+.today-date {
+    padding: 8px;
+    font-size: 12px;
+    color: #908ea3;
+}
+
 .article-card {
     background: linear-gradient(to right, #ffffff 0%, #f8f7fe 50%, #ffffff 100%);
     background-color: #f7f7f7;
