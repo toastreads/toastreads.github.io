@@ -114,7 +114,6 @@ function populate_card() {
             break;
         case 3:
             console.log("Its a Wednesday");
-            no_image = "url('/images/wednesday_no_image.jpg')"
             fetch_and_write(wednesday_list)
             break;
         case 4:

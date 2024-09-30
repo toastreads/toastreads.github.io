@@ -13,18 +13,15 @@ noise.fadeIn = 2
 noise.fadeOut = 0.5
 
 const noiseButton = document.querySelector("#noise-button");
-const noiseButtonLed = document.querySelector("#noise-button-led")
 noiseButton.addEventListener("click", () => {
   if (noiseButton.dataset.playing === "false") {
     noise.start();
     noiseButton.dataset.playing = "true";
     noiseButton.classList.add("focus-buttons-active")
-    noiseButtonLed.classList.add("focus-button-led-active")
   } else if (noiseButton.dataset.playing === "true") {
     noise.stop();
     noiseButton.dataset.playing = "false";
     noiseButton.classList.remove("focus-buttons-active")
-    noiseButtonLed.classList.remove("focus-button-led-active")
   }
 });
 
@@ -69,20 +66,17 @@ function stopOsc() {
 }
 
 binauralButton = document.querySelector("#binaural-button");
-binauralButtonLed = document.querySelector("#binaural-button-led");
 binauralButton.addEventListener("click", () => {
   if (binauralButton.dataset.playing === "false") {
     startOsc();
     
     binauralButton.dataset.playing = "true";
     binauralButton.classList.add("focus-buttons-active")
-    binauralButtonLed.classList.add("focus-button-led-active")
   } else if (binauralButton.dataset.playing === "true") {
     stopOsc();
     
     binauralButton.dataset.playing = "false";
     binauralButton.classList.remove("focus-buttons-active")
-    binauralButtonLed.classList.remove("focus-button-led-active")
   }
 });
 
