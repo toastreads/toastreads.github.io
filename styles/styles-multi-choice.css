@@ -6,6 +6,11 @@
     --body-text: "Inter", sans-serif;
 }
 
+@font-face {
+    font-family: 'Rocher';
+    src: url('/fonts/RocherColorGX.woff2');
+}
+
 a {
     color: var(--text-color);
     text-decoration: none;
@@ -31,9 +36,12 @@ body {
 }
 
 .title {
-    font-family: "Mali", sans-serif;
-    font-size: 16px;
+    font-family: "Rocher", "Mali", sans-serif;
+    font-size: 24px;
     font-weight: 400;
+    font-palette: --blue;
+    font-variation-settings: "BVEL" 59, "SHDW" 100;
+    
     color: var(--text-color);
     margin-top: 4px;
 }
