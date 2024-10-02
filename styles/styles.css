@@ -35,7 +35,7 @@ body {
     font-family: "Rocher", "Mali", sans-serif;
     font-size: 24px;
     font-weight: 400;
-    font-palette: --blue;
+
     font-variation-settings: "BVEL" 59, "SHDW" 100;
     
     color: var(--text-color);
@@ -59,24 +59,25 @@ body {
 .bubble-below-the-title {
     width: max-content;
     height: max-content;
-    padding: 5px;
+    padding: 6px;
     margin: auto;
     border-radius: 8px;
     margin-top: 8px;
-    /* box-shadow: -2px -2px 5px 0px #ffffff, 2px 2px 5px 0px #0900ac1c,
+    box-shadow: -2px -2px 4px 0px #ffffff, 2px 2px 4px 0px #0900ac1c,
         inset 1px 1px 2px 0px #ffffff, inset -1px -1px 2px 0px #0900ac1c,
-        inset 4px 4px 10px 0px #0900ac0b, inset -4px -4px 9px 0px #ffffff51; */
+        inset 4px 4px 10px 0px #0900ac0b, inset -4px -4px 9px 0px #ffffff51;
     cursor: pointer;
 }
 
 #bubble-dot {
     width: 8px;
     height: 2px;
-    /* background-color: #2222337d; */
-    border: #2222337d solid 1px;
+    background-color: #2222337d;
+    /* border: #2222337d solid 1px; */
     margin: auto;
     border-radius: 2px;
 }
+
 
 .general-container {
     padding-left: 16px;
