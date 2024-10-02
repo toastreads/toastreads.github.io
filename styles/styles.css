@@ -16,11 +16,6 @@ a {
     text-decoration: none;
 }
 
-html,
-body {
-    height: 100%;
-}
-
 body {
     text-align: center;
     background-color: #f2f3f8;
@@ -46,7 +41,7 @@ body {
     color: var(--text-color);
     margin-top: 4px;
 
-    
+
     position: sticky;
     top: 0;
     z-index: 10;
@@ -314,6 +309,12 @@ body {
     font-size: 16px;
     margin-top: 6px;
     text-align: left;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    /* Truncate when no. of lines exceed 2 */
+    overflow: hidden;
 }
 
 .article-source {
