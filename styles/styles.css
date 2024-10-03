@@ -377,7 +377,8 @@ body {
 }
 
 .secondary-button:active {
-    background-color: #e4e6f1;
+    /* background-color: #e4e6f1; */
+    background-color: #99a1c932;
 }
 
 .secondary-button-pressed {
