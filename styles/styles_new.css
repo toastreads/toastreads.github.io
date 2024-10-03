@@ -574,7 +574,69 @@ body {
 }
 
 
+.focus-button-container-2 {
+    display: inline-block;
+    /* margin-top: -16px; */
+    padding: 8px;
+    width: 100px;
+    border: #22223346 solid 1px;
+    border-radius: 2px;
 
+    color: var(--text-color);
+    font-family: var(--ui-mono-font);
+    text-transform: uppercase;
+    font-size: 10px;
+    text-align: center;
+
+    margin: -2px;
+}
+.focus-button {
+    /*Sensory perception*/
+    background-color: #f2f3f8;
+
+    border: 0;
+
+    color: var(--text-color);
+    font-family: var(--ui-mono-font);
+    text-transform: uppercase;
+    font-size: 10px;
+    text-align: center;
+
+    width: 64px;
+    height: 64px;
+    /* border-radius: 9px; */
+    border-radius: 100px;
+
+    display: inline-block;
+
+    padding: 2px;
+    
+
+    cursor: pointer;
+
+    box-shadow: -4px -4px 5px 0px #ffffff, 4px 4px 5px 0px #0900ac1c,
+        inset 1px 1px 2px 0px #ffffff, inset -1px -1px 2px 0px #0900ac1c,
+        inset 4px 4px 10px 0px #0900ac0b, inset -4px -4px 9px 0px #ffffff51;
+    
+    position: relative;
+
+    margin-bottom: 16px;
+}
+.focus-button::after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-color: #5b7a5bbf;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border-radius: 100px;
+    border: #85a285bf solid 1px;
+
+    box-shadow: inset 4px 4px 10px 0px #0900ac1c, inset -4px -4px 9px 0px #fffee525;
+    
+}
 
 
 @keyframes focus-button-color-change {
@@ -602,6 +664,8 @@ body {
     animation: focus-button-color-change 0.9s infinite alternate;
 
 }
+
+
 
 #saved-list-parent {
     /* background-color: #e3e4ef; */
