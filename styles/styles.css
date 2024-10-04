@@ -89,10 +89,10 @@ body {
 }
 
 .message-box-bubble {
-    margin-top: 8px;
+    margin-top: 16px;
     background-color: var(--text-color);
     padding: 8px;
-    border-radius: 8px;
+    border-radius: 16px;
     text-align: left;
     position: relative;
     box-shadow: 0px 5px 30px 10px #0010390f, 0px 20px 20px -20px #02004459;
@@ -114,33 +114,41 @@ body {
 .message-box-content {
     display: inline-block;
     text-align: left;
-    padding: 8px;
+    padding: 16px;
     color: #ffffff;
 }
 
 .message-box-header {
     font-size: 16px;
     font-weight: 500;
-    color: #eeeeff;
+    /* color: #eeeeff; */
 
 }
 
 .message-box-paragraph {
     margin-top: 12px;
     font-size: 12px;
-    color: #eeeeff;
-    line-height: 1.4;
+    /* color: #eeeeff; */
+    line-height: 1.8;
+}
+tag {
+    color: #FBB39A;
 }
 
 .today-headline {
+    color: var(--text-color);
+    font-family: var(--ui-general-font);
     font-size: 14px;
     font-weight: 600;
     font-style: italic;
 }
 .today-date {
     padding: 8px;
+    font-family: var(--ui-general-font);
     font-size: 12px;
     color: #908ea3;
+    color: var(--text-color);
+    filter: opacity(0.5);
 }
 
 .article-card {
