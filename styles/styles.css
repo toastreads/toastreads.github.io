@@ -305,7 +305,7 @@ tag {
 
     text-align: left;
     /* background-color: #e1e4e7; */
-    background-color: #000a5319;
+    background-color: #e8d0d2d1;
     border-radius: 4px;
     display: inline-block;
 
@@ -745,7 +745,7 @@ tag {
 
 .saved-article-card-pic {
     display: inline-block;
-    background: #8b949e;
+    background: #FBB39A;
     background-size: cover;
     background-repeat: no-repeat;
 
