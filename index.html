@@ -68,7 +68,8 @@
             <div class="message-box-content">
                 <div class="message-box-header">Take it slow.</div>
                 <div class="message-box-paragraph">
-                    Unlock curated reads on <tag>#tech</tag>, <tag>#psychology</tag>, <tag>#art</tag>, and more. Take your time, dive in, and grow!
+                    Unlock curated reads on <tag>#tech</tag>, <tag>#psychology</tag>, <tag>#art</tag>, and more. Take
+                    your time, dive in, and grow!
                 </div>
             </div>
             <div><button class="secondary-button" id="message-box-close-button"><img class="secondary-button-icon"
@@ -226,36 +227,36 @@
     </div>
 
     <div class="containers">
-    <div class="container-header space-betweeners-aligned-center">
-        <div>
-            <img src="/images/headphones.png" class="container-header-icon" alt="">
-            <span>Focus Mode</span>
+        <div class="container-header space-betweeners-aligned-center">
+            <div>
+                <img src="/images/headphones.png" class="container-header-icon" alt="">
+                <span>Focus Mode</span>
+            </div>
+            <div>
+                <button class="secondary-button"><img class="secondary-button-icon" src="images/settings_icon.png"
+                        alt=""></button>
+            </div>
         </div>
-        <div>
-            <button class="secondary-button"><img class="secondary-button-icon" src="images/settings_icon.png"
-                    alt=""></button>
+        <div id="focus-buttons-set">
+            <div class="focus-button-container">
+                <div class="focus-button-led" id="noise-button-led"></div>
+                <div class="focus-button-square"><button id="noise-button" class="focus-button" data-playing="false"
+                        role="switch" aria-checked="false"></button></div>
+                <div class="focus-button-label"><span>Noise</span></div>
+            </div>
+            <div class="focus-button-container">
+                <div class="focus-button-led" id="rain-button-led"></div>
+                <div class="focus-button-square"><button id="rain-button" class="focus-button" data-playing="false"
+                        role="switch" aria-checked="false"></button></div>
+                <div class="focus-button-label"><span>Rain</span></div>
+            </div>
+            <div class="focus-button-container">
+                <div class="focus-button-led" id="binaural-button-led"></div>
+                <div class="focus-button-square"><button id="binaural-button" class="focus-button" data-playing="false"
+                        role="switch" aria-checked="false"></button></div>
+                <div class="focus-button-label"><span>Binaural</span></div>
+            </div>
         </div>
-    </div>
-    <div id="focus-buttons-set">
-        <div class="focus-button-container">
-            <div class="focus-button-led" id="noise-button-led"></div>
-            <div class="focus-button-square"><button id="noise-button" class="focus-button" data-playing="false" role="switch"
-                aria-checked="false"></button></div>
-            <div class="focus-button-label"><span>Noise</span></div>
-        </div>
-        <div class="focus-button-container">
-            <div class="focus-button-led" id="rain-button-led"></div>
-            <div class="focus-button-square"><button id="rain-button" class="focus-button" data-playing="false" role="switch"
-                aria-checked="false"></button></div>
-            <div class="focus-button-label"><span>Rain</span></div>
-        </div>
-        <div class="focus-button-container">
-            <div class="focus-button-led" id="binaural-button-led"></div>
-            <div class="focus-button-square"><button id="binaural-button" class="focus-button" data-playing="false" role="switch"
-                aria-checked="false"></button></div>
-            <div class="focus-button-label"><span>Binaural</span></div>
-        </div>
-    </div>
     </div>
 
     <div class="containers" id="saved-section">
@@ -324,14 +325,21 @@
         </div>
     </div>
 
+    <div class="containers">
+        <div class="container-header">
+            <img src="/images/meme_icon.png" class="container-header-icon" alt="">
+            <span>Fidget</span>
+        </div>
+        <div  >
+            <img id="fidget-spinner" src="images/fidget_spinner.png" width="400px">
+        </div>
+    </div>
+
     <div class="spacer"></div>
     <div class="subtitle">Delightfully useful reads and useless memes, toasted once a day</div>
     <div class="spacer"></div>
-    <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe "
-        frameborder="0" height="450" width="100%" name="cp_embed_2" scrolling="no"
-        src="https://codepen.io/guyom/embed/rmXyvR?height=450&amp;theme-id=178&amp;slug-hash=rmXyvR&amp;default-tab=result&amp;user=guyom&amp;embed-version=2&amp;pen-title=GSAP%20%2F%20Fidget%20Spinner&amp;name=cp_embed_2"
-        style="width: 100%; overflow:hidden; display:block;" title="GSAP / Fidget Spinner" loading="lazy"
-        id="cp_embed_rmXyvR"></iframe>
+    
+    
     <div class="footer"><a href="/submit_article.html">Submit an article</a> | <a href="/report_something.html">Report
             something</a> | <a href="/get_in_touch.html">Get in touch</a></div>
     <div class="spacer"></div>
@@ -342,6 +350,8 @@
     <script type="text/javascript" src="https://unpkg.com/tone"></script>
     <script type="text/javascript" src="/js/focus.js"></script>
     <script type="text/javascript" src="/js/ui.js"></script>
+    <script type="text/javascript" src="/js/propeller.min.js"></script>
+    <script type="text/javascript" src="/js/fidget.js"></script>
 </body>
 
 </html>

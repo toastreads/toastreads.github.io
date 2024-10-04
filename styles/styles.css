@@ -95,7 +95,7 @@ body {
     border-radius: 16px;
     text-align: left;
     position: relative;
-    box-shadow: 0px 5px 30px 10px #0010390f, 0px 20px 20px -20px #02004459;
+    box-shadow: 0px 5px 30px 10px #0900ac0f, 0px 20px 20px -20px #0900ac59;
 }
 
 .message-box-bubble:before {
@@ -159,7 +159,9 @@ tag {
     min-width: 210px;
     margin: auto;
     padding: 16px;
-    box-shadow: 0px 5px 30px 10px #0010390f, 0px 20px 20px -30px #02004459;
+    /* box-shadow: 0px 5px 30px 10px #0010390f, 0px 20px 20px -30px #02004459; */
+    box-shadow: 0px 5px 30px 10px #0900ac0f, 0px 20px 20px -30px #0900ac59;
+    
     border: #ffffff;
     border-style: solid;
     border-width: 1px;
@@ -712,7 +714,9 @@ tag {
 
     padding: 4px;
 
-    box-shadow: 0px 8px 20px 0px #0f14211d;
+    /* box-shadow: 0px 8px 20px 0px #0f14211d; */
+    box-shadow: 0px 8px 20px 0px #0900ac1d;
+    
 
     border: #ffffff;
     border-style: solid;
