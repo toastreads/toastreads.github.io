@@ -1103,3 +1103,7 @@ However, delay the fade out process for 2.5 seconds */
 .hideElement {
     display: none;
 }
+
+#fidget-spinner {
+    margin: 70px;
+}
