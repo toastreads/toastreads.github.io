@@ -569,6 +569,9 @@ tag {
     box-shadow: inset 1px 1px 0px 0px #ffffffa5, 1px 1px 0px 0px #ffffffa5;
     position: relative;
 }
+.focus-button-square:active {
+    box-shadow: inset 0px 0px 5px 2px #2222330f;
+}
 
 .focus-button {
     /*Sensory perception*/
@@ -683,6 +686,8 @@ tag {
     animation: focus-button-color-change 0.9s infinite alternate;
 
 }
+
+
 
 
 
