@@ -503,10 +503,7 @@ body {
     text-align: center;
 }
 
-.focus-button-container {
-    display: inline-block;
-    /* margin-top: -16px; */
-}
+
 
 
 
@@ -516,10 +513,10 @@ body {
     width: 4px;
     height: 4px;
     border-radius: 2px;
-    transform: translate(-4px);
+    translate: -50%;
 
     background-color: #00158a20;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
 
 }
 
@@ -539,60 +536,136 @@ body {
     }
 }
 
-.focus-buttons {
+
+.focus-button-container {
+    display: inline-block;
+    /* margin-top: -16px; */
+    /* padding: 16px; */
+    /* width: 100px;
+    height: 100px; */
+    border: #22223300 solid 1px;
+    border-radius: 2px;
+
+    
+
+    margin: 8px;
+}
+.focus-button-square {
+    background-color: #f2f3f8;
+    border: #2222332c solid 1px;
+    
+
+    border-radius: 400px;
+    padding: 12px;
+
+    box-shadow: inset 1px 1px 0px 0px #ffffffa5, 1px 1px 0px 0px #ffffffa5;
+    position: relative;
+}
+
+.focus-button {
     /*Sensory perception*/
     background-color: #f2f3f8;
 
     border: 0;
+    border-radius: 100px;
+
+    width: 64px;
+    height: 64px;
+
+    display: inline-block;
+
+    cursor: pointer;
+
+    box-shadow: -1px -1px 2px 0px #ffffff, -1px -1px 4px 0px #0900ac1c, 
+        -4px -4px 5px 0px #ffffff, 4px 4px 5px 2px #0900ac1c,
+        inset 1px 1px 2px 0px #ffffff, inset -1px -1px 2px 0px #0900ac1c,
+        inset 4px 4px 10px 0px #0900ac0b, inset -4px -4px 9px 0px #ffffff51,
+        4px 4px 30px 0px #0900ac1d;
+    
+    position: relative;
+}
+#noise-button::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    /* background-color: #7a5b5bbf; */
+    background-color: #c48f7c;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border-radius: 100px;
+    /* border: #ad8a8abf solid 1px; */
+    border: #c48f7c solid 1px;
+    box-shadow: inset 4px 4px 10px 0px #0900ac1c, inset -4px -4px 9px 0px #fffee525;
+}
+#rain-button::after {
+    content: "";
+    width: 4px;
+    height: 24px;
+    /* background-color: #72acbbbf; */
+    /* background-color: #7dc6c9; */
+    background-color: #97c2eb;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    
+    border-radius: 100px;
+    /* border: #9abbc3bf solid 1px; */
+    border: #97c2eb solid 1px;
+    box-shadow: inset 4px 4px 10px 0px #0900ac1c, inset -4px -4px 9px 0px #fffee525;
+}
+#binaural-button::after {
+    content: "";
+    width: 24px;
+    height: 4px;
+    /* background-color: #5b7a5bbf; */
+    background-color: #9cc59a;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border-radius: 100px;
+    /* border: #85a285bf solid 1px; */
+    border: #9cc59a solid 1px;
+    box-shadow: inset 4px 4px 10px 0px #0900ac1c, inset -4px -4px 9px 0px #fffee525;
+}
+.focus-button-label {
+    margin-top: 8px;
 
     color: var(--text-color);
     font-family: var(--ui-mono-font);
     text-transform: uppercase;
     font-size: 10px;
     text-align: center;
-
-    width: 96px;
-    height: 52px;
-    /* border-radius: 9px; */
-    border-radius: 26px;
-
-    display: inline-block;
-
-    padding: 2px;
-    margin-right: 8px;
-
-    cursor: pointer;
-
-    /* transition: background-color 0.2s; */
-
-    /* box-shadow: -3px -3px 5px 3px #ffffff ,1px 1px 5px 5px #0900ac1c; */
-    /* box-shadow: -2px -2px 5px 0px #ffffff ,2px 2px 5px 0px #0900ac1c; */
-
-    box-shadow: -2px -2px 5px 0px #ffffff, 2px 2px 5px 0px #0900ac1c,
-        inset 1px 1px 2px 0px #ffffff, inset -1px -1px 2px 0px #0900ac1c,
-        inset 4px 4px 10px 0px #0900ac0b, inset -4px -4px 9px 0px #ffffff51;
 }
-
-
-
 
 
 @keyframes focus-button-color-change {
     from {
         color: var(--text-color);
 
-        box-shadow: 0px -4px 5px -4px #ff9c782f, inset 0px 2px 5px -2px #ff9c782f, -2px -2px 5px 0px #ffffff, 2px 2px 5px 0px #0900ac1c,
+
+        
+            box-shadow: 0px -4px 5px -4px #ff9c782f, inset 0px 2px 5px -2px #ff9c782f,
+            -1px -1px 2px 0px #ffffff, -1px -1px 4px 0px #ac4b001c, 
+            -4px -4px 5px 0px #ffffff, 4px 4px 5px 2px #0900ac1c,
             inset 1px 1px 2px 0px #ffffff, inset -1px -1px 2px 0px #0900ac1c,
-            inset 4px 4px 10px 0px #0900ac0b, inset -4px -4px 9px 0px #ffffff51;
+            inset 4px 4px 10px 0px #0900ac0b, inset -4px -4px 9px 0px #ffffff51,
+            4px 4px 30px 0px #ac00001d;
 
     }
 
     to {
         color: #222b33;
 
-        box-shadow: 0px 0px 0px 0px #ff9c7800, inset 0px 0px 0px 0px #ff9c7800, -2px -2px 5px 0px #ffffff, 2px 2px 5px 0px #0900ac1c,
+        box-shadow: 0px -4px 5px -4px #ff9c7800, inset 0px 2px 5px -2px #ff9c7800,
+            -1px -1px 2px 0px #ffffff, -1px -1px 4px 0px #0900ac1c, 
+            -4px -4px 5px 0px #ffffff, 4px 4px 5px 2px #0900ac1c,
             inset 1px 1px 2px 0px #ffffff, inset -1px -1px 2px 0px #0900ac1c,
-            inset 4px 4px 10px 0px #0900ac0b, inset -4px -4px 9px 0px #ffffff51;
+            inset 4px 4px 10px 0px #0900ac0b, inset -4px -4px 9px 0px #ffffff51,
+            4px 4px 30px 0px #0900ac1d;
     }
 }
 
@@ -602,6 +675,8 @@ body {
     animation: focus-button-color-change 0.9s infinite alternate;
 
 }
+
+
 
 #saved-list-parent {
     /* background-color: #e3e4ef; */
