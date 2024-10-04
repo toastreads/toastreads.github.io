@@ -540,7 +540,7 @@ body {
 .focus-button-container {
     display: inline-block;
     /* margin-top: -16px; */
-    padding: 16px;
+    /* padding: 16px; */
     /* width: 100px;
     height: 100px; */
     border: #22223300 solid 1px;
@@ -548,13 +548,20 @@ body {
 
     
 
-    margin: -2.5px;
+    margin: 8px;
 }
 .focus-button-square {
-    border: #2222330c solid 1px;
-    border-radius: 4px;
-    padding: 8px;
+    background-color: #f2f3f8;
+    border: #2222331e solid 1px;
+    
+
+    border-radius: 400px;
+    padding: 12px;
+
+    box-shadow: inset 1px 1px 0px 0px #ffffffa5, inset -1px -1px 0px 0px #0900ac13;
+    position: relative;
 }
+
 .focus-button {
     /*Sensory perception*/
     background-color: #f2f3f8;
@@ -577,41 +584,48 @@ body {
 }
 #noise-button::after {
     content: "";
-    width: 16px;
-    height: 16px;
-    background-color: #7a5b5bbf;
+    width: 8px;
+    height: 8px;
+    /* background-color: #7a5b5bbf; */
+    background-color: #c48f7c;
     position: absolute;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
     border-radius: 100px;
-    border: #ad8a8abf solid 1px;
+    /* border: #ad8a8abf solid 1px; */
+    border: #c48f7c solid 1px;
     box-shadow: inset 4px 4px 10px 0px #0900ac1c, inset -4px -4px 9px 0px #fffee525;
 }
 #rain-button::after {
     content: "";
-    width: 16px;
-    height: 16px;
-    background-color: #72acbbbf;
+    width: 4px;
+    height: 24px;
+    /* background-color: #72acbbbf; */
+    background-color: #7dc6c9;
     position: absolute;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
+    
     border-radius: 100px;
-    border: #9abbc3bf solid 1px;
+    /* border: #9abbc3bf solid 1px; */
+    border: #7dc6c9 solid 1px;
     box-shadow: inset 4px 4px 10px 0px #0900ac1c, inset -4px -4px 9px 0px #fffee525;
 }
 #binaural-button::after {
     content: "";
-    width: 16px;
-    height: 16px;
-    background-color: #5b7a5bbf;
+    width: 24px;
+    height: 4px;
+    /* background-color: #5b7a5bbf; */
+    background-color: #9cc59a;
     position: absolute;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
     border-radius: 100px;
-    border: #85a285bf solid 1px;
+    /* border: #85a285bf solid 1px; */
+    border: #9cc59a solid 1px;
     box-shadow: inset 4px 4px 10px 0px #0900ac1c, inset -4px -4px 9px 0px #fffee525;
 }
 .focus-button-label {
