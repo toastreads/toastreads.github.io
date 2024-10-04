@@ -517,15 +517,12 @@ tag {
 
 .focus-button-led {
     margin: auto;
-    text-align: center;
-    width: 4px;
+    width: 8px;
     height: 4px;
-    border-radius: 2px;
-    translate: -50%;
+    border-radius: 4px;
 
     background-color: #00158a20;
     margin-bottom: 8px;
-
 }
 
 .focus-button-led-active {
