@@ -1,19 +1,23 @@
-new Propeller(document.getElementById('fidget-spinner'), {
+fidgetSpinner = document.querySelector("#fidget-spinner")
+phenaSpinner = document.querySelector("#phena-spinner")
+fidgetPhenaSwitchButton = document.querySelector("#fidget-phena-switch-button")
+
+new Propeller(fidgetSpinner, {
     inertia: 0.9999, speed: 0,
     angle: 0
 });
 
+new Propeller(phenaSpinner, {
+    inertia: 0.9999, speed: 0, step: 29,
+    angle: 0
+});
 
-// new Propeller(document.getElementById('fidget-spinner'), {
-//     inertia: 0.9999, speed: 0, step:50,
-//     angle: 0
-// });
-
-fidgetPhenaSwitchButton = document.querySelector("#fidget-phena-switch-button")
 fidgetPhenaSwitchButton.addEventListener("click", () => {
-
-    new Propeller(document.getElementById('phena-spinner'), {
-        inertia: 0.9999, speed: 0, step: 29,
-        angle: 0
-    });
+    if (phenaSpinner.classList.contains("hideElement")) {
+        phenaSpinner.classList.remove("hideElement")
+        fidgetSpinner.classList.add("hideElement")
+    } else {
+        phenaSpinner.classList.add("hideElement")
+        fidgetSpinner.classList.remove("hideElement")
+    }
 })
