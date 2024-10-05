@@ -1158,3 +1158,11 @@ However, delay the fade out process for 2.5 seconds */
 #fidget-spinner {
     filter: drop-shadow(0px 0px 20px #7b00003f);
 }
+#canvas {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: -1;
+    
+}
