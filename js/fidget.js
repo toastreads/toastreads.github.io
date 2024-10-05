@@ -5,7 +5,7 @@ fidgetPhenaSwitchButton = document.querySelector("#fidget-phena-switch-button")
 new Propeller(fidgetSpinner, {
     inertia: 0.9999, speed: 0,
     angle: 0, onRotate: function(){ 
-        console.log(this.speed)
+        //console.log(this.speed)
         if(Math.abs(this.speed)>20){
             document.querySelector("#canvas").classList.remove("hideElement")
             maxConfettis = Math.min(Math.abs(this.speed), 150)
