@@ -1104,9 +1104,9 @@ However, delay the fade out process for 2.5 seconds */
     display: none;
 }
 .fidget-container {
+    margin-top: 64px;
     text-align: center;
 }
 #fidget-spinner {
-    
-    filter: drop-shadow(2px 2px 20px #0900852b);
+
 }
