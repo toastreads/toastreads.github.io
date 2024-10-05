@@ -1,3 +1,7 @@
+let maxConfettis = 150;
+let particleSize = 0.5
+
+
 fidgetSpinner = document.querySelector("#fidget-spinner")
 phenaSpinner = document.querySelector("#phena-spinner")
 fidgetPhenaSwitchButton = document.querySelector("#fidget-phena-switch-button")
@@ -44,8 +48,7 @@ let W = window.innerWidth;
 let H = window.innerHeight;
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
-let maxConfettis = 150;
-let particleSize = 0.5
+
 const particles = [];
 
 const possibleColors = [
