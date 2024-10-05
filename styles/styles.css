@@ -28,7 +28,7 @@ body {
 .title-image img {
     height: 48px;
     margin-top: 16px;
-    
+
 }
 
 .title {
@@ -37,7 +37,7 @@ body {
     font-weight: 400;
 
     font-variation-settings: "BVEL" 59, "SHDW" 100;
-    
+
     color: var(--text-color);
     margin-top: 4px;
 
@@ -46,7 +46,7 @@ body {
     top: 0;
     z-index: 10;
     background-color: #f2f3f8;
-    
+
     padding: 8px;
 }
 
@@ -57,6 +57,7 @@ body {
     margin-top: 16px;
     margin-bottom: 8px;
 }
+
 .bubble-below-the-title {
     width: max-content;
     height: max-content;
@@ -131,6 +132,7 @@ body {
     /* color: #eeeeff; */
     line-height: 1.8;
 }
+
 tag {
     color: #FBB39A;
 }
@@ -142,6 +144,7 @@ tag {
     font-weight: 600;
     font-style: italic;
 }
+
 .today-date {
     padding: 8px;
     font-family: var(--ui-general-font);
@@ -161,7 +164,7 @@ tag {
     padding: 16px;
     /* box-shadow: 0px 5px 30px 10px #0010390f, 0px 20px 20px -30px #02004459; */
     box-shadow: 0px 5px 30px 10px #0900ac0f, 0px 20px 20px -30px #0900ac59;
-    
+
     border: #ffffff;
     border-style: solid;
     border-width: 1px;
@@ -553,14 +556,15 @@ tag {
     border: #22223300 solid 1px;
     border-radius: 2px;
 
-    
+
 
     margin: 8px;
 }
+
 .focus-button-square {
     background-color: #f2f3f8;
     border: #2222332c solid 1px;
-    
+
 
     border-radius: 400px;
     padding: 12px;
@@ -568,6 +572,7 @@ tag {
     box-shadow: inset 1px 1px 0px 0px #ffffffa5, 1px 1px 0px 0px #ffffffa5;
     position: relative;
 }
+
 .focus-button-square:active {
     box-shadow: inset 0px 0px 5px 2px #2222330f;
 }
@@ -586,14 +591,15 @@ tag {
 
     cursor: pointer;
 
-    box-shadow: -1px -1px 2px 0px #ffffff, -1px -1px 4px 0px #0900ac1c, 
+    box-shadow: -1px -1px 2px 0px #ffffff, -1px -1px 4px 0px #0900ac1c,
         -4px -4px 5px 0px #ffffff, 4px 4px 5px 2px #0900ac1c,
         inset 1px 1px 2px 0px #ffffff, inset -1px -1px 2px 0px #0900ac1c,
         inset 4px 4px 10px 0px #0900ac0b, inset -4px -4px 9px 0px #ffffff51,
         4px 4px 30px 0px #0900ac1d;
-    
+
     position: relative;
 }
+
 #noise-button::after {
     content: "";
     width: 8px;
@@ -609,6 +615,7 @@ tag {
     border: #c48f7c solid 1px;
     box-shadow: inset 4px 4px 10px 0px #0900ac1c, inset -4px -4px 9px 0px #fffee525;
 }
+
 #rain-button::after {
     content: "";
     width: 4px;
@@ -620,12 +627,13 @@ tag {
     top: 50%;
     left: 50%;
     translate: -50% -50%;
-    
+
     border-radius: 100px;
     /* border: #9abbc3bf solid 1px; */
     border: #97c2eb solid 1px;
     box-shadow: inset 4px 4px 10px 0px #0900ac1c, inset -4px -4px 9px 0px #fffee525;
 }
+
 #binaural-button::after {
     content: "";
     width: 24px;
@@ -641,6 +649,7 @@ tag {
     border: #9cc59a solid 1px;
     box-shadow: inset 4px 4px 10px 0px #0900ac1c, inset -4px -4px 9px 0px #fffee525;
 }
+
 .focus-button-label {
     margin-top: 8px;
 
@@ -657,9 +666,9 @@ tag {
         color: var(--text-color);
 
 
-        
-            box-shadow: 0px -4px 5px -4px #ff9c782f, inset 0px 2px 5px -2px #ff9c782f,
-            -1px -1px 2px 0px #ffffff, -1px -1px 4px 0px #ac4b001c, 
+
+        box-shadow: 0px -4px 5px -4px #ff9c782f, inset 0px 2px 5px -2px #ff9c782f,
+            -1px -1px 2px 0px #ffffff, -1px -1px 4px 0px #ac4b001c,
             -4px -4px 5px 0px #ffffff, 4px 4px 5px 2px #0900ac1c,
             inset 1px 1px 2px 0px #ffffff, inset -1px -1px 2px 0px #0900ac1c,
             inset 4px 4px 10px 0px #0900ac0b, inset -4px -4px 9px 0px #ffffff51,
@@ -671,7 +680,7 @@ tag {
         color: #222b33;
 
         box-shadow: 0px -4px 5px -4px #ff9c7800, inset 0px 2px 5px -2px #ff9c7800,
-            -1px -1px 2px 0px #ffffff, -1px -1px 4px 0px #0900ac1c, 
+            -1px -1px 2px 0px #ffffff, -1px -1px 4px 0px #0900ac1c,
             -4px -4px 5px 0px #ffffff, 4px 4px 5px 2px #0900ac1c,
             inset 1px 1px 2px 0px #ffffff, inset -1px -1px 2px 0px #0900ac1c,
             inset 4px 4px 10px 0px #0900ac0b, inset -4px -4px 9px 0px #ffffff51,
@@ -716,7 +725,7 @@ tag {
 
     /* box-shadow: 0px 8px 20px 0px #0f14211d; */
     box-shadow: 0px 8px 20px 0px #0900ac1d;
-    
+
 
     border: #ffffff;
     border-style: solid;
@@ -1103,13 +1112,23 @@ However, delay the fade out process for 2.5 seconds */
 .hideElement {
     display: none;
 }
+
 .fidget-container {
     margin-top: 32px;
     margin-bottom: 32px;
 
     text-align: center;
     position: relative;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
 .fidget-container::after {
     content: "";
     background-image: url("/images/spinner_arrows.png");
@@ -1123,6 +1142,7 @@ However, delay the fade out process for 2.5 seconds */
     opacity: 0.2;
     z-index: -1;
 }
+
 #phena-spinner {
     filter: drop-shadow(0px 0px 10px #002a1c3f);
 }
