@@ -6,9 +6,10 @@ new Propeller(fidgetSpinner, {
     inertia: 0.9999, speed: 0,
     angle: 0, onRotate: function(){ 
         console.log(this.speed)
-        if(Math.abs(this.speed)>5){
+        if(Math.abs(this.speed)>20){
             document.querySelector("#canvas").classList.remove("hideElement")
             maxConfettis = Math.min(Math.abs(this.speed), 150)
+            particleSize = Math.abs(this.speed/30)
         } else {
             document.querySelector("#canvas").classList.add("hideElement")
             
@@ -43,7 +44,8 @@ let W = window.innerWidth;
 let H = window.innerHeight;
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
-maxConfettis = 150;
+let maxConfettis = 150;
+let particleSize = 0.5
 const particles = [];
 
 const possibleColors = [
@@ -79,7 +81,7 @@ function confettiParticle() {
 
   this.draw = function() {
     context.beginPath();
-    context.lineWidth = this.r / 2;
+    context.lineWidth = this.r * particleSize;
     context.strokeStyle = this.color;
     context.moveTo(this.x + this.tilt + this.r / 3, this.y);
     context.lineTo(this.x + this.tilt, this.y + this.tilt + this.r / 5);
