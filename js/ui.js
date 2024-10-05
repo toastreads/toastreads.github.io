@@ -11,9 +11,9 @@ messageBoxCloseButton.addEventListener("click", () => {
 bubbleButton.addEventListener("click", () => {
     if (messageBox.classList.contains("hideElement")) {
         messageBox.classList.remove("hideElement")
-        bubbleButton.classList.add("secondary-button-pressed")
+        // bubbleButton.classList.add("secondary-button-pressed")
     } else {
         messageBox.classList.add("hideElement")
-        bubbleButton.classList.remove("secondary-button-pressed")
+        // bubbleButton.classList.remove("secondary-button-pressed")
     }
 })
