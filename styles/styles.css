@@ -136,8 +136,8 @@ body {
 }
 
 .message-box-paragraph {
-    margin-top: 12px;
-    font-size: 12px;
+    margin-top: 8px;
+    font-size: 14px;
     /* color: #eeeeff; */
     line-height: 1.5;
 }
@@ -1164,5 +1164,5 @@ However, delay the fade out process for 2.5 seconds */
     width: 100%;
     top: 0;
     z-index: -1;
-    
+
 }
