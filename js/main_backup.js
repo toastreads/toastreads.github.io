@@ -1,6 +1,6 @@
-console.clear()
-console.log("CLEARED!!!!!");
-
+//© Nithin Davis Nanthikkara
+console.clear();
+console.log("/main.js/ loaded")
 
 
 //functions defined for use
@@ -17,8 +17,10 @@ function decode_date(inputDate) {
     return decodedDate
 }
 
-
+// This script is released to the public domain and may be used, modified and
+// distributed without restrictions. Attribution not necessary but appreciated.
 // Source: https://weeknumber.com/how-to/javascript
+
 // Returns the ISO week of the date.
 Date.prototype.getWeek = function () {
     var date = new Date(this.getTime());
@@ -44,75 +46,6 @@ Date.prototype.getDateWithoutTime = function () {
 }
 
 
-////------------------------------------------------------------
-
-
-async function getArticleOfTheDay(dateOfInterest) {
-    jsonList = await getDayBasedJSON(dateOfInterest)
-    index = dateOfInterest.getWeek()
-    articleObject = jsonList[index]
-
-    return articleObject
-}
-
-//function that returns the json data of the article based on the date provided
-function getDayBasedJSON(dateOfInterest) {
-    //File paths for different days lists
-    const monday_list = "json/monday_list.json"
-    const tuesday_list = "json/tuesday_list.json"
-    const wednesday_list = "json/wednesday_list.json"
-    const thursday_list = "json/thursday_list.json"
-    const friday_list = "json/friday_list.json"
-    const saturday_list = "json/saturday_list.json"
-    const sunday_list = "json/sunday_list.json"
-
-    //Select list based on the day of the week.
-    switch (dateOfInterest.getDay()) {
-        case 0:
-            console.log("Its a Sunday");
-            // no_image = "url('/images/sunday_no_image.jpg')"
-            return fetchFromJSON(sunday_list)
-        case 1:
-            console.log("Its a Monday");
-            no_image = "url('/images/monday_no_image.jpg')"
-            return fetchFromJSON(monday_list)
-        case 2:
-            console.log("Its a Tuesday");
-            no_image = "url('/images/tuesday_no_image.jpg')"
-            return fetchFromJSON(tuesday_list)
-        case 3:
-            console.log("Its a Wednesday");
-            no_image = "url('/images/wednesday_no_image.jpg')"
-            return fetchFromJSON(wednesday_list)
-        case 4:
-            console.log("Its a Thursday");
-            no_image = "url('/images/thursday_no_image.jpg')"
-            return fetchFromJSON(thursday_list)
-        case 5:
-            console.log("Its a Friday");
-            no_image = "url('/images/friday_no_image.jpg')"
-            return fetchFromJSON(friday_list)
-        case 6:
-            console.log("Its a Saturday");
-            no_image = "url('/images/saturday_no_image.jpg')"
-            return fetchFromJSON(saturday_list)
-    }
-}
-
-async function fetchFromJSON(jsonFilePath) {
-    try {
-        const response = await fetch(jsonFilePath)
-        if (response.ok) {
-            console.log("New fetch is Success")
-            return response.json()
-
-        }
-    } catch (error) {
-        console.error(error);     
-    }
-}
-
-////------------------------------------------------------------
 
 let today = new Date()
 
@@ -138,10 +71,6 @@ document.getElementById("dev-tool-clicker").addEventListener("click", function (
     populate_card()
 });
 
-
-// console.log("TESTING")
-// console.log("Here it is", getDayBasedJSON(today))
-// console.log("Article of the day is:", getArticleOfTheDay(today))
 
 populate_card();
 
@@ -209,8 +138,6 @@ function populate_card() {
 
 
 }
-
-
 
 function fetch_and_write(jsonFilePath) {
     console.log("Fetching data from,", jsonFilePath, "...")

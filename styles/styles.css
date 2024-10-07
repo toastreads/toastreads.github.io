@@ -1128,6 +1128,7 @@ However, delay the fade out process for 2.5 seconds */
 
     text-align: center;
     position: relative;
+    z-index: 1;
 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -1163,6 +1164,6 @@ However, delay the fade out process for 2.5 seconds */
     height: 100%;
     width: 100%;
     top: 0;
-    z-index: -1;
+    z-index: 1;
 
 }

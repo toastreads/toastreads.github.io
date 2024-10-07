@@ -1,20 +1,20 @@
 function fetch_meme() {
-    console.log("/meme.js/Fetching meme...")
+    // console.log("/meme.js/Fetching meme...")
     fetch("https://meme-api.com/gimme")
         .then(response => {
             if (response.ok) {
-                console.log("/meme.js/Meme fetch Success")
+                // console.log("/meme.js/Meme fetch Success")
                 return response.json()
 
 
             } else {
-                console.log("/meme.js/Meme Fetch failed")
+                // console.log("/meme.js/Meme Fetch failed")
                 return response.json()
             }
         })
         .then(data => {
             write_meme(data)
-            console.log("/meme.js/Meme data: ",data);
+            // console.log("/meme.js/Meme data: ",data);
             
         })
     }
