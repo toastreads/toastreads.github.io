@@ -108,7 +108,7 @@ async function fetchFromJSON(jsonFilePath) {
 
         }
     } catch (error) {
-        console.error(error);     
+        console.error(error);
     }
 }
 
@@ -231,7 +231,50 @@ function fetch_and_write(jsonFilePath) {
         })
 }
 
+async function writeCardElement(element, dateOfInterest, dateOffset = 0) {
+    tomorrow = new Date()
+    tomorrow.setDate(dateOfInterest.getDate() + dateOffset)
+    document.querySelector(element).innerHTML = (await getArticleOfTheDay(tomorrow)).title
+}
+async function getArticleOfTheDayWithOffset(dateOfInterest, dateOffset = 0){
+    tomorrow = new Date()
+    tomorrow.setDate(dateOfInterest.getDate() + dateOffset)
+    return (await getArticleOfTheDay(tomorrow))
+}
 
+async function writeSuggestedCards(){
+    suggestedCard1 = document.querySelector("#suggested-article-card-1")
+    suggestedArticleObject1 = await getArticleOfTheDayWithOffset(today, 1)
+    
+    suggestedCard1.querySelector(".saved-article-card-title").innerHTML = suggestedArticleObject1.title
+    suggestedCard1.querySelector(".saved-article-source-name").innerHTML = extractDomain(suggestedArticleObject1.link)
+    suggestedCard1.querySelector(".saved-article-card-pic").style.backgroundImage = String("url(\"" + (suggestedArticleObject1.image).toString() + "\")")
+    suggestedCard1.addEventListener("click", function(){
+        window.open(suggestedArticleObject1.link, '_blank');
+    })
+
+
+    suggestedCard2 = document.querySelector("#suggested-article-card-2")
+    suggestedArticleObject2 = await getArticleOfTheDayWithOffset(today, 2)
+    
+    suggestedCard2.querySelector(".saved-article-card-title").innerHTML = suggestedArticleObject2.title
+    suggestedCard2.querySelector(".saved-article-source-name").innerHTML = extractDomain(suggestedArticleObject2.link)
+    suggestedCard2.querySelector(".saved-article-card-pic").style.backgroundImage = String("url(\"" + (suggestedArticleObject2.image).toString() + "\")")
+    suggestedCard2.addEventListener("click", function(){
+        window.open(suggestedArticleObject2.link, '_blank');
+    })
+
+    suggestedCard3 = document.querySelector("#suggested-article-card-3")
+    suggestedArticleObject3 = await getArticleOfTheDayWithOffset(today, 3)
+    
+    suggestedCard3.querySelector(".saved-article-card-title").innerHTML = suggestedArticleObject3.title
+    suggestedCard3.querySelector(".saved-article-source-name").innerHTML = extractDomain(suggestedArticleObject3.link)
+    suggestedCard3.querySelector(".saved-article-card-pic").style.backgroundImage = String("url(\"" + (suggestedArticleObject3.image).toString() + "\")")
+    suggestedCard3.addEventListener("click", function(){
+        window.open(suggestedArticleObject3.link, '_blank');
+    })
+}
+writeSuggestedCards()
 
 function write_card(data) {
 
@@ -246,6 +289,8 @@ function write_card(data) {
     document.getElementById("article-title").innerHTML = data[index].title;
     document.getElementById("topic").innerHTML = String("#" + data[index].topic);
     document.getElementById("article-description").innerHTML = data[index].description;
+
+
 
     if (data[index].image.startsWith("http", 0)) {
 
