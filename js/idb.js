@@ -102,11 +102,8 @@ function display_saved_articles_data() {
             listItem.querySelector(".saved-article-source-logo").style.backgroundImage = cursor.value.sourcelogo;
             listItem.setAttribute("data-note-id", cursor.value.id);
 
-            //I'm defining linkOfThisArticle here because for some reason, cursor.value.link evaluates to undefined inside the addEventListener. This happens only is Safari btw. Weird.
-            linkOfThisArticle = cursor.value.link;
-            listItem.querySelector(".saved-article-card-clickable-area").addEventListener("click", function (event) {
-                window.open(linkOfThisArticle, '_blank')
-            });
+            listItem.querySelector(".saved-article-card-clickable-area").href = cursor.value.link
+            listItem.querySelector(".saved-article-card-clickable-area").target = '_blank'
 
             const deleteBtn = listItem.querySelector(".delete-button");
             deleteBtn.addEventListener("click", delete_item);
