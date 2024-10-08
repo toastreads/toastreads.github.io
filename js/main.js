@@ -256,9 +256,9 @@ async function writeSuggestedCard(cardElementID, dateOfInterest, dateOffset){
 }
 
 async function writeAllSuggestedCards(){
-    await writeSuggestedCard("#suggested-article-card-1", today, 1)
-    await writeSuggestedCard("#suggested-article-card-2", today, 2)
-    await writeSuggestedCard("#suggested-article-card-3", today, 3)
+    await writeSuggestedCard("#suggested-article-card-1", today, 4)
+    await writeSuggestedCard("#suggested-article-card-2", today, 5)
+    await writeSuggestedCard("#suggested-article-card-3", today, 6)
 }
 writeAllSuggestedCards()
 
