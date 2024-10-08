@@ -49,6 +49,15 @@ body {
 
 
     padding: 8px;
+
+}
+.title::after {
+    content: "beta";
+    font-family: var(--ui-mono-font);
+    font-size: 8px;
+    color: var(--text-color);
+    opacity: 0.5;
+    position: absolute;
 }
 
 .subtitle {
