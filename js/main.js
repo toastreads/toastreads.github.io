@@ -252,6 +252,7 @@ async function writeSuggestedCard(cardElementID, dateOfInterest, dateOffset){
     suggestedCard.querySelector(".saved-article-card-pic").style.backgroundImage = String("url(\"" + (suggestedArticleObject.image).toString() + "\")")
     suggestedCard.href = suggestedArticleObject.link
     suggestedCard.target = '_blank'
+    suggestedCard.querySelector(".topic").innerHTML = suggestedArticleObject.topic
 }
 
 async function writeAllSuggestedCards(){
