@@ -1,5 +1,4 @@
 console.clear()
-console.log("CLEARED!!!!!");
 
 
 
@@ -139,10 +138,6 @@ document.getElementById("dev-tool-clicker").addEventListener("click", function (
 });
 
 
-// console.log("TESTING")
-// console.log("Here it is", getDayBasedJSON(today))
-// console.log("Article of the day is:", getArticleOfTheDay(today))
-
 populate_card();
 
 
@@ -231,11 +226,6 @@ function fetch_and_write(jsonFilePath) {
         })
 }
 
-async function writeCardElement(element, dateOfInterest, dateOffset = 0) {
-    tomorrow = new Date()
-    tomorrow.setDate(dateOfInterest.getDate() + dateOffset)
-    document.querySelector(element).innerHTML = (await getArticleOfTheDay(tomorrow)).title
-}
 async function getArticleOfTheDayWithOffset(dateOfInterest, dateOffset = 0){
     tomorrow = new Date()
     tomorrow.setDate(dateOfInterest.getDate() + dateOffset)
@@ -253,7 +243,15 @@ async function writeSuggestedCard(cardElementID, dateOfInterest, dateOffset){
     suggestedCard.href = suggestedArticleObject.link
     suggestedCard.target = '_blank'
     suggestedCard.querySelector(".topic").innerHTML = suggestedArticleObject.topic
+    suggestedCard.querySelector(".topic").style.backgroundColor = getRandomColor()
 }
+function getRandomColor() {
+
+
+      color = 50 * Math.ceil(Math.random() * 7.2);
+
+    return String("hsl("+color + "," + "60%,80%)");
+  }
 
 async function writeAllSuggestedCards(){
     await writeSuggestedCard("#suggested-article-card-1", today, 4)
@@ -261,6 +259,15 @@ async function writeAllSuggestedCards(){
     await writeSuggestedCard("#suggested-article-card-3", today, 6)
 }
 writeAllSuggestedCards()
+
+async function writeMainCard(dateOfInterest=today){
+    mainArticleObject = await getArticleOfTheDay(dateOfInterest)
+
+    document.querySelector("#article-title").innerHTML = mainArticleObject.title
+    document.querySelector("#topic").innerHTML = mainArticleObject.topic
+    document.querySelector("#article-description").innerHTML = mainArticleObject.description;
+
+}
 
 function write_card(data) {
 
@@ -273,7 +280,7 @@ function write_card(data) {
     index = today.getWeek(); // using this function now, source: https://weeknumber.com/how-to/javascript
     console.log("Writing card with data index = ", index)
     document.getElementById("article-title").innerHTML = data[index].title;
-    document.getElementById("topic").innerHTML = String("#" + data[index].topic);
+    document.getElementById("topic").innerHTML = data[index].topic;
     document.getElementById("article-description").innerHTML = data[index].description;
 
 
