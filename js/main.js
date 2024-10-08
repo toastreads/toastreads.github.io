@@ -250,9 +250,8 @@ async function writeSuggestedCard(cardElementID, dateOfInterest, dateOffset){
     suggestedCard.querySelector(".saved-article-source-name").innerHTML = extractDomain(suggestedArticleObject.link)
     suggestedCard.querySelector(".saved-article-source-logo").style.backgroundImage = sourceLogoURL = String("url(\"" + (suggestedArticleObject.sourcelogo).toString() + "\")")
     suggestedCard.querySelector(".saved-article-card-pic").style.backgroundImage = String("url(\"" + (suggestedArticleObject.image).toString() + "\")")
-    suggestedCard.addEventListener("click", ()=>{
-        window.open(suggestedArticleObject.link, '_blank');
-    })
+    suggestedCard.href = suggestedArticleObject.link
+    suggestedCard.target = '_blank'
 }
 
 async function writeAllSuggestedCards(){
