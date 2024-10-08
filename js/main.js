@@ -312,9 +312,8 @@ function write_card(data) {
 // templinkstring = String("location.href='" + String(templink) + "';")
 //     document.getElementById("clickable-area").setAttribute("onclick",templinkstring)
 
-    // document.getElementById("clickable-area").addEventListener("click", () => {
-    //     window.open(data[index].link, '_blank');
-    // })
+    document.getElementById("clickable-area").href = data[index].link
+    document.getElementById("clickable-area").target = '_blank'
 
 
 
