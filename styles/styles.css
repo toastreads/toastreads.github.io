@@ -1118,7 +1118,7 @@ However, delay the fade out process for 2.5 seconds */
     animation-duration: 0.3s;
 }
 
-.hideElement {
+.hide-element {
     display: none;
 }
 

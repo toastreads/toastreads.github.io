@@ -168,40 +168,6 @@
     </div>
 
     <div class="containers">
-        <div class="container-header space-betweeners-aligned-center">
-            <div>
-                <img src="/images/headphones.png" class="container-header-icon" alt="">
-                <span>Focus Mode</span>
-            </div>
-            <div>
-                <button class="secondary-button"><img class="secondary-button-icon" src="images/settings_icon.png"
-                        alt=""></button>
-            </div>
-        </div>
-        <div id="focus-buttons-set">
-            <div class="focus-button-container">
-                <div class="focus-button-led" id="noise-button-led"></div>
-                <div class="focus-button-square"><button id="noise-button" class="focus-button" data-playing="false"
-                        role="switch" aria-checked="false"></button></div>
-                <div class="focus-button-label"><span>Noise</span></div>
-            </div>
-            <div class="focus-button-container">
-                <div class="focus-button-led" id="rain-button-led"></div>
-                <div class="focus-button-square"><button id="rain-button" class="focus-button" data-playing="false"
-                        role="switch" aria-checked="false"></button></div>
-                <div class="focus-button-label"><span>Rain</span></div>
-            </div>
-            <div class="focus-button-container">
-                <div class="focus-button-led" id="binaural-button-led"></div>
-                <div class="focus-button-square"><button id="binaural-button" class="focus-button" data-playing="false"
-                        role="switch" aria-checked="false"></button></div>
-                <div class="focus-button-label"><span>Binaural</span></div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="containers">
         <div class="container-header">
             <img src="images/trending_icon.png" class="container-header-icon" alt="">
             <span>You might also like,</span>
@@ -261,11 +227,53 @@
     </div>
 
     <div class="containers">
-        <div class="container-header">
-            <img src="/images/meme_icon.png" class="container-header-icon" alt="">
-            <span>Meme of the time</span>
+        <div class="container-header space-betweeners-aligned-center">
+            <div>
+                <img src="/images/headphones.png" class="container-header-icon" alt="">
+                <span>Focus Mode</span>
+            </div>
+            <div>
+                <button class="secondary-button"><img class="secondary-button-icon" src="images/settings_icon.png"
+                        alt=""></button>
+            </div>
         </div>
-        <div>
+        <div id="focus-buttons-set">
+            <div class="focus-button-container">
+                <div class="focus-button-led" id="noise-button-led"></div>
+                <div class="focus-button-square"><button id="noise-button" class="focus-button" data-playing="false"
+                        role="switch" aria-checked="false"></button></div>
+                <div class="focus-button-label"><span>Noise</span></div>
+            </div>
+            <div class="focus-button-container">
+                <div class="focus-button-led" id="rain-button-led"></div>
+                <div class="focus-button-square"><button id="rain-button" class="focus-button" data-playing="false"
+                        role="switch" aria-checked="false"></button></div>
+                <div class="focus-button-label"><span>Rain</span></div>
+            </div>
+            <div class="focus-button-container">
+                <div class="focus-button-led" id="binaural-button-led"></div>
+                <div class="focus-button-square"><button id="binaural-button" class="focus-button" data-playing="false"
+                        role="switch" aria-checked="false"></button></div>
+                <div class="focus-button-label"><span>Binaural</span></div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <div class="containers">
+        <div class="container-header space-betweeners-aligned-center">
+            <div>
+                <img src="/images/meme_icon.png" class="container-header-icon" alt="">
+            <span>Meme of the time</span>
+            </div>
+            <div>
+                <button id="hide-meme-button" class="secondary-button"><img class="secondary-button-icon" src="images/hide_icon.png" alt=""></button>
+            </div>
+            
+        </div>
+        <div id="meme-content">
             <img src="" alt="" id="meme-pic">
             <div class="spacer"></div>
             <div><span>Source: </span><span><a id="meme-source" target="_blank" href="">acquiring-source</a></span>
@@ -332,7 +340,7 @@
 
 
     <div class="containers">
-        <canvas id="canvas" class="hideElement"></canvas>
+        <canvas id="canvas" class="hide-element"></canvas>
         <div class="container-header space-betweeners-aligned-center">
             <div>
                 <img src="/images/game_icon.png" class="container-header-icon" alt="">
@@ -343,7 +351,7 @@
                     src="images/refresh_icon.png" alt=""></button>
         </div>
         <div class="fidget-container">
-            <img id="fidget-spinner" class="hideElement" src="images/fidget_spinner.png" width="80%">
+            <img id="fidget-spinner" class="hide-element" src="images/fidget_spinner.png" width="80%">
             <img id="phena-spinner" src="images/ph6.png" width="300px">
         </div>
     </div>

@@ -242,39 +242,25 @@ async function getArticleOfTheDayWithOffset(dateOfInterest, dateOffset = 0){
     return (await getArticleOfTheDay(tomorrow))
 }
 
-async function writeSuggestedCards(){
-    suggestedCard1 = document.querySelector("#suggested-article-card-1")
-    suggestedArticleObject1 = await getArticleOfTheDayWithOffset(today, 1)
+async function writeSuggestedCard(cardElementID, dateOfInterest, dateOffset){
+    suggestedCard = document.querySelector(cardElementID)
+    suggestedArticleObject = await getArticleOfTheDayWithOffset(dateOfInterest, dateOffset)
     
-    suggestedCard1.querySelector(".saved-article-card-title").innerHTML = suggestedArticleObject1.title
-    suggestedCard1.querySelector(".saved-article-source-name").innerHTML = extractDomain(suggestedArticleObject1.link)
-    suggestedCard1.querySelector(".saved-article-card-pic").style.backgroundImage = String("url(\"" + (suggestedArticleObject1.image).toString() + "\")")
-    suggestedCard1.addEventListener("click", function(){
-        window.open(suggestedArticleObject1.link, '_blank');
-    })
-
-
-    suggestedCard2 = document.querySelector("#suggested-article-card-2")
-    suggestedArticleObject2 = await getArticleOfTheDayWithOffset(today, 2)
-    
-    suggestedCard2.querySelector(".saved-article-card-title").innerHTML = suggestedArticleObject2.title
-    suggestedCard2.querySelector(".saved-article-source-name").innerHTML = extractDomain(suggestedArticleObject2.link)
-    suggestedCard2.querySelector(".saved-article-card-pic").style.backgroundImage = String("url(\"" + (suggestedArticleObject2.image).toString() + "\")")
-    suggestedCard2.addEventListener("click", function(){
-        window.open(suggestedArticleObject2.link, '_blank');
-    })
-
-    suggestedCard3 = document.querySelector("#suggested-article-card-3")
-    suggestedArticleObject3 = await getArticleOfTheDayWithOffset(today, 3)
-    
-    suggestedCard3.querySelector(".saved-article-card-title").innerHTML = suggestedArticleObject3.title
-    suggestedCard3.querySelector(".saved-article-source-name").innerHTML = extractDomain(suggestedArticleObject3.link)
-    suggestedCard3.querySelector(".saved-article-card-pic").style.backgroundImage = String("url(\"" + (suggestedArticleObject3.image).toString() + "\")")
-    suggestedCard3.addEventListener("click", function(){
-        window.open(suggestedArticleObject3.link, '_blank');
+    suggestedCard.querySelector(".saved-article-card-title").innerHTML = suggestedArticleObject.title
+    suggestedCard.querySelector(".saved-article-source-name").innerHTML = extractDomain(suggestedArticleObject.link)
+    suggestedCard.querySelector(".saved-article-source-logo").style.backgroundImage = sourceLogoURL = String("url(\"" + (suggestedArticleObject.sourcelogo).toString() + "\")")
+    suggestedCard.querySelector(".saved-article-card-pic").style.backgroundImage = String("url(\"" + (suggestedArticleObject.image).toString() + "\")")
+    suggestedCard.addEventListener("click", function(){
+        window.open(suggestedArticleObject.link, '_blank');
     })
 }
-writeSuggestedCards()
+
+async function writeAllSuggestedCards(){
+    await writeSuggestedCard("#suggested-article-card-1", today, 1)
+    await writeSuggestedCard("#suggested-article-card-2", today, 2)
+    await writeSuggestedCard("#suggested-article-card-3", today, 3)
+}
+writeAllSuggestedCards()
 
 function write_card(data) {
 
