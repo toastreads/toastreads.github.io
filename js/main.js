@@ -250,7 +250,7 @@ async function writeSuggestedCard(cardElementID, dateOfInterest, dateOffset){
     suggestedCard.querySelector(".saved-article-source-name").innerHTML = extractDomain(suggestedArticleObject.link)
     suggestedCard.querySelector(".saved-article-source-logo").style.backgroundImage = sourceLogoURL = String("url(\"" + (suggestedArticleObject.sourcelogo).toString() + "\")")
     suggestedCard.querySelector(".saved-article-card-pic").style.backgroundImage = String("url(\"" + (suggestedArticleObject.image).toString() + "\")")
-    suggestedCard.addEventListener("click", function(){
+    suggestedCard.addEventListener("click", ()=>{
         window.open(suggestedArticleObject.link, '_blank');
     })
 }
@@ -309,45 +309,23 @@ function write_card(data) {
     document.getElementById("article-source-name").innerHTML = extractDomain(data[index].link)
 
 
+// templink = String(data[index].link)
+// templinkstring = String("location.href='" + String(templink) + "';")
+//     document.getElementById("clickable-area").setAttribute("onclick",templinkstring)
 
-    //document.getElementById("clickable-area").setAttribute("onclick","location.href='www.yahoo.com';")
-    document.getElementById("clickable-area").addEventListener("click", function (event) {
-        window.open(data[index].link, '_blank');
-    })
-
+    // document.getElementById("clickable-area").addEventListener("click", () => {
+    //     window.open(data[index].link, '_blank');
+    // })
 
 
 
     setup_share_button(data[index].title, today);
     setup_save_button(data[index].title, data[index].description, data[index].link, data[index].image, sourceLogoURL, encode_date(today));
-    setup_done_button();
+    setup_done_button(data[index].link);
     setup_note_button();
     setup_textarea(data[index].title, data[index].description, data[index].link, data[index].image, sourceLogoURL, encode_date(today));
 
 
-}
-
-var offset = 0;
-
-
-
-function week_of_the_year(fromThisDay = 0) {
-
-    fromThisDay = offset; // dev tool - delete later
-
-
-    var now = today;
-    var start = new Date(now.getFullYear(), 0, 0);
-    var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
-    var oneDay = 1000 * 60 * 60 * 24;
-    var dayOfYear = Math.abs(Math.floor(diff / oneDay) - fromThisDay);
-    console.log('Day of year: ' + dayOfYear);
-
-    //calculate week of the year
-    var weekOfYear = Math.floor(dayOfYear * (52 / 365));
-    console.log("Week of the year with DST: " + (weekOfYear));
-
-    return weekOfYear;
 }
 
 function extractDomain(url) {
@@ -400,9 +378,13 @@ function setup_save_button(title, description, link, pic, sourcelogo, datecode) 
     })
 }
 
-function setup_done_button() {
+function setup_done_button(link) {
     document.getElementById('done-button').addEventListener('click', function (event) {
         snack("Your a Champ!")
+        event.target.innerHTML = "Started Reading..."
+        setTimeout(()=>{window.open(link, '_blank')},500)
+        
+        
     })
 }
 

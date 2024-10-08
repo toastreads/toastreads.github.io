@@ -11,11 +11,11 @@ new Propeller(fidgetSpinner, {
     angle: 0, onRotate: function(){ 
         //console.log(this.speed)
         if(Math.abs(this.speed)>0){
-            document.querySelector("#canvas").classList.remove("hideElement")
+            document.querySelector("#canvas").classList.remove("hide-element")
             maxConfettis = Math.min(Math.abs(this.speed), 150)
             particleSize = Math.abs(this.speed/20)
         } else {
-            document.querySelector("#canvas").classList.add("hideElement")
+            document.querySelector("#canvas").classList.add("hide-element")
             
         }
         
@@ -28,13 +28,13 @@ new Propeller(phenaSpinner, {
 });
 
 fidgetPhenaSwitchButton.addEventListener("click", () => {
-    if (phenaSpinner.classList.contains("hideElement")) {
-        phenaSpinner.classList.remove("hideElement")
-        fidgetSpinner.classList.add("hideElement")
-        document.querySelector("#canvas").classList.add("hideElement")
+    if (phenaSpinner.classList.contains("hide-element")) {
+        phenaSpinner.classList.remove("hide-element")
+        fidgetSpinner.classList.add("hide-element")
+        document.querySelector("#canvas").classList.add("hide-element")
     } else {
-        phenaSpinner.classList.add("hideElement")
-        fidgetSpinner.classList.remove("hideElement")
+        phenaSpinner.classList.add("hide-element")
+        fidgetSpinner.classList.remove("hide-element")
         
     }
 })
