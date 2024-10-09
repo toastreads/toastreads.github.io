@@ -32,3 +32,14 @@ hideMemeButton.addEventListener("click", () => {
         hideMemeButton.classList.add("secondary-button-pressed")
     }
 })
+
+
+document.addEventListener("scroll", ()=>{
+    console.log(window.scrollY);
+    
+    if(window.scrollY > 70) {
+        document.querySelector(".title").classList.add("title-floating")
+    } else {
+        document.querySelector(".title").classList.remove("title-floating")
+    }
+})

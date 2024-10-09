@@ -32,7 +32,7 @@ body {
 }
 
 .title {
-    font-family: "Rocher",  sans-serif;
+    font-family: "Rocher", sans-serif;
     font-size: 24px;
     font-variation-settings: "BVEL" 59, "SHDW" 100;
 
@@ -46,12 +46,17 @@ body {
 
     padding: 8px;
 }
+
 .title::after {
     content: "beta";
     font-family: var(--ui-mono-font);
     font-size: 8px;
     color: var(--text-color);
     position: absolute;
+}
+.title-floating {
+    background: linear-gradient(to right, #f2f3f8 0%, #ffffff 50%, #f2f3f8 100%);
+    box-shadow: 0px 0px 30px -20px #050065;
 }
 
 .subtitle {
@@ -322,13 +327,16 @@ tag {
     display: inline-block;
 
 }
+
 .topic::before {
     content: "#";
 }
+
 .small-horizontal-spacer {
     width: 8px;
     height: 8px;
 }
+
 .article-description {
     font-family: "Inter", var(--body-text), sans-serif;
     font-weight: 300;
@@ -506,7 +514,18 @@ tag {
     margin: 8px auto;
     text-align: left;
 
-    border-bottom: #0700521d solid 1px;
+    /* border-bottom: #0700521d solid 1px; */
+}
+
+.containers::after {
+    content: "";
+
+    width: 100%;
+    height: 16px;
+    display: block;
+    border-bottom: #07005211 solid 1px;
+
+
 }
 
 .container-header {
@@ -925,6 +944,7 @@ tag {
     justify-content: space-between;
     align-items: center;
 }
+
 .no-space-betweeners-aligned-center {
     display: flex;
     align-items: center;
@@ -1164,9 +1184,11 @@ However, delay the fade out process for 2.5 seconds */
 #phena-spinner {
     filter: drop-shadow(0px 0px 10px #002a1c3f);
 }
+
 #fidget-spinner {
     filter: drop-shadow(0px 0px 20px #7b00003f);
 }
+
 #canvas {
     position: fixed;
     height: 100%;
@@ -1176,6 +1198,6 @@ However, delay the fade out process for 2.5 seconds */
 
 }
 
-.margin-top-4{
+.margin-top-4 {
     margin-top: 4px;
 }
