@@ -29,4 +29,10 @@ function fetch_meme() {
         
     }
 
+    
+
     document.onload = fetch_meme()
+
+    document.querySelector("#cycle-meme-button").addEventListener("click", ()=>{
+        fetch_meme()
+    })
