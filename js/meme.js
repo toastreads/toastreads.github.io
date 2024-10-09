@@ -55,7 +55,7 @@ function fetch_meme() {
                 try {
                     // Use the Web Share API to trigger the native sharing dialog
                     await navigator.share({
-                        text: "Shared via toastreads.com",
+                        text: "Shared via Toastreads!",
                         url: linkToShare
                     });
                 } catch (error) {
