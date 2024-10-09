@@ -250,7 +250,7 @@ function getRandomColor() {
 
       color = 50 * Math.ceil(Math.random() * 7.2);
 
-    return String("hsl("+color + "," + "60%,80%)");
+    return String("hsl("+color + "," + "60%,90%)");
   }
 
 async function writeAllSuggestedCards(){

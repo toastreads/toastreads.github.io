@@ -315,7 +315,7 @@ tag {
 }
 
 #topic {
-    font-family: var(--ui-mono-font);
+    font-family: "Inter", var(--body-text), sans-serif;
     font-size: 12px;
     color: var(--text-color);
     padding: 4px;
@@ -337,16 +337,16 @@ tag {
     content: "#";
 }
 .topic {
-    font-family: var(--ui-mono-font);
-    font-size: 12px;
+    font-family: "Inter", var(--body-text), sans-serif;
+    font-size: 10px;
     color: var(--text-color);
-    padding: 2px;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
     text-transform: capitalize;
     text-align: left;
     background-color: #cce0e1d1;
-    border-radius: 2px;
+    border-radius: 16px;
     display: inline-block;
 
 }
@@ -851,7 +851,7 @@ tag {
 }
 
 .saved-article-source {
-    display: block;
+    display: inline-block;
     font-family: "Inter", var(--body-text), sans-serif;
     font-size: 10px;
     font-weight: 400;
@@ -860,9 +860,9 @@ tag {
 
     text-align: left;
     /* display: flex; */
-    align-items: center;
+    /* align-items: center; */
 
-    margin-top: 6px;
+    /* margin-top: 6px; */
 
     /* background-color: yellow; */
 }
@@ -1202,4 +1202,8 @@ However, delay the fade out process for 2.5 seconds */
     top: 0;
     z-index: 1;
 
+}
+
+.margin-top-4{
+    margin-top: 4px;
 }
