@@ -32,31 +32,25 @@ body {
 }
 
 .title {
-    font-family: "Rocher", "Mali", sans-serif;
+    font-family: "Rocher",  sans-serif;
     font-size: 24px;
-    font-weight: 400;
-
     font-variation-settings: "BVEL" 59, "SHDW" 100;
 
     color: var(--text-color);
     margin-top: 0px;
-
 
     position: sticky;
     top: 0;
     z-index: 10;
     background-color: #f2f3f8;
 
-
     padding: 8px;
-
 }
 .title::after {
     content: "beta";
     font-family: var(--ui-mono-font);
     font-size: 8px;
     color: var(--text-color);
-    opacity: 0.5;
     position: absolute;
 }
 
