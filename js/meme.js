@@ -25,6 +25,7 @@ function fetch_meme() {
             document.getElementById("meme-pic").src = jsonData.url;
             document.getElementById("meme-source").innerHTML = jsonData.url
             document.getElementById("meme-source").href = jsonData.url
+            setShareMemeButton(jsonData.url)
         }
         
     }
@@ -36,3 +37,39 @@ function fetch_meme() {
     document.querySelector("#cycle-meme-button").addEventListener("click", ()=>{
         fetch_meme()
     })
+
+    
+    
+    
+    
+    
+    function setShareMemeButton(titleToShare) {
+
+
+        linkToShare = titleToShare
+    
+
+        if (navigator.share) {
+            const shareButton = document.querySelector('#share-meme-button');
+            shareButton.addEventListener('click', async () => {
+                try {
+                    // Use the Web Share API to trigger the native sharing dialog
+                    await navigator.share({
+                        text: "Shared via toastreads.com",
+                        url: linkToShare
+                    });
+                } catch (error) {
+                    console.error('Error sharing meme:', error.message);
+                }
+            });
+        } else {
+            console.warn('Web Share API not supported on this browser');
+            const copyButton = document.querySelector('#share-meme-button');
+            copyButton.addEventListener('click', function (event) {
+                navigator.clipboard.writeText(linkToShare)
+                snack(String("Link copied to clipboard:<br>" + linkToShare))
+            })
+    
+        }
+    
+    }
