@@ -11,6 +11,15 @@
     src: url('/fonts/RocherColorGX.woff2');
 }
 
+@font-palette-values --Grays {
+    font-family: Rocher;
+    override-colors:
+        0 #1d2259,
+        1 #f9877c,
+        2 #dc5079,
+        3 #ffd9bd
+}
+
 a {
     color: var(--text-color);
     text-decoration: none;
@@ -34,7 +43,9 @@ body {
 .title {
     font-family: "Rocher", sans-serif;
     font-size: 24px;
-    font-variation-settings: "BVEL" 59, "SHDW" 100;
+    /* font-variation-settings: "BVEL" 59, "SHDW" 100; */
+    font-variation-settings: "BVEL" 41, "SHDW" 100;
+    font-palette: --Grays;
 
     color: var(--text-color);
     margin-top: 0px;
@@ -42,7 +53,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 10;
-    
+
 
     padding: 8px;
 }
@@ -416,20 +427,21 @@ tag {
 
 
     cursor: pointer;
-    
+
 }
 
 .secondary-button:active {
     /* background-color: #e4e6f1; */
     background-color: #99a1c932;
-    
+
 }
 
 .secondary-button-pressed {
     background-color: #dddfec;
 }
+
 .secondary-button-rotate {
-    
+
     transform: rotate(720deg);
 }
 
@@ -443,7 +455,7 @@ tag {
     /*center correction*/
     /* margin-right: 4px; */
     margin: 2px;
-    transition:1s;
+    transition: 1s;
 
 
 
@@ -1251,7 +1263,8 @@ However, delay the fade out process for 2.5 seconds */
     color: #ffffff;
     padding: 16px;
 }
-.footer a{
+
+.footer a {
     color: #ffffff;
 }
 
