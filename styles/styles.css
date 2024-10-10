@@ -158,7 +158,8 @@ body {
 }
 
 tag {
-    color: #FBB39A;
+    /* color: #FBB39A; */
+    color: #F9877C;
 }
 
 .today-headline {
