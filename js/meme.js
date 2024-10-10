@@ -26,6 +26,7 @@ function fetch_meme() {
             document.getElementById("meme-source").innerHTML = jsonData.url
             document.getElementById("meme-source").href = jsonData.url
             setShareMemeButton(jsonData.url)
+            document.querySelector("#cycle-meme-button").querySelector(".secondary-button-icon").classList.remove("secondary-button-rotate")
         }
         
     }
@@ -35,6 +36,7 @@ function fetch_meme() {
     document.onload = fetch_meme()
 
     document.querySelector("#cycle-meme-button").addEventListener("click", ()=>{
+        document.querySelector("#cycle-meme-button").querySelector(".secondary-button-icon").classList.add("secondary-button-rotate")
         fetch_meme()
     })
 
