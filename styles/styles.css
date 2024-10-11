@@ -1292,5 +1292,9 @@ However, delay the fade out process for 2.5 seconds */
 .spacer {
     height: 16px;
 }
-
+#dev-tool-clicker {
+    opacity: 0;
+    width: 100px;
+    height: 8px; 
+}
 /* Watch this : https://www.youtube.com/watch?v=44FTAS-qT8Q */
