@@ -258,7 +258,7 @@ async function writeAllSuggestedCards(){
     await writeSuggestedCard("#suggested-article-card-2", today, 5)
     await writeSuggestedCard("#suggested-article-card-3", today, 6)
 }
-writeAllSuggestedCards()
+//writeAllSuggestedCards()
 
 async function writeMainCard(dateOfInterest=today){
     mainArticleObject = await getArticleOfTheDay(dateOfInterest)
@@ -269,12 +269,11 @@ async function writeMainCard(dateOfInterest=today){
 
 }
 
+function makeURL(input){
+    return String("url(\"" + (input).toString() + "\")")
+}
+
 function write_card(data) {
-
-    //dev tool stuff  -----
-
-
-
 
 
     index = today.getWeek(); // using this function now, source: https://weeknumber.com/how-to/javascript
@@ -283,54 +282,28 @@ function write_card(data) {
     document.getElementById("topic").innerHTML = data[index].topic;
     document.getElementById("article-description").innerHTML = data[index].description;
 
-
-
     if (data[index].image.startsWith("http", 0)) {
-
-
-
-
-        imageURL = String("url(\"" + (data[index].image).toString() + "\")")
-        gradientOverlay = "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%)"
-        combinedImageGradientOverlay = String(gradientOverlay + "," + imageURL)
-        document.getElementById("article-pic").style.backgroundImage = combinedImageGradientOverlay;
-
-
+        document.getElementById("article-pic").style.backgroundImage = makeURL(data[index].image);
     } else {
-        gradient_with_no_image = String("linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%)" + "," + no_image)
-        document.getElementById("article-pic").style.backgroundImage = gradient_with_no_image;
-
+        document.getElementById("article-pic").style.backgroundImage = no_image;
     }
 
     if (data[index].sourcelogo.startsWith("http", 0)) {
-
-
-        sourceLogoURL = String("url(\"" + (data[index].sourcelogo).toString() + "\")")
-        document.getElementById("article-source-icon").style.backgroundImage = sourceLogoURL;
-
-
+        document.getElementById("article-source-icon").style.backgroundImage = makeURL(data[index].sourcelogo);
     } else {
         document.getElementById("article-source-icon").style.backgroundImage = "url(images/globe_icon.png)";
     }
 
     document.getElementById("article-source-name").innerHTML = extractDomain(data[index].link)
 
-
-// templink = String(data[index].link)
-// templinkstring = String("location.href='" + String(templink) + "';")
-//     document.getElementById("clickable-area").setAttribute("onclick",templinkstring)
-
     document.getElementById("clickable-area").href = data[index].link
     document.getElementById("clickable-area").target = '_blank'
-
-
 
     setup_share_button(data[index].title, today);
     setup_save_button(data[index].title, data[index].description, data[index].link, data[index].image, sourceLogoURL, encode_date(today));
     setup_done_button(data[index].link);
     setup_note_button();
     setup_textarea(data[index].title, data[index].description, data[index].link, data[index].image, sourceLogoURL, encode_date(today));
-
 
 }
 
