@@ -1,8 +1,5 @@
 console.clear()
 
-
-
-//functions defined for use
 function encode_date(inputDate) {
 
     dateInmillisecondFormat = Date.parse(inputDate)
@@ -16,9 +13,6 @@ function decode_date(inputDate) {
     return decodedDate
 }
 
-
-// Source: https://weeknumber.com/how-to/javascript
-// Returns the ISO week of the date.
 Date.prototype.getWeek = function () {
     var date = new Date(this.getTime());
     date.setHours(0, 0, 0, 0);
@@ -42,8 +36,6 @@ Date.prototype.getDateWithoutTime = function () {
     return new Date(this.toDateString());
 }
 
-
-////------------------------------------------------------------
 
 
 async function getArticleOfTheDay(dateOfInterest) {
@@ -104,31 +96,24 @@ function getDayBasedJSON(dateOfInterest) {
     switch (dateOfInterest.getDay()) {
         case 0:
             console.log("Its a Sunday");
-            no_image = "url('/images/sunday_no_image.jpg')"
             return fetchFromJSON(sunday_list)
         case 1:
             console.log("Its a Monday");
-            no_image = "url('/images/monday_no_image.jpg')"
             return fetchFromJSON(monday_list)
         case 2:
             console.log("Its a Tuesday");
-            no_image = "url('/images/tuesday_no_image.jpg')"
             return fetchFromJSON(tuesday_list)
         case 3:
             console.log("Its a Wednesday");
-            no_image = "url('/images/wednesday_no_image.jpg')"
             return fetchFromJSON(wednesday_list)
         case 4:
             console.log("Its a Thursday");
-            no_image = "url('/images/thursday_no_image.jpg')"
             return fetchFromJSON(thursday_list)
         case 5:
             console.log("Its a Friday");
-            no_image = "url('/images/friday_no_image.jpg')"
             return fetchFromJSON(friday_list)
         case 6:
             console.log("Its a Saturday");
-            no_image = "url('/images/saturday_no_image.jpg')"
             return fetchFromJSON(saturday_list)
     }
 }
@@ -146,12 +131,8 @@ async function fetchFromJSON(jsonFilePath) {
     }
 }
 
-////------------------------------------------------------------
 
 let today = new Date()
-
-
-let no_image = "url('images/sunday_no_image.jpg')"
 
 //sd is shared date
 let sd = (new URLSearchParams(window.location.search)).get("sd");
@@ -242,10 +223,10 @@ async function writeMainCard(dateOfInterest = today) {
     document.getElementById("clickable-area").target = '_blank'
 
     setup_share_button(mainArticleObject.title, today);
-    setup_save_button(mainArticleObject.title, mainArticleObject.description, mainArticleObject.link, mainArticleObject.image, sourceLogoURL, encode_date(today));
+    setup_save_button(mainArticleObject.title, mainArticleObject.description, mainArticleObject.link, mainArticleObject.image, mainArticleObject.sourceLogoURL, encode_date(today));
     setup_done_button(mainArticleObject.link);
     setup_note_button();
-    setup_textarea(mainArticleObject.title, mainArticleObject.description, mainArticleObject.link, mainArticleObject.image, sourceLogoURL, encode_date(today));
+    setup_textarea(mainArticleObject.title, mainArticleObject.description, mainArticleObject.link, mainArticleObject.image, mainArticleObject.sourceLogoURL, encode_date(today));
 
 
 }
