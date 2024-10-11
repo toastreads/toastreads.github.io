@@ -1,15 +1,12 @@
 console.clear()
 
 function encode_date(inputDate) {
-
     dateInmillisecondFormat = Date.parse(inputDate)
     encodedtoString = dateInmillisecondFormat.toString(36)
-
     return encodedtoString
 }
 function decode_date(inputDate) {
     decodedDate = new Date(parseInt(inputDate, 36))
-
     return decodedDate
 }
 
@@ -132,28 +129,7 @@ async function fetchFromJSON(jsonFilePath) {
 }
 
 
-let today = new Date()
 
-//sd is shared date
-let sd = (new URLSearchParams(window.location.search)).get("sd");
-if (sd) {
-    //bla = console.log(sd.replace(/['"]+/g, ''));
-    console.log("There is a sd (shared day) in the URL: ", sd);
-    //today = new Date(Date.parse(sd))
-    today = decode_date(sd)
-    console.log("today will be considered to be = ", today)
-} else {
-    console.log("There is NO sd in the URL")
-    today = new Date().getDateWithoutTime()
-    console.log("today will be considered to be = ", today)
-}
-
-document.getElementById("dev-tool-clicker").addEventListener("click", function (event) {
-    today.setDate(today.getDate() + 1)
-    writeTodayHeadline(today)
-    writeMainCard(today)
-    writeAllSuggestedCards()
-});
 
 
 
@@ -198,8 +174,8 @@ async function writeAllSuggestedCards() {
 }
 
 
-async function writeMainCard(dateOfInterest = today) {
-    mainArticleObject = await getArticleOfTheDay(dateOfInterest)
+async function writeMainCard(dateOfInterest = today, offset=0) {
+    mainArticleObject = await getArticleOfTheDayWithOffset(dateOfInterest, offset)
 
     if (mainArticleObject.image.startsWith("http", 0)) {
         document.querySelector("#article-pic").style.backgroundImage = makeURL(mainArticleObject.image);
@@ -347,12 +323,39 @@ function writeTodayHeadline(dateOfInterest) {
     document.getElementById("today-date").innerHTML = dateOfInterest.toDateString().substring(0, 3).concat(",", dateOfInterest.toDateString().substring(3, 10));
 }
 
+
+
+let today = new Date()
+
+//sd is shared date
+let sd = (new URLSearchParams(window.location.search)).get("sd");
+if (sd) {
+    //bla = console.log(sd.replace(/['"]+/g, ''));
+    console.log("There is a sd (shared day) in the URL: ", sd);
+    //today = new Date(Date.parse(sd))
+    today = decode_date(sd)
+    console.log("today will be considered to be = ", today)
+} else {
+    console.log("There is NO sd in the URL")
+    today = new Date().getDateWithoutTime()
+    console.log("today will be considered to be = ", today)
+}
+
+document.getElementById("dev-tool-clicker").addEventListener("click", function (event) {
+    today.setDate(today.getDate() + 1)
+    writeTodayHeadline(today)
+    writeMainCard(today)
+    writeAllSuggestedCards()
+});
+
 writeTodayHeadline(today)
 writeMainCard(today)
 writeAllSuggestedCards()
 
 
-
+document.querySelector("#cycle-article-button").addEventListener("click", () => {
+    writeMainCard(today,Math.ceil(365*Math.random()))
+})
 
 
 
