@@ -851,7 +851,7 @@ tag {
 
 .saved-article-card-pic {
     display: inline-block;
-    background: #FBB39A;
+    background: var(--text-color);
     background-size: cover;
     background-repeat: no-repeat;
 

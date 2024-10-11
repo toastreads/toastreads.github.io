@@ -54,6 +54,41 @@ async function getArticleOfTheDay(dateOfInterest) {
     return articleObject
 }
 
+function getDefaultImageOfTheDay(dateOfInterest){
+    switch (dateOfInterest.getDay()) {
+        case 0:
+            console.log("Its a Sunday");
+            no_image = "url('/images/sunday_no_image.jpg')"
+            break
+        case 1:
+            console.log("Its a Monday");
+            no_image = "url('/images/monday_no_image.jpg')"
+            break
+        case 2:
+            console.log("Its a Tuesday");
+            no_image = "url('/images/tuesday_no_image.jpg')"
+            break
+        case 3:
+            console.log("Its a Wednesday");
+            no_image = "url('/images/wednesday_no_image.jpg')"
+            break
+        case 4:
+            console.log("Its a Thursday");
+            no_image = "url('/images/thursday_no_image.jpg')"
+            break
+        case 5:
+            console.log("Its a Friday");
+            no_image = "url('/images/friday_no_image.jpg')"
+            break
+        case 6:
+            console.log("Its a Saturday");
+            no_image = "url('/images/saturday_no_image.jpg')"
+            break
+    }
+    return no_image
+
+}
+
 //function that returns the json data of the article based on the date provided
 function getDayBasedJSON(dateOfInterest) {
     //File paths for different days lists
@@ -69,7 +104,7 @@ function getDayBasedJSON(dateOfInterest) {
     switch (dateOfInterest.getDay()) {
         case 0:
             console.log("Its a Sunday");
-            // no_image = "url('/images/sunday_no_image.jpg')"
+            no_image = "url('/images/sunday_no_image.jpg')"
             return fetchFromJSON(sunday_list)
         case 1:
             console.log("Its a Monday");
@@ -134,112 +169,34 @@ if (sd) {
 
 document.getElementById("dev-tool-clicker").addEventListener("click", function (event) {
     today.setDate(today.getDate() + 1)
-    populate_card()
+    writeTodayHeadline(today)
+    writeMainCard(today)
+    writeAllSuggestedCards()
 });
 
 
-populate_card();
 
 
-
-
-function populate_card() {
-
-    // Insert date and time into HTML
-    document.getElementById("today").innerHTML = today.toDateString().substring(0, 3).concat(",", today.toDateString().substring(3, 10));
-
-
-
-
-
-    //File paths for different days lists
-    const monday_list = "json/monday_list.json"
-    const tuesday_list = "json/tuesday_list.json"
-    const wednesday_list = "json/wednesday_list.json"
-    const thursday_list = "json/thursday_list.json"
-    const friday_list = "json/friday_list.json"
-    const saturday_list = "json/saturday_list.json"
-    const sunday_list = "json/sunday_list.json"
-
-    //Select list based on the day of the week.
-    switch (today.getDay()) {
-        case 0:
-            console.log("Its a Sunday");
-            no_image = "url('/images/sunday_no_image.jpg')"
-            fetch_and_write(sunday_list)
-            break;
-        case 1:
-            console.log("Its a Monday");
-            no_image = "url('/images/monday_no_image.jpg')"
-            fetch_and_write(monday_list)
-            break;
-        case 2:
-            console.log("Its a Tuesday");
-            no_image = "url('/images/tuesday_no_image.jpg')"
-            fetch_and_write(tuesday_list)
-            break;
-        case 3:
-            console.log("Its a Wednesday");
-            no_image = "url('/images/wednesday_no_image.jpg')"
-            fetch_and_write(wednesday_list)
-            break;
-        case 4:
-            console.log("Its a Thursday");
-            no_image = "url('/images/thursday_no_image.jpg')"
-            fetch_and_write(thursday_list)
-            break;
-        case 5:
-            console.log("Its a Friday");
-            no_image = "url('/images/friday_no_image.jpg')"
-            fetch_and_write(friday_list)
-            break;
-        case 6:
-            console.log("Its a Saturday");
-            no_image = "url('/images/saturday_no_image.jpg')"
-            fetch_and_write(saturday_list)
-            break;
-
-    }
-
-
-
-}
-
-
-
-function fetch_and_write(jsonFilePath) {
-    console.log("Fetching data from,", jsonFilePath, "...")
-    fetch(jsonFilePath)
-        .then(response => {
-            if (response.ok) {
-                console.log("Success")
-                return response.json()
-
-
-            } else {
-                console.log("Fetch failed")
-                return response.json()
-            }
-        })
-        .then(data => {
-            write_card(data)
-        })
-}
-
-async function getArticleOfTheDayWithOffset(dateOfInterest, dateOffset = 0){
+async function getArticleOfTheDayWithOffset(dateOfInterest, dateOffset = 0) {
     tomorrow = new Date()
     tomorrow.setDate(dateOfInterest.getDate() + dateOffset)
     return (await getArticleOfTheDay(tomorrow))
 }
 
-async function writeSuggestedCard(cardElementID, dateOfInterest, dateOffset){
+async function writeSuggestedCard(cardElementID, dateOfInterest, dateOffset) {
     suggestedCard = document.querySelector(cardElementID)
     suggestedArticleObject = await getArticleOfTheDayWithOffset(dateOfInterest, dateOffset)
-    
+
     suggestedCard.querySelector(".saved-article-card-title").innerHTML = suggestedArticleObject.title
     suggestedCard.querySelector(".saved-article-source-name").innerHTML = extractDomain(suggestedArticleObject.link)
-    suggestedCard.querySelector(".saved-article-source-logo").style.backgroundImage = sourceLogoURL = String("url(\"" + (suggestedArticleObject.sourcelogo).toString() + "\")")
-    suggestedCard.querySelector(".saved-article-card-pic").style.backgroundImage = String("url(\"" + (suggestedArticleObject.image).toString() + "\")")
+    suggestedCard.querySelector(".saved-article-source-logo").style.backgroundImage = makeURL(suggestedArticleObject.sourcelogo)
+    
+    if (suggestedArticleObject.image.startsWith("http", 0)) {
+        suggestedCard.querySelector(".saved-article-card-pic").style.backgroundImage = makeURL(suggestedArticleObject.image)
+    } else {
+        suggestedCard.querySelector(".saved-article-card-pic").style.backgroundImage = getDefaultImageOfTheDay(dateOfInterest)
+    }
+
     suggestedCard.href = suggestedArticleObject.link
     suggestedCard.target = '_blank'
     suggestedCard.querySelector(".topic").innerHTML = suggestedArticleObject.topic
@@ -248,70 +205,55 @@ async function writeSuggestedCard(cardElementID, dateOfInterest, dateOffset){
 function getRandomColor() {
 
 
-      color = 50 * Math.ceil(Math.random() * 7.2);
+    color = 50 * Math.ceil(Math.random() * 7.2);
 
-    return String("hsl("+color + "," + "60%,90%)");
-  }
+    return String("hsl(" + color + "," + "60%,90%)");
+}
 
-async function writeAllSuggestedCards(){
+async function writeAllSuggestedCards() {
     await writeSuggestedCard("#suggested-article-card-1", today, 4)
     await writeSuggestedCard("#suggested-article-card-2", today, 5)
     await writeSuggestedCard("#suggested-article-card-3", today, 6)
 }
 
 
-async function writeMainCard(dateOfInterest=today){
+async function writeMainCard(dateOfInterest = today) {
     mainArticleObject = await getArticleOfTheDay(dateOfInterest)
 
     if (mainArticleObject.image.startsWith("http", 0)) {
-        document.getElementById("article-pic").style.backgroundImage = makeURL(mainArticleObject.image);
+        document.querySelector("#article-pic").style.backgroundImage = makeURL(mainArticleObject.image);
     } else {
-        document.getElementById("article-pic").style.backgroundImage = no_image;
+        document.querySelector("#article-pic").style.backgroundImage = getDefaultImageOfTheDay(dateOfInterest);
     }
 
     document.querySelector("#article-title").innerHTML = mainArticleObject.title
     document.querySelector("#topic").innerHTML = mainArticleObject.topic
     document.querySelector("#article-description").innerHTML = mainArticleObject.description;
 
-}
-
-function makeURL(input){
-    return String("url(\"" + (input).toString() + "\")")
-}
-
-function write_card(data) {
-
-
-    index = today.getWeek(); // using this function now, source: https://weeknumber.com/how-to/javascript
-    console.log("Writing card with data index = ", index)
-    document.getElementById("article-title").innerHTML = data[index].title;
-    document.getElementById("topic").innerHTML = data[index].topic;
-    document.getElementById("article-description").innerHTML = data[index].description;
-
-    if (data[index].image.startsWith("http", 0)) {
-        document.getElementById("article-pic").style.backgroundImage = makeURL(data[index].image);
-    } else {
-        document.getElementById("article-pic").style.backgroundImage = no_image;
-    }
-
-    if (data[index].sourcelogo.startsWith("http", 0)) {
-        document.getElementById("article-source-icon").style.backgroundImage = makeURL(data[index].sourcelogo);
+    if (mainArticleObject.sourcelogo.startsWith("http", 0)) {
+        document.getElementById("article-source-icon").style.backgroundImage = makeURL(mainArticleObject.sourcelogo);
     } else {
         document.getElementById("article-source-icon").style.backgroundImage = "url(images/globe_icon.png)";
     }
 
-    document.getElementById("article-source-name").innerHTML = extractDomain(data[index].link)
+    document.getElementById("article-source-name").innerHTML = extractDomain(mainArticleObject.link)
 
-    document.getElementById("clickable-area").href = data[index].link
+    document.getElementById("clickable-area").href = mainArticleObject.link
     document.getElementById("clickable-area").target = '_blank'
 
-    setup_share_button(data[index].title, today);
-    setup_save_button(data[index].title, data[index].description, data[index].link, data[index].image, sourceLogoURL, encode_date(today));
-    setup_done_button(data[index].link);
+    setup_share_button(mainArticleObject.title, today);
+    setup_save_button(mainArticleObject.title, mainArticleObject.description, mainArticleObject.link, mainArticleObject.image, sourceLogoURL, encode_date(today));
+    setup_done_button(mainArticleObject.link);
     setup_note_button();
-    setup_textarea(data[index].title, data[index].description, data[index].link, data[index].image, sourceLogoURL, encode_date(today));
+    setup_textarea(mainArticleObject.title, mainArticleObject.description, mainArticleObject.link, mainArticleObject.image, sourceLogoURL, encode_date(today));
+
 
 }
+
+function makeURL(input) {
+    return String("url(\"" + (input).toString() + "\")")
+}
+
 
 function extractDomain(url) {
     return url.replace(/^(?:https?:\/\/)?(?:[^\/]+\.)?([^.\/]+\.[^.\/]+).*$/, "$1");
@@ -367,9 +309,9 @@ function setup_done_button(link) {
     document.getElementById('done-button').addEventListener('click', function (event) {
         snack("Your a Champ!")
         event.target.innerHTML = "Started Reading..."
-        setTimeout(()=>{window.open(link, '_blank')},500)
-        
-        
+        setTimeout(() => { window.open(link, '_blank') }, 500)
+
+
     })
 }
 
@@ -420,6 +362,12 @@ function snack(message) {
     setTimeout(function () { document.getElementById("snackbar").className = document.getElementById("snackbar").className.replace("show", ""); }, 3000);
 }
 
+function writeTodayHeadline(dateOfInterest) {
+    document.getElementById("today-date").innerHTML = dateOfInterest.toDateString().substring(0, 3).concat(",", dateOfInterest.toDateString().substring(3, 10));
+}
+
+writeTodayHeadline(today)
+writeMainCard(today)
 writeAllSuggestedCards()
 
 
