@@ -167,10 +167,10 @@ function getRandomColor() {
     return String("hsl(" + color + "," + "60%,90%)");
 }
 
-async function writeAllSuggestedCards() {
-    await writeSuggestedCard("#suggested-article-card-1", today, 4)
-    await writeSuggestedCard("#suggested-article-card-2", today, 5)
-    await writeSuggestedCard("#suggested-article-card-3", today, 6)
+async function writeAllSuggestedCards(dateOfInterest) {
+    await writeSuggestedCard("#suggested-article-card-1", dateOfInterest, 4)
+    await writeSuggestedCard("#suggested-article-card-2", dateOfInterest, 5)
+    await writeSuggestedCard("#suggested-article-card-3", dateOfInterest, 6)
 }
 
 
@@ -320,7 +320,9 @@ function snack(message) {
 }
 
 function writeTodayHeadline(dateOfInterest) {
-    document.getElementById("today-date").innerHTML = dateOfInterest.toDateString().substring(0, 3).concat(",", dateOfInterest.toDateString().substring(3, 10));
+    //document.getElementById("today-date").innerHTML = dateOfInterest.toDateString().substring(0, 3).concat(",", dateOfInterest.toDateString().substring(3, 10));
+    document.getElementById("today-date").innerHTML = dateOfInterest.toDateString().substring(3, 10);
+    document.querySelector("#today-headline").innerHTML = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dateOfInterest.getDay()]
 }
 
 
@@ -350,11 +352,13 @@ document.getElementById("dev-tool-clicker").addEventListener("click", function (
 
 writeTodayHeadline(today)
 writeMainCard(today)
-writeAllSuggestedCards()
+writeAllSuggestedCards(today)
 
 
 document.querySelector("#cycle-article-button").addEventListener("click", () => {
-    writeMainCard(today,Math.ceil(365*Math.random()))
+    randomDateOffset = Math.ceil(365*Math.random())
+    writeMainCard(today,randomDateOffset)
+    writeAllSuggestedCards(today)
 })
 
 

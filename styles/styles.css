@@ -180,6 +180,9 @@ tag {
     font-weight: 600;
     font-style: italic;
 }
+.today-headline::before {
+    content: "#";
+}
 
 .today-date {
     padding: 8px;
