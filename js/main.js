@@ -356,9 +356,16 @@ writeAllSuggestedCards(today)
 
 
 document.querySelector("#cycle-article-button").addEventListener("click", () => {
+
     randomDateOffset = Math.ceil(365*Math.random())
-    writeMainCard(today,randomDateOffset)
-    writeAllSuggestedCards(today)
+    randomDate = new Date()
+    randomDate.setDate(randomDate.getDate() + randomDateOffset)
+    randomDate = randomDate.getDateWithoutTime()
+    console.log("Random Date= ", randomDate);
+    
+
+    writeMainCard(randomDate)
+    writeAllSuggestedCards(randomDate)
 })
 
 
