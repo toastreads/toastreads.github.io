@@ -258,10 +258,16 @@ async function writeAllSuggestedCards(){
     await writeSuggestedCard("#suggested-article-card-2", today, 5)
     await writeSuggestedCard("#suggested-article-card-3", today, 6)
 }
-//writeAllSuggestedCards()
+
 
 async function writeMainCard(dateOfInterest=today){
     mainArticleObject = await getArticleOfTheDay(dateOfInterest)
+
+    if (mainArticleObject.image.startsWith("http", 0)) {
+        document.getElementById("article-pic").style.backgroundImage = makeURL(mainArticleObject.image);
+    } else {
+        document.getElementById("article-pic").style.backgroundImage = no_image;
+    }
 
     document.querySelector("#article-title").innerHTML = mainArticleObject.title
     document.querySelector("#topic").innerHTML = mainArticleObject.topic
@@ -414,7 +420,7 @@ function snack(message) {
     setTimeout(function () { document.getElementById("snackbar").className = document.getElementById("snackbar").className.replace("show", ""); }, 3000);
 }
 
-
+writeAllSuggestedCards()
 
 
 
