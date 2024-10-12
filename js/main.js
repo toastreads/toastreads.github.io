@@ -46,31 +46,31 @@ async function getArticleOfTheDay(dateOfInterest) {
 function getDefaultImageOfTheDay(dateOfInterest){
     switch (dateOfInterest.getDay()) {
         case 0:
-            console.log("Its a Sunday");
+            ////console.log("Its a Sunday");
             no_image = "url('/images/sunday_no_image.jpg')"
             break
         case 1:
-            console.log("Its a Monday");
+            ////console.log("Its a Monday");
             no_image = "url('/images/monday_no_image.jpg')"
             break
         case 2:
-            console.log("Its a Tuesday");
+            //console.log("Its a Tuesday");
             no_image = "url('/images/tuesday_no_image.jpg')"
             break
         case 3:
-            console.log("Its a Wednesday");
+            //console.log("Its a Wednesday");
             no_image = "url('/images/wednesday_no_image.jpg')"
             break
         case 4:
-            console.log("Its a Thursday");
+            //console.log("Its a Thursday");
             no_image = "url('/images/thursday_no_image.jpg')"
             break
         case 5:
-            console.log("Its a Friday");
+            //console.log("Its a Friday");
             no_image = "url('/images/friday_no_image.jpg')"
             break
         case 6:
-            console.log("Its a Saturday");
+            //console.log("Its a Saturday");
             no_image = "url('/images/saturday_no_image.jpg')"
             break
     }
@@ -92,25 +92,25 @@ function getDayBasedJSON(dateOfInterest) {
     //Select list based on the day of the week.
     switch (dateOfInterest.getDay()) {
         case 0:
-            console.log("Its a Sunday");
+            //console.log("Its a Sunday");
             return fetchFromJSON(sunday_list)
         case 1:
-            console.log("Its a Monday");
+            //console.log("Its a Monday");
             return fetchFromJSON(monday_list)
         case 2:
-            console.log("Its a Tuesday");
+            //console.log("Its a Tuesday");
             return fetchFromJSON(tuesday_list)
         case 3:
-            console.log("Its a Wednesday");
+            //console.log("Its a Wednesday");
             return fetchFromJSON(wednesday_list)
         case 4:
-            console.log("Its a Thursday");
+            //console.log("Its a Thursday");
             return fetchFromJSON(thursday_list)
         case 5:
-            console.log("Its a Friday");
+            //console.log("Its a Friday");
             return fetchFromJSON(friday_list)
         case 6:
-            console.log("Its a Saturday");
+            //console.log("Its a Saturday");
             return fetchFromJSON(saturday_list)
     }
 }
@@ -119,7 +119,7 @@ async function fetchFromJSON(jsonFilePath) {
     try {
         const response = await fetch(jsonFilePath)
         if (response.ok) {
-            console.log("New fetch is Success")
+            //console.log("New fetch is Success")
             return response.json()
 
         }
@@ -223,7 +223,7 @@ function setup_share_button(titleToShare, dateOfShare) {
     encodedDateOfShare = encode_date(dateOfShare)
     linkToShare = String("https://toastreads.com/?sd=" + encodedDateOfShare)
 
-    console.log("DEEP LINK: ", linkToShare)
+    //console.log("DEEP LINK: ", linkToShare)
     if (navigator.share) {
         const shareButton = document.getElementById('share-button');
         shareButton.addEventListener('click', async () => {
@@ -234,7 +234,7 @@ function setup_share_button(titleToShare, dateOfShare) {
                     url: linkToShare
                 });
 
-                console.log('Shared successfully');
+                //console.log('Shared successfully');
             } catch (error) {
                 console.error('Error sharing:', error.message);
             }
@@ -300,7 +300,7 @@ function setup_note_button() {
 function setup_textarea(title, description, link, pic, sourcelogo, datecode) {
     textArea = document.querySelector("#note-textarea")
     textArea.addEventListener("input", function () {
-        console.log("User is typing ...", textArea.value);
+        //console.log("User is typing ...", textArea.value);
         write_to_saved_articles_os(title, description, link, pic, sourcelogo, datecode, "something")
 
 
@@ -332,15 +332,15 @@ let today = new Date()
 //sd is shared date
 let sd = (new URLSearchParams(window.location.search)).get("sd");
 if (sd) {
-    //bla = console.log(sd.replace(/['"]+/g, ''));
-    console.log("There is a sd (shared day) in the URL: ", sd);
+    //bla = //console.log(sd.replace(/['"]+/g, ''));
+    //console.log("There is a sd (shared day) in the URL: ", sd);
     //today = new Date(Date.parse(sd))
     today = decode_date(sd)
-    console.log("today will be considered to be = ", today)
+    //console.log("today will be considered to be = ", today)
 } else {
-    console.log("There is NO sd in the URL")
+    //console.log("There is NO sd in the URL")
     today = new Date().getDateWithoutTime()
-    console.log("today will be considered to be = ", today)
+    //console.log("today will be considered to be = ", today)
 }
 
 document.getElementById("dev-tool-clicker").addEventListener("click", function (event) {
@@ -361,9 +361,7 @@ document.querySelector("#cycle-article-button").addEventListener("click", () => 
     randomDate = new Date()
     randomDate.setDate(randomDate.getDate() + randomDateOffset)
     randomDate = randomDate.getDateWithoutTime()
-    console.log("Random Date= ", randomDate);
     
-
     writeMainCard(randomDate)
     writeAllSuggestedCards(randomDate)
 })
