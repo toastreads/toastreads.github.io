@@ -402,6 +402,12 @@ document.querySelector("#cycle-article-button").addEventListener("click", () => 
 
     writeMainCard(randomDate)
     writeAllSuggestedCards(randomDate)
+
+    document.querySelector("#cycle-article-button").querySelector(".secondary-button-icon").classList.add("secondary-button-rotate")
+
+    setTimeout(() => {
+        document.querySelector("#cycle-article-button").querySelector(".secondary-button-icon").classList.remove("secondary-button-rotate")
+    }, 500);
 })
 
 

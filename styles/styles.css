@@ -292,7 +292,7 @@ tag {
     z-index: -1;
 }
 .article-pic-loading {
-    background-color: #e0dff3;
+    background-color: #98a1b0;
     background-size: auto;
     background-position: center;
     
@@ -323,6 +323,7 @@ tag {
     translate: -50% -50%;
 
     background-image: url("/images/spiral.png");
+    opacity: 0.9;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1340,7 +1341,7 @@ However, delay the fade out process for 2.5 seconds */
 
 
 .black-out {
-    background-color: #e0dff3;
+    background-color: #d5d8e6;
     color: #ffffff00;
     border-radius: 4px;
     /* filter: brightness(100); */
