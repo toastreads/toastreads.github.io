@@ -292,7 +292,7 @@ tag {
     z-index: -1;
 }
 .article-pic-loading {
-    background-color: var(--text-color);
+    background-color: #e0dff3;
     background-size: auto;
     background-position: center;
     
@@ -300,6 +300,21 @@ tag {
     border-radius: 2px;
     position: relative;
     clip-path: inset(0px 0px 0px 0px);
+}
+.article-pic-loading::after {
+    content: "beaming...";
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    translate: -50% -50%;
+    
+    
+    color: #ffffff;
+    background-color: var(--text-color);
+    padding: 4px 8px 4px 8px;
+    border-radius: 2px;
+    z-index: 10;
+
 }
 .spiral-rotating {
     position: absolute;
@@ -313,6 +328,7 @@ tag {
     background-repeat: no-repeat;
     height: 500px;
     width: 500px;
+    z-index: -1;
     animation: spiral-rotation 0.3s infinite linear;
    
 
@@ -367,7 +383,6 @@ tag {
     color: var(--text-color);
     margin-top: 8px;
     text-align: left;
-    text-shadow: 0px 1px 1px rgb(255, 255, 255);
 }
 
 #tags-container {
@@ -1321,4 +1336,32 @@ However, delay the fade out process for 2.5 seconds */
     width: 100px;
     height: 8px; 
 }
+
+
+
+.black-out {
+    background-color: #e0dff3;
+    color: #ffffff00;
+    border-radius: 4px;
+    /* filter: brightness(100); */
+
+
+    animation: black-out-animation 0.4s infinite alternate;
+}
+@keyframes black-out-animation {
+    from {
+        opacity: 0.4;
+
+    }
+    to {
+        opacity: 0.7;
+
+
+    }
+    
+}
+
+
+
+
 /* Watch this : https://www.youtube.com/watch?v=44FTAS-qT8Q */

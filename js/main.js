@@ -43,7 +43,7 @@ async function getArticleOfTheDay(dateOfInterest) {
     return articleObject
 }
 
-function getDefaultImageOfTheDay(dateOfInterest){
+function getDefaultImageOfTheDay(dateOfInterest) {
     switch (dateOfInterest.getDay()) {
         case 0:
             ////console.log("Its a Sunday");
@@ -140,12 +140,7 @@ async function getArticleOfTheDayWithOffset(dateOfInterest, dateOffset = 0) {
     return (await getArticleOfTheDay(tomorrow))
 }
 
-function showUnnecessaryAnimation(){
-    setTimeout(() => {
-        document.querySelector(".article-pic-loading").classList.add("hide-element")
-        document.querySelector(".article-pic").classList.remove("hide-element")
-    }, 1000);
-}
+
 
 async function writeSuggestedCard(cardElementID, dateOfInterest, dateOffset) {
 
@@ -155,7 +150,7 @@ async function writeSuggestedCard(cardElementID, dateOfInterest, dateOffset) {
     suggestedCard.querySelector(".saved-article-card-title").innerHTML = suggestedArticleObject.title
     suggestedCard.querySelector(".saved-article-source-name").innerHTML = extractDomain(suggestedArticleObject.link)
     suggestedCard.querySelector(".saved-article-source-logo").style.backgroundImage = makeURL(suggestedArticleObject.sourcelogo)
-    
+
     if (suggestedArticleObject.image.startsWith("http", 0)) {
         suggestedCard.querySelector(".saved-article-card-pic").style.backgroundImage = makeURL(suggestedArticleObject.image)
     } else {
@@ -181,9 +176,43 @@ async function writeAllSuggestedCards(dateOfInterest) {
     await writeSuggestedCard("#suggested-article-card-3", dateOfInterest, 6)
 }
 
+function showUnnecessaryAnimation() {
+    document.querySelector(".article-pic-loading").classList.remove("hide-element")
+    document.querySelector(".article-pic").classList.add("hide-element")
+    setTimeout(() => {
+        document.querySelector(".article-pic-loading").classList.add("hide-element")
+        document.querySelector(".article-pic").classList.remove("hide-element")
+    }, 1000);
+}
+function showUnnecessaryBlackOut() {
+    document.querySelector(".article-title").classList.add("black-out")
+    document.querySelector("#topic").classList.add("black-out")
+    document.querySelector("#article-description").classList.add("black-out")
+    document.querySelector("#topic").classList.add("black-out")
+    document.querySelector("#article-source-name").classList.add("black-out")
+    document.querySelector("#article-source-icon").classList.add("black-out")
+    document.querySelector("#save-button").classList.add("black-out")
+    document.querySelector("#share-button").classList.add("black-out")
+    document.querySelector("#note-button").classList.add("black-out")
+    document.querySelector("#done-button").classList.add("black-out")
+    setTimeout(() => {
+        document.querySelector(".article-title").classList.remove("black-out")
+        document.querySelector("#topic").classList.remove("black-out")
+        document.querySelector("#article-description").classList.remove("black-out")
+        document.querySelector("#topic").classList.remove("black-out")
+        document.querySelector("#article-source-name").classList.remove("black-out")
+        document.querySelector("#article-source-icon").classList.remove("black-out")
+    document.querySelector("#save-button").classList.remove("black-out")
+    document.querySelector("#share-button").classList.remove("black-out")
+    document.querySelector("#note-button").classList.remove("black-out")
+    document.querySelector("#done-button").classList.remove("black-out")
+    }, 900);
 
-async function writeMainCard(dateOfInterest = today, offset=0) {
+}
+
+async function writeMainCard(dateOfInterest = today, offset = 0) {
     showUnnecessaryAnimation()
+    showUnnecessaryBlackOut()
     mainArticleObject = await getArticleOfTheDayWithOffset(dateOfInterest, offset)
 
     if (mainArticleObject.image.startsWith("http", 0)) {
@@ -366,11 +395,11 @@ writeAllSuggestedCards(today)
 
 document.querySelector("#cycle-article-button").addEventListener("click", () => {
 
-    randomDateOffset = Math.ceil(365*Math.random())
+    randomDateOffset = Math.ceil(365 * Math.random())
     randomDate = new Date()
     randomDate.setDate(randomDate.getDate() + randomDateOffset)
     randomDate = randomDate.getDateWithoutTime()
-    
+
     writeMainCard(randomDate)
     writeAllSuggestedCards(randomDate)
 })
