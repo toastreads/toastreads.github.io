@@ -1,4 +1,4 @@
-console.clear()
+// console.clear()
 
 function encode_date(inputDate) {
     dateInmillisecondFormat = Date.parse(inputDate)
@@ -140,7 +140,15 @@ async function getArticleOfTheDayWithOffset(dateOfInterest, dateOffset = 0) {
     return (await getArticleOfTheDay(tomorrow))
 }
 
+function showUnnecessaryAnimation(){
+    setTimeout(() => {
+        document.querySelector(".article-pic-loading").classList.add("hide-element")
+        document.querySelector(".article-pic").classList.remove("hide-element")
+    }, 1000);
+}
+
 async function writeSuggestedCard(cardElementID, dateOfInterest, dateOffset) {
+
     suggestedCard = document.querySelector(cardElementID)
     suggestedArticleObject = await getArticleOfTheDayWithOffset(dateOfInterest, dateOffset)
 
@@ -175,6 +183,7 @@ async function writeAllSuggestedCards(dateOfInterest) {
 
 
 async function writeMainCard(dateOfInterest = today, offset=0) {
+    showUnnecessaryAnimation()
     mainArticleObject = await getArticleOfTheDayWithOffset(dateOfInterest, offset)
 
     if (mainArticleObject.image.startsWith("http", 0)) {
