@@ -336,7 +336,7 @@ tag {
     height: 500px;
     width: 500px;
     z-index: -1;
-    animation: spiral-rotation 0.3s infinite linear;
+    animation: spiral-rotation 0.4s infinite linear;
    
 
 }

@@ -418,7 +418,7 @@ function getDarkRandomColor() {
 
     color = 50 * Math.ceil(Math.random() * 7.2);
 
-    return String("hsl(" + color + "," + "20%,25%)");
+    return String("hsl(" + color + "," + "15%,79%)");
 }
 
 
