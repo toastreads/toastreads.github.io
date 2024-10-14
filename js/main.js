@@ -162,13 +162,7 @@ async function writeSuggestedCard(cardElementID, dateOfInterest, dateOffset) {
     suggestedCard.querySelector(".topic").innerHTML = suggestedArticleObject.topic
     suggestedCard.querySelector(".topic").style.backgroundColor = getRandomColor()
 }
-function getRandomColor() {
 
-
-    color = 50 * Math.ceil(Math.random() * 7.2);
-
-    return String("hsl(" + color + "," + "60%,90%)");
-}
 
 async function writeAllSuggestedCards(dateOfInterest) {
     await writeSuggestedCard("#suggested-article-card-1", dateOfInterest, 4)
@@ -400,6 +394,8 @@ document.querySelector("#cycle-article-button").addEventListener("click", () => 
     randomDate.setDate(randomDate.getDate() + randomDateOffset)
     randomDate = randomDate.getDateWithoutTime()
 
+    document.querySelector(".dark-random-color-background").style.backgroundColor = getDarkRandomColor()
+
     writeMainCard(randomDate)
     writeAllSuggestedCards(randomDate)
 
@@ -410,7 +406,20 @@ document.querySelector("#cycle-article-button").addEventListener("click", () => 
     }, 500);
 })
 
+function getRandomColor() {
 
+
+    color = 50 * Math.ceil(Math.random() * 7.2);
+
+    return String("hsl(" + color + "," + "60%,90%)");
+}
+function getDarkRandomColor() {
+
+
+    color = 50 * Math.ceil(Math.random() * 7.2);
+
+    return String("hsl(" + color + "," + "20%,25%)");
+}
 
 
 //bugs to fix:

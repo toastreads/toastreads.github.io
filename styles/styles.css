@@ -306,6 +306,7 @@ tag {
     position: relative;
     clip-path: inset(0px 0px 0px 0px);
 }
+
 .article-pic-loading::after {
     content: "beaming...";
     position: absolute;
@@ -328,7 +329,7 @@ tag {
     translate: -50% -50%;
 
     background-image: url("/images/spiral.png");
-    opacity: 0.9;
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1367,7 +1368,9 @@ However, delay the fade out process for 2.5 seconds */
     
 }
 
-
+.dark-random-color-background {
+    background-color: #222233;
+}
 
 
 /* Watch this : https://www.youtube.com/watch?v=44FTAS-qT8Q */
