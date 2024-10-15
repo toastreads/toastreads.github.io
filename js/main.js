@@ -81,7 +81,7 @@ function getDefaultImageOfTheDay(dateOfInterest, dateOffset = 0) {
 }
 
 //function that returns the json data of the article based on the date provided
-function getDayBasedJSON(dateOfInterest) {
+async function getDayBasedJSON(dateOfInterest) {
     //File paths for different days lists
     const monday_list = "json/monday_list.json"
     const tuesday_list = "json/tuesday_list.json"
@@ -95,25 +95,25 @@ function getDayBasedJSON(dateOfInterest) {
     switch (dateOfInterest.getDay()) {
         case 0:
             //console.log("Its a Sunday");
-            return fetchFromJSON(sunday_list)
+            return await fetchFromJSON(sunday_list)
         case 1:
             //console.log("Its a Monday");
-            return fetchFromJSON(monday_list)
+            return await fetchFromJSON(monday_list)
         case 2:
             //console.log("Its a Tuesday");
-            return fetchFromJSON(tuesday_list)
+            return await fetchFromJSON(tuesday_list)
         case 3:
             //console.log("Its a Wednesday");
-            return fetchFromJSON(wednesday_list)
+            return await fetchFromJSON(wednesday_list)
         case 4:
             //console.log("Its a Thursday");
-            return fetchFromJSON(thursday_list)
+            return await fetchFromJSON(thursday_list)
         case 5:
             //console.log("Its a Friday");
-            return fetchFromJSON(friday_list)
+            return await fetchFromJSON(friday_list)
         case 6:
             //console.log("Its a Saturday");
-            return fetchFromJSON(saturday_list)
+            return await fetchFromJSON(saturday_list)
     }
 }
 
@@ -392,8 +392,10 @@ writeAllSuggestedCards(today)
 document.querySelector("#cycle-article-button").addEventListener("click", () => {
 
     randomDateOffset = Math.ceil(365 * Math.random())
+    console.log("random offset= ", randomDateOffset);
+    
     date = new Date()
-    randomDate = new Date((date.getFullYear(), 0, 1))
+    randomDate = new Date(new Date().getFullYear(), 0, 1)
     console.log("date 0=", randomDate);
     
     randomDate.setDate(randomDate.getDate() + randomDateOffset)
