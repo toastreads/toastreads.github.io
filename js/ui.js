@@ -33,7 +33,7 @@ hideMemeButton.addEventListener("click", () => {
 
 
 document.addEventListener("scroll", ()=>{    
-    if(window.scrollY > 70) {
+    if(window.scrollY > 85) {
         document.querySelector(".title").classList.add("title-floating")
     } else {
         document.querySelector(".title").classList.remove("title-floating")
