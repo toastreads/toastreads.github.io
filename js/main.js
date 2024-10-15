@@ -392,9 +392,14 @@ writeAllSuggestedCards(today)
 document.querySelector("#cycle-article-button").addEventListener("click", () => {
 
     randomDateOffset = Math.ceil(365 * Math.random())
-    randomDate = new Date()
+    date = new Date()
+    randomDate = new Date((date.getFullYear(), 0, 1))
+    console.log("date 0=", randomDate);
+    
     randomDate.setDate(randomDate.getDate() + randomDateOffset)
     randomDate = randomDate.getDateWithoutTime()
+    console.log("random date = ", randomDate);
+    
 
     document.querySelector(".dark-random-color-background").style.backgroundColor = getDarkRandomColor()
 
