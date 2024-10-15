@@ -43,8 +43,10 @@ async function getArticleOfTheDay(dateOfInterest) {
     return articleObject
 }
 
-function getDefaultImageOfTheDay(dateOfInterest) {
-    switch (dateOfInterest.getDay()) {
+function getDefaultImageOfTheDay(dateOfInterest, dateOffset = 0) {
+    resultantDate = new Date()
+    resultantDate.setDate(dateOfInterest.getDate() + dateOffset)
+    switch (resultantDate.getDay()) {
         case 0:
             ////console.log("Its a Sunday");
             no_image = "url('/images/sunday_no_image.jpg')"
@@ -154,7 +156,7 @@ async function writeSuggestedCard(cardElementID, dateOfInterest, dateOffset) {
     if (suggestedArticleObject.image.startsWith("http", 0)) {
         suggestedCard.querySelector(".saved-article-card-pic").style.backgroundImage = makeURL(suggestedArticleObject.image)
     } else {
-        suggestedCard.querySelector(".saved-article-card-pic").style.backgroundImage = getDefaultImageOfTheDay(dateOfInterest)
+        suggestedCard.querySelector(".saved-article-card-pic").style.backgroundImage = getDefaultImageOfTheDay(dateOfInterest, dateOffset)
     }
 
     suggestedCard.href = suggestedArticleObject.link
