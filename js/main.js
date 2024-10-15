@@ -214,7 +214,7 @@ async function writeMainCard(dateOfInterest = today, offset = 0) {
     if (mainArticleObject.image.startsWith("http", 0)) {
         document.querySelector("#article-pic").style.backgroundImage = makeURL(mainArticleObject.image);
     } else {
-        document.querySelector("#article-pic").style.backgroundImage = getDefaultImageOfTheDay(dateOfInterest);
+        document.querySelector("#article-pic").style.backgroundImage = getDefaultImageOfTheDay(dateOfInterest, offset);
     }
 
     document.querySelector("#article-title").innerHTML = mainArticleObject.title
