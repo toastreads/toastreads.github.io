@@ -1,9 +1,12 @@
 let maxConfettis = 150;
 let particleSize = 0.5
 
-
+fidgetSpinnerContainer = document.querySelector("#fidget-spinner-container")
 fidgetSpinner = document.querySelector("#fidget-spinner")
+
+phenaSpinnerContainer = document.querySelector("#phena-spinner-container")
 phenaSpinner = document.querySelector("#phena-spinner")
+
 fidgetPhenaSwitchButton = document.querySelector("#fidget-phena-switch-button")
 
 new Propeller(fidgetSpinner, {
@@ -28,16 +31,17 @@ new Propeller(phenaSpinner, {
 });
 
 fidgetPhenaSwitchButton.addEventListener("click", () => {
-    if (phenaSpinner.classList.contains("hide-element")) {
-        phenaSpinner.classList.remove("hide-element")
-        fidgetSpinner.classList.add("hide-element")
+    if (phenaSpinnerContainer.classList.contains("hide-element")) {
+        phenaSpinnerContainer.classList.remove("hide-element")
+        fidgetSpinnerContainer.classList.add("hide-element")
         document.querySelector("#canvas").classList.add("hide-element")
     } else {
-        phenaSpinner.classList.add("hide-element")
-        fidgetSpinner.classList.remove("hide-element")
-        
+        phenaSpinnerContainer.classList.add("hide-element")
+        fidgetSpinnerContainer.classList.remove("hide-element")
     }
 })
+
+
 
 
 
@@ -147,3 +151,4 @@ for (var i = 0; i < maxConfettis; i++) {
 canvas.width = W;
 canvas.height = H;
 Draw();
+

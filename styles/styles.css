@@ -74,7 +74,7 @@ body {
     background: linear-gradient(to bottom, #f2f3f8 0%, #f2f3f8 20%, #f2f3f8b4 100%);
     box-shadow: 0px 0px 30px -20px #050065;
     border-bottom: #0062ff1b solid 1px;
-    backdrop-filter: blur(5px) saturate(300%) brightness(200%) contrast(100%);
+    backdrop-filter: contrast(2) brightness(1) blur(4px) saturate(3);
     /* svg filters: https://blog.logrocket.com/complete-guide-using-css-filters-svgs/ */
 
 
@@ -1286,7 +1286,7 @@ However, delay the fade out process for 2.5 seconds */
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.fidget-container::after {
+/* .fidget-container::after {
     content: "";
     background-image: url("/images/spinner_arrows.png");
     background-size: contain;
@@ -1298,14 +1298,27 @@ However, delay the fade out process for 2.5 seconds */
     translate: -50% -50%;
     opacity: 0.2;
     z-index: -1;
-}
+} */
 
 #phena-spinner {
     filter: drop-shadow(0px 0px 10px #002a1c3f);
+    position: relative;
+    
 }
+
 
 #fidget-spinner {
     filter: drop-shadow(0px 0px 20px #7b00003f);
+}
+.spinner-arrows {
+    position: absolute;
+    width: 365px;
+    height: 365px;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    opacity: 0.2;
+    z-index: -1;
 }
 
 #canvas {
@@ -1313,6 +1326,7 @@ However, delay the fade out process for 2.5 seconds */
     height: 100%;
     width: 100%;
     top: 0;
+    left: 0;
     z-index: 1;
 
 }
