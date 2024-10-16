@@ -13,7 +13,7 @@ new Propeller(fidgetSpinner, {
     inertia: 0.9999, speed: 0,
     angle: 0, onRotate: function(){ 
         //console.log(this.speed)
-        if(Math.abs(this.speed)>0){
+        if(Math.abs(this.speed)>10){
             document.querySelector("#canvas").classList.remove("hide-element")
             maxConfettis = Math.min(Math.abs(this.speed), 150)
             particleSize = Math.abs(this.speed/20)
